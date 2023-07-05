@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+:root {
+  font-size: 62.5%; /* 1rem === 10px*/
+
+  --bg-color: #fffeff;
+  --bg-card-color: #ececec;
+  --title-color: #2a2a2a;
+  --text-color: #888888;
+  --violet-grad: #7c92f8;
+  --purple-grad: #c3baf9;
+  --border-radius: 2rem;
+}
+
+.flex {
+  display: flex;
+  /* align-items: center;
+  justify-content: center; */
+}
+
+.container {
+  max-width: 1400px;
+  height: 100vh;
+  padding-block: 4rem;
+  margin-inline: 11.6rem;
+  background-color: var(--bg-color);
+}
+
+.apple-grid {
+  height: 100%;
+  display: grid;
+  place-content: center;
+  gap: 1rem;
+  grid-template-columns: 0.5fr 0.7fr 2.2fr 0.8fr 0.8fr;
+  grid-template-rows: 0.6fr 0.6fr 1fr 0.9fr 1.3fr 1fr 1fr;
+  grid-auto-flow: row;
+  grid-template-areas:
+    'brand welcome mail stacks stacks'
+    'profile profile mail stacks stacks'
+    'profile profile hello stacks stacks'
+    'profile profile hello depoiments depoiments'
+    'profile profile projects depoiments depoiments'
+    'profile profile projects blank contact'
+    'resume resume projects blank contact';
+}
+
+.brand {
+  grid-area: brand;
+}
+.welcome {
+  grid-area: welcome;
+}
+.profile {
+  grid-area: profile;
+}
+.resume {
+  grid-area: resume;
+}
+.mail {
+  grid-area: mail;
+  align-items: center;
+  justify-content: center;
+}
+.hello {
+  grid-area: hello;
+
+  background-image: url(./assets/topographic_bg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.hello-message {
+  flex-direction: column;
+}
+.hello span {
+  font-size: 7rem;
+  background: linear-gradient(43deg, var(--text-color), var(--title-color));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hello span:nth-child(1) {
+  font-size: 2.4rem;
+}
+
+.projects {
+  grid-area: projects;
+  overflow: hidden;
+}
+.stacks {
+  grid-area: stacks;
+}
+.depoiments {
+  grid-area: depoiments;
+}
+.blank {
+  grid-area: blank;
+}
+.contact {
+  grid-area: contact;
+}
+
+.card {
+  background-color: var(--bg-card-color);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  /* overflow: hidden; */
+}
+
+/*-------------------- DISPOSITIVOS MOVEIS --------------------*/
+
+@media (max-width: 991.98px) {
+}
