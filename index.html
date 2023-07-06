@@ -5,46 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="style.css" />
+
+    <link rel="icon" type="image/x-icon" href="./assets/fav_icon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
     <title>DevRibeiro</title>
   </head>
   <body>
     <main>
-        <div class="container">
-          <div class="apple-grid">
-            <div class="brand card">
-              <div class="brand_logo flex">
-                <!-- LOGO DEVRIBEIRO -->
-                <img src="./assets/logo_dev.svg" alt="logotipo devribeiro">
-              </div>
+      <div class="container">
+        <div class="apple-grid">
+          <section class="brand card pd-1">
+            <div class="brand-logo flex">
+              <!-- LOGO DEVRIBEIRO -->
+              <img src="./assets/logo_dev.svg" alt="logotipo devribeiro" />
             </div>
-            <div class="welcome card">Bem-vindo</div>
-            <div class="profile card">
-              <div class="profile_avatar">Imagem</div>
-              <div class="profile_name">Nome</div>
-              <div class="profile_about">Sobre mim</div>
+          </section>
+          <section class="welcome card flex pd-1">
+            <h2 class="gradient">Bem-Vindo</h2>
+          </section>
+          <section class="profile card pd-1">
+            <div class="profile_avatar">Imagem</div>
+            <div class="profile_name">Nome</div>
+            <div class="profile_about">Sobre mim</div>
+          </section>
+          <section class="resume card pd-1">
+            <a href="#" class="fill flex"
+              >Baixe meu currículo
+              <img src="./assets/Arrow_down.svg" alt="seta para baixo"
+            /></a>
+          </section>
+          <section class="mail card flex pd-1">
+            <div class="mail-img">
+              <img src="./assets/mail.svg" alt="imagem endereço de email" />
             </div>
-            <div class="resume card">
-              <div class="resume-text">Baixe meu currículo</div>
-              <img src="" alt="imagem seta para baixo">
+          </section>
+          <section class="hello card flex pd-1">
+            <div class="hello-message flex gradient">
+              <span>Hello world,</span>
+              <h1>DevRibeiro</h1>
             </div>
-            <div class="mail card flex">
-              <div class="mail_img">
-                <img src="./assets/mail.svg" alt="imagem endereço de email">
-              </div>
+          </section>
+          <section class="projects card pd-1">Projetos</section>
+          <section class="stacks card pd-1">Habilclassades</section>
+          <section class="depoiments card pd-1">Depoimentos</section>
+          <section class="blank card pd-1">Aberto</section>
+          <section class="contact card flex">
+            <div class="contacts-card flex">
+              <a
+                href="https://www.linkedin.com/in/rafael-ribeiro-alves-48293aa2/"
+                target="_blank"
+                ><img src="./assets/linkedin.svg" alt="icone linkedin"
+              /></a>
+              <a href="https://github.com/rafaelribeiro-dev" target="_blank"
+                ><img src="./assets/github.svg" alt="icone github"
+              /></a>
+              <a href="https://www.instagram.com/devribeiro/" target="_blank"
+                ><img src="./assets/instagram.svg" alt="icone instagram"
+              /></a>
+              <a
+                href="https://wa.me/5511993943715?text=Olá,%20tudo%20bem?"
+                target="_blank"
+                ><img src="./assets/whatsapp.svg" alt="icone whatsapp"
+              /></a>
             </div>
-            <div class="hello card flex">
-              <div class="hello-message flex">
-                <span>hello world,</span>
-                <span>DevRibeiro</span>
-              </div>
-            </div>
-            <div class="projects card">Projetos</div>
-            <div class="stacks card">Habilclassades</div>
-            <div class="depoiments card">Depoimentos</div>
-            <div class="blank card">Aberto</div>
-            <div class="contact card">Contatos</div>
+          </section>
         </div>
-      </section>
+      </div>
     </main>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   </body>

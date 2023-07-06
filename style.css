@@ -8,13 +8,20 @@ html,
 body {
   width: 100%;
   height: 100%;
+  background-color: var(--bg-white);
 }
-
+@font-face {
+  font-family: 'SF Pro Display', sans-serif;
+  src: url(./assets/SF-Pro-Display-Bold.otf) format('opentype');
+  src: url(./assets/SF-Pro-Display-Regular.otf) format('opentype');
+}
 :root {
+  font-family: 'SF Pro Display', sans-serif;
   font-size: 62.5%; /* 1rem === 10px*/
 
-  --bg-color: #fffeff;
-  --bg-card-color: #ececec;
+  --bg-white: #fffeff;
+  --soft-grey: #e9e9e9;
+  --medium-grey: #d9d9d9;
   --title-color: #2a2a2a;
   --text-color: #888888;
   --violet-grad: #7c92f8;
@@ -24,16 +31,29 @@ body {
 
 .flex {
   display: flex;
-  /* align-items: center;
-  justify-content: center; */
+}
+
+.pd-1 {
+  padding: 1rem;
+}
+
+.card {
+  background-color: var(--soft-grey);
+  border-radius: var(--border-radius);
+}
+
+.gradient {
+  background: linear-gradient(90deg, var(--text-color), var(--title-color));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .container {
-  max-width: 1400px;
+  max-width: 1440px;
   height: 100vh;
   padding-block: 4rem;
   margin-inline: 11.6rem;
-  background-color: var(--bg-color);
 }
 
 .apple-grid {
@@ -41,7 +61,7 @@ body {
   display: grid;
   place-content: center;
   gap: 1rem;
-  grid-template-columns: 0.5fr 0.7fr 2.2fr 0.8fr 0.8fr;
+  grid-template-columns: 0.5fr 1fr 2.2fr 0.8fr 0.8fr;
   grid-template-rows: 0.6fr 0.6fr 1fr 0.9fr 1.3fr 1fr 1fr;
   grid-auto-flow: row;
   grid-template-areas:
@@ -57,15 +77,54 @@ body {
 .brand {
   grid-area: brand;
 }
+.brand-logo {
+  align-items: center;
+  justify-content: center;
+}
+.brand-logo img {
+  height: 6rem;
+}
 .welcome {
   grid-area: welcome;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome h2 {
+  font-size: 4rem;
+  font-weight: 700;
 }
 .profile {
   grid-area: profile;
 }
 .resume {
   grid-area: resume;
+  align-items: center;
+  justify-content: center;
 }
+.resume a {
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.75px;
+}
+.resume a.fill {
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.resume .fill {
+  background: linear-gradient(90deg, var(--purple-grad), var(--violet-grad));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
 .mail {
   grid-area: mail;
   align-items: center;
@@ -86,16 +145,18 @@ body {
 .hello-message {
   flex-direction: column;
 }
-.hello span {
-  font-size: 7rem;
-  background: linear-gradient(43deg, var(--text-color), var(--title-color));
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
+.hello h1 {
+  font-size: 9rem;
+  text-align: center;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 0.9;
 }
 
 .hello span:nth-child(1) {
   font-size: 2.4rem;
+  padding-left: 0.2rem;
+  padding-left: 0.4rem;
 }
 
 .projects {
@@ -113,16 +174,39 @@ body {
 }
 .contact {
   grid-area: contact;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
 }
 
-.card {
-  background-color: var(--bg-card-color);
+.contact .contacts-card {
+  background-color: var(--medium-grey);
   border-radius: var(--border-radius);
-  padding: 1rem;
-  /* overflow: hidden; */
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  gap: 1rem;
+}
+.contact img {
+  transition: 0.5s;
+}
+.contact img:hover {
+  transition: 0.5s;
+  transform: scale(1.2);
 }
 
-/*-------------------- DISPOSITIVOS MOVEIS --------------------*/
+/*-------------------- MOBILE DEVICES --------------------*/
 
-@media (max-width: 991.98px) {
+@media (min-width: 992px) and (max-width: 1024px) {
+  .container {
+    margin-inline: 2rem;
+  }
+}
+
+/*-------------------- LARGEST DISPLAY --------------------*/
+@media (min-width: 1600px) {
+  .container {
+    margin: auto;
+  }
 }
