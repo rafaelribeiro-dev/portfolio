@@ -8,7 +8,7 @@ html,
 body {
   width: 100%;
   height: 100%;
-  background-color: var(--bg-white);
+  background-color: var(--background);
 }
 @font-face {
   font-family: 'SF Pro Display', sans-serif;
@@ -19,11 +19,11 @@ body {
   font-family: 'SF Pro Display', sans-serif;
   font-size: 62.5%; /* 1rem === 10px*/
 
-  --bg-white: #fffeff;
-  --soft-grey: #e9e9e9;
-  --medium-grey: #d9d9d9;
+  --background: #ebeceb;
+  --bg-card: #fefefe;
   --title-color: #2a2a2a;
   --text-color: #888888;
+  --disabled: #cecfd0;
   --violet-grad: #7c92f8;
   --purple-grad: #c3baf9;
   --border-radius: 2rem;
@@ -38,8 +38,13 @@ body {
 }
 
 .card {
-  background-color: var(--soft-grey);
+  background-color: var(--bg-card);
   border-radius: var(--border-radius);
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: bold;
 }
 
 .gradient {
@@ -70,8 +75,8 @@ body {
     'profile profile hello stacks stacks'
     'profile profile hello depoiments depoiments'
     'profile profile projects depoiments depoiments'
-    'profile profile projects blank contact'
-    'resume resume projects blank contact';
+    'profile profile projects select-mode contact'
+    'resume resume projects select-mode contact';
 }
 
 .brand {
@@ -82,7 +87,7 @@ body {
   justify-content: center;
 }
 .brand-logo img {
-  height: 6rem;
+  height: 4rem;
 }
 .welcome {
   grid-area: welcome;
@@ -90,12 +95,36 @@ body {
   justify-content: center;
 }
 
-.welcome h2 {
-  font-size: 4rem;
+.welcome p {
+  font-size: 3rem;
   font-weight: 700;
 }
 .profile {
   grid-area: profile;
+  align-items: center;
+  flex-direction: column;
+  padding: 2.1rem;
+}
+.profile .profile-avatar {
+  width: 12rem;
+  height: 12rem;
+  background-color: var(--title-color);
+  border-radius: 50%;
+}
+.profile .profile-name h2 {
+  font-size: 2.4rem;
+  padding-top: 1.2rem;
+}
+.profile .profile-name h3 {
+  font-size: 1.4rem;
+  color: var(--text-color);
+  font-weight: 400;
+  text-align: center;
+}
+.profile .profile-about p {
+  font-size: 1.6rem;
+  color: var(--text-color);
+  padding-top: 2.8rem;
 }
 .resume {
   grid-area: resume;
@@ -115,7 +144,6 @@ body {
   text-decoration: none;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
 }
 
 .resume .fill {
@@ -124,11 +152,16 @@ body {
   -webkit-background-clip: text;
   color: transparent;
 }
-
 .mail {
   grid-area: mail;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+.mail .image {
+  position: absolute;
+  right: 1rem;
+  bottom: 0.5rem;
 }
 .hello {
   grid-area: hello;
@@ -145,12 +178,34 @@ body {
 .hello-message {
   flex-direction: column;
 }
-.hello h1 {
-  font-size: 9rem;
+
+.hello-message span {
+  color: var(--text-color);
+}
+.hello-message h1 {
+  font-size: 7rem;
   text-align: center;
   font-style: normal;
   font-weight: 700;
   line-height: 0.9;
+
+  background: linear-gradient(
+    90deg,
+    var(--text-color),
+    var(--title-color),
+    var(--text-color)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-size: 200% 100%;
+  animation: 6s skeleton linear infinite;
+}
+
+@keyframes skeleton {
+  to {
+    background-position-x: -200%;
+  }
 }
 
 .hello span:nth-child(1) {
@@ -162,15 +217,59 @@ body {
 .projects {
   grid-area: projects;
   overflow: hidden;
+  justify-content: center;
 }
 .stacks {
   grid-area: stacks;
+  gap: 4rem;
+  align-items: center;
+  flex-direction: column;
 }
+
+.stacks-icons {
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.stacks .ico {
+  background-color: #f5f5f7;
+  width: 5.6rem;
+  height: 5.6rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.8rem;
+  cursor: pointer;
+}
+
+.stacks .tailwind svg path,
+.react svg path,
+.nodejs svg path,
+.sass svg path {
+  fill: var(--disabled);
+}
+
+.stacks .typescript svg path:nth-child(1) {
+  fill: var(--disabled);
+}
+
 .depoiments {
   grid-area: depoiments;
+  justify-content: center;
 }
-.blank {
-  grid-area: blank;
+.select-mode {
+  grid-area: select-mode;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  opacity: 0.5;
+  border: 2px dashed var(--violet-grad);
+}
+
+.select-mode .avatar img {
+  width: 100%;
 }
 .contact {
   grid-area: contact;
@@ -180,13 +279,14 @@ body {
 }
 
 .contact .contacts-card {
-  background-color: var(--medium-grey);
+  background-color: #fff;
   border-radius: var(--border-radius);
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 1rem;
   gap: 1rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 .contact img {
   transition: 0.5s;
@@ -201,6 +301,11 @@ body {
 @media (min-width: 992px) and (max-width: 1024px) {
   .container {
     margin-inline: 2rem;
+  }
+  .contact .contacts-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1rem;
   }
 }
 
