@@ -216,7 +216,7 @@ body {
 
 .projects {
   grid-area: projects;
-  overflow: hidden;
+  /* overflow: hidden; */
   justify-content: center;
 }
 .stacks {
@@ -253,6 +253,37 @@ body {
 
 .stacks .typescript svg path:nth-child(1) {
   fill: var(--disabled);
+}
+
+[data-tooltip] {
+  position: relative;
+  cursor: pointer;
+}
+
+[data-tooltip]::after {
+  position: absolute;
+  width: 20rem;
+  top: -9rem;
+  text-align: center;
+
+  content: attr(data-tooltip);
+  color: var(--disabled);
+  background-color: var(--title-color);
+  padding: 1rem;
+  font-size: 1.4rem;
+  border-radius: 1.2rem;
+
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(3rem);
+  transition: all 0.4s ease-in-out;
+}
+
+[data-tooltip]:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: all 0.5s ease-in-out;
 }
 
 .depoiments {
