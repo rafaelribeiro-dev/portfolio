@@ -8,7 +8,7 @@ html,
 body {
   width: 100%;
   height: 100%;
-  background-color: var(--background);
+  background-color: var(--neutral-100);
 }
 @font-face {
   font-family: 'SF Pro Display', sans-serif;
@@ -19,26 +19,41 @@ body {
   font-family: 'SF Pro Display', sans-serif;
   font-size: 62.5%; /* 1rem === 10px*/
 
-  --background: #ebeceb;
-  --bg-card: #fefefe;
-  --black: #040505;
-  --white: #fff;
-  --color-primary: #2a2a2a;
-  --color-secondary: #888888;
-  --disabled: #cecfd0;
-  --color-violet: #7c92f8;
-  --color-purple: #c3baf9;
-  --color-pink: #cd6799;
+  --neutral-700: #02050f;
+  --neutral-600: #1d1d1d;
+  --neutral-500: #3c3c3c;
+  --neutral-400: #676767;
+  --neutral-300: #b1b1b8;
+
+  --neutral-200: #d6d6d6;
+  --neutral-100: #f0f0f0;
+  --neutral: #fefffe;
+
+  --auxiliary-500: #7c92f8;
+  --auxiliary-400: #c3baf9;
+  --auxiliary-300: #f9fa9c;
+
+  --logo-color-1: #ff6596;
+  --logo-color-2: #ffd876;
+
   --border-radius: 2rem;
 }
+
 p {
   font-size: 1.6rem;
   font-weight: 300;
 }
+a {
+  text-decoration: none;
+}
+ul,
+li {
+  list-style: none;
+}
 
 ::selection {
-  background-color: var(--color-violet);
-  color: var(--background);
+  background-color: var(--auxiliary-500);
+  color: var(--neutral-100);
 }
 .flex {
   display: flex;
@@ -49,29 +64,26 @@ p {
 }
 
 .card {
-  background-color: var(--bg-card);
+  background-color: var(--neutral);
   border-radius: var(--border-radius);
 }
 
 .title {
   font-size: 1.8rem;
-  font-weight: 300;
-  color: var(--black);
+  font-weight: 400;
+  color: var(--neutral-500);
+  letter-spacing: -0.5px;
 }
 
 .gradient {
-  background: linear-gradient(
-    90deg,
-    var(--color-secondary),
-    var(--color-primary)
-  );
+  background: linear-gradient(90deg, var(--neutral-500), var(--neutral-600));
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
 }
 
 .container {
-  max-width: 1440px;
+  max-width: 1300px;
   height: 100vh;
   padding-block: 4rem;
   margin-inline: 11.6rem;
@@ -81,7 +93,7 @@ p {
   height: 100%;
   display: grid;
   place-content: center;
-  gap: 1rem;
+  gap: 0.8rem;
   grid-template-columns: 0.5fr 1fr 2.2fr 0.8fr 0.8fr;
   grid-template-rows: 0.6fr 0.6fr 1fr 0.9fr 1.3fr 1fr 1fr;
   grid-auto-flow: row;
@@ -97,52 +109,57 @@ p {
 
 .brand {
   grid-area: brand;
+  padding: 0.5rem;
 }
 .brand-logo {
   align-items: center;
   justify-content: center;
 }
 .brand-logo img {
-  height: 4rem;
+  height: 6rem;
 }
 .welcome {
   grid-area: welcome;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 0.5rem;
 }
 
 .welcome p {
   font-size: 3rem;
-  font-weight: 300;
-  color: var(--black);
+  font-weight: 700;
+  color: var(--neutral-400);
+  letter-spacing: -1.5px;
+  text-align: center;
 }
 .profile {
   grid-area: profile;
   align-items: center;
   flex-direction: column;
-  padding: 2.1rem;
+  padding: 1.5rem 3rem;
 }
 .profile .profile-avatar {
-  width: 12rem;
-  height: 12rem;
-  background-color: var(--color-primary);
+  width: 14rem;
+  height: 14rem;
+  background-color: var(--neutral-600);
   border-radius: 50%;
 }
 .profile .profile-name h2 {
   font-size: 2.4rem;
   padding-top: 1.2rem;
   font-weight: 400;
-  color: var(--black);
+  color: var(--neutral-500);
 }
 .profile .profile-name h3 {
-  font-size: 1.4rem;
-  color: var(--color-secondary);
+  font-size: 1.6rem;
+  color: var(--neutral-500);
   font-weight: 300;
   text-align: center;
 }
 .profile .profile-about p {
   font-size: 1.6rem;
-  color: var(--color-secondary);
+  color: var(--neutral-500);
   padding-top: 2.8rem;
 }
 .resume {
@@ -153,7 +170,7 @@ p {
 .resume a {
   font-size: 3rem;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 500;
   line-height: normal;
   letter-spacing: -0.75px;
 }
@@ -166,18 +183,24 @@ p {
 }
 
 .resume .fill {
-  background: linear-gradient(90deg, var(--color-purple), var(--color-violet));
+  background: var(--neutral-500);
+
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
 }
+
+.resume svg path {
+  fill: var(--neutral-500);
+}
+
 .mail {
   grid-area: mail;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
-  background-color: var(--bg-card);
+  background-color: var(--neutral);
   background-image: url(./assets/mail.svg);
   background-position: center;
   background-repeat: no-repeat;
@@ -191,15 +214,15 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(100, 100, 111, 0.2);
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(5px);
   opacity: 0;
-  transition: 0.3s;
+  transition: 0.5s;
   gap: 1.8rem;
 }
 .mail .overlay p {
   font-size: 1.8rem;
-  color: var(--color-primary);
+  color: var(--neutral-600);
   font-weight: 200;
 }
 .mail:hover .overlay {
@@ -217,7 +240,7 @@ p {
 }
 
 .mail .copy svg {
-  fill: var(--color-primary);
+  fill: var(--neutral-600);
 }
 
 .mail .copy:hover {
@@ -241,7 +264,7 @@ p {
 }
 
 .hello-message span {
-  color: var(--color-secondary);
+  color: var(--neutral-500);
 }
 .hello-message h1 {
   font-size: 7rem;
@@ -252,15 +275,15 @@ p {
 
   background: linear-gradient(
     90deg,
-    var(--color-secondary),
-    var(--color-primary),
-    var(--color-secondary)
+    var(--neutral-300),
+    var(--neutral-600),
+    var(--neutral-300)
   );
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   background-size: 200% 100%;
-  animation: 6s skeleton linear infinite;
+  animation: 7s skeleton linear infinite;
 }
 
 @keyframes skeleton {
@@ -277,9 +300,26 @@ p {
 
 .projects {
   grid-area: projects;
-  /* overflow: hidden; */
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
 }
+
+.projects .slider {
+  width: 45rem;
+  height: 28rem;
+  border-radius: var(--border-radius);
+}
+
+.projects .slider img {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .stacks {
   grid-area: stacks;
   gap: 2rem;
@@ -296,7 +336,7 @@ p {
 }
 
 .stacks .ico {
-  background-color: #f5f5f7;
+  background-color: var(--neutral-100);
   width: 5.6rem;
   height: 5.6rem;
   align-items: center;
@@ -306,25 +346,22 @@ p {
   position: relative;
 }
 
-.stacks .ico:nth-child(n + 6) {
-  border: 1px solid var(--color-pink);
-}
-
 .stacks .description p {
-  color: var(--color-pink);
-  font-size: 1.4rem;
-  font-weight: 200;
+  color: var(--neutral-100);
+  font-size: 1.2rem;
+  font-weight: 300;
+
+  background-color: var(--neutral-400);
+  border-radius: 50px;
+  padding: 0.8rem;
 }
 
-.stacks .tailwind svg path,
-.react svg path,
-.nodejs svg path,
-.sass svg path {
-  fill: var(--disabled);
+.stacks .ico:nth-child(n + 6) svg path {
+  fill: var(--neutral-400);
 }
 
-.stacks .typescript svg path:nth-child(1) {
-  fill: var(--disabled);
+.stacks .typescript svg path:nth-child(2) {
+  fill: var(--neutral);
 }
 .stacks .description {
   width: 85%;
@@ -346,8 +383,8 @@ p {
   text-align: center;
 
   content: attr(data-tooltip);
-  color: var(--disabled);
-  background-color: var(--color-primary);
+  color: var(--neutral-200);
+  background-color: var(--neutral-600);
   padding: 1rem;
   font-size: 1.4rem;
   border-radius: 1.2rem;
@@ -388,17 +425,39 @@ p {
   flex-direction: column;
   gap: 1rem;
 }
+.contact ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.contact ul li {
+  background: var(--auxiliary-400);
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-align: center;
+  color: var(--neutral);
+  border-radius: 20px;
+
+  padding: 1rem;
+}
+.contact ul li a {
+  color: var(--neutral);
+  transition: 0.5s;
+}
+.contact ul li a:hover {
+  background: var(--auxiliary-500);
+}
 
 .contact .contact .title {
-  color: var(--black);
+  color: var(--neutral-500);
   font-weight: 400;
 }
 
 .contact .contacts-card {
-  background-color: rgba(100, 100, 111, 0.2);
-  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(1px);
   border-radius: var(--border-radius);
-  width: 70%;
+  width: 75%;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;

@@ -7,7 +7,7 @@
 <path d="M1 95.5H306M1.5 96L1.5 57M305.5 96V53M1 18.5H76M105 18.5L306 18.5M79 64.5L241 64.5M1.5 26L1.5 18M75.5 26V18M35.5 19V14M200.5 19V14M153.5 70V65M95.5 101V96M105.5 26V18M78.5 65V57M240.5 65V57M305.5 26V18" stroke="#888888" stroke-linejoin="round"/>
 <defs>
 <linearGradient id="paint0_linear_1695_136" x1="2.21951" y1="39.3158" x2="307.234" y2="39.3158" gradientUnits="userSpaceOnUse">
-<stop offset="0.288866" stop-color="#FF80BF"/>
+<stop stop-color="#FF6596"/>
 <stop offset="1" stop-color="#FFD876"/>
 </linearGradient>
 </defs>

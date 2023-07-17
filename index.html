@@ -21,13 +21,13 @@
     <main>
       <div class="container">
         <div class="apple-grid">
-          <section class="brand card pd-1">
+          <section class="brand card">
             <div class="brand-logo flex">
               <!-- LOGO DEVRIBEIRO -->
               <img src="./assets/logo_dev.svg" alt="logotipo devribeiro" />
             </div>
           </section>
-          <section class="welcome card flex pd-1">
+          <section class="welcome card flex">
             <p>Bem-Vindo</p>
           </section>
           <section class="profile card flex">
@@ -48,8 +48,17 @@
           <section class="resume card pd-1">
             <a href="#" class="fill flex"
               >Baixe meu currículo
-              <img src="./assets/Arrow_down.svg" alt="seta para baixo"
-            /></a>
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1651_71)">
+                <path d="M19.5 24.258L27.546 16.212L29.667 18.333L18 30L6.33301 18.333L8.45401 16.212L16.5 24.258V6H19.5V24.258Z" fill="#1D1D1D"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_1651_71">
+                <rect width="36" height="36" fill="white"/>
+                </clipPath>
+                </defs>
+                </svg>
+              </a>
           </section>
           <section class="mail card flex pd-1">
             <div class="overlay flex">
@@ -79,6 +88,11 @@
           </section>
           <section class="projects card flex pd-1">
             <span class="title">Projetos</span>
+            <div class="content">
+              <div class="slider">
+                <img src="./assets/frioprime.png" alt="cliente Frio Prime">
+              </div>
+            </div>
           </section>
           <section class="stacks card flex pd-1">
             <span class="title">Habilidades</span>
@@ -332,8 +346,27 @@
             </div>
             <div class="toggle title">switch</div>
           </section>
-          <section class="contact card flex">
-            <div class="contacts-card flex">
+          <section class="contact card flex pd-1">
+            <ul class="contact-list">
+              <li><a href="https://www.linkedin.com/in/rafael-ribeiro-alves-48293aa2/"
+                target="_blank">Linkedin</a></li>
+              <li><a href="https://github.com/rafaelribeiro-dev" target="_blank">Github</a></li>
+              <li><a href="https://www.instagram.com/devribeiro/" target="_blank">Instagram</a></li>
+              <li><a href="https://wa.me/5511993943715?text=Olá,%20tudo%20bem?"
+                target="_blank">Whatsapp</a></li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </main>
+    <script src="./main.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  </body>
+</html>
+
+
+<!-- 
+  <div class="contacts-card flex">
               <a
                 href="https://www.linkedin.com/in/rafael-ribeiro-alves-48293aa2/"
                 target="_blank"
@@ -352,12 +385,4 @@
               /></a>
             </div>
             <span class="title">Contato</span>
-          </section>
-        </div>
-      </div>
-    </main>
-    <script src="./main.js"></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-  </body>
-</html>
-
+ -->
