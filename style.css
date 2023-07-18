@@ -8,7 +8,7 @@ html,
 body {
   width: 100%;
   height: 100%;
-  background-color: var(--neutral-100);
+  background-color: var(--neutral);
 }
 @font-face {
   font-family: 'SF Pro Display', sans-serif;
@@ -20,13 +20,13 @@ body {
   font-size: 62.5%; /* 1rem === 10px*/
 
   --neutral-700: #02050f;
-  --neutral-600: #1d1d1d;
+  --neutral-600: #1d1d1f;
   --neutral-500: #3c3c3c;
   --neutral-400: #676767;
   --neutral-300: #b1b1b8;
 
   --neutral-200: #d6d6d6;
-  --neutral-100: #f0f0f0;
+  --neutral-100: #f5f5f7;
   --neutral: #fefffe;
 
   --auxiliary-500: #7c92f8;
@@ -64,7 +64,7 @@ li {
 }
 
 .card {
-  background-color: var(--neutral);
+  background-color: var(--neutral-100);
   border-radius: var(--border-radius);
 }
 
@@ -183,7 +183,7 @@ li {
 }
 
 .resume .fill {
-  background: var(--neutral-500);
+  background: linear-gradient(180deg, #91d4fa 0%, #6c9de2 100%, #6c9de2 100%);
 
   background-clip: text;
   -webkit-background-clip: text;
@@ -200,7 +200,6 @@ li {
   justify-content: center;
   position: relative;
   overflow: hidden;
-  background-color: var(--neutral);
   background-image: url(./assets/mail.svg);
   background-position: center;
   background-repeat: no-repeat;
@@ -250,7 +249,7 @@ li {
 .hello {
   grid-area: hello;
 
-  background-image: url(./assets/topographic_bg.png);
+  background-image: url(./assets/[WWDC\ 2023]-[Apple\ Watch]-[watchOS\ 10]_cleanup\ 1.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -259,13 +258,7 @@ li {
   justify-content: center;
   align-items: center;
 }
-.hello-message {
-  flex-direction: column;
-}
 
-.hello-message span {
-  color: var(--neutral-500);
-}
 .hello-message h1 {
   font-size: 7rem;
   text-align: center;
@@ -275,9 +268,9 @@ li {
 
   background: linear-gradient(
     90deg,
-    var(--neutral-300),
-    var(--neutral-600),
-    var(--neutral-300)
+    var(--neutral-100),
+    var(--neutral),
+    var(--neutral-100)
   );
   background-clip: text;
   -webkit-background-clip: text;
@@ -290,12 +283,6 @@ li {
   to {
     background-position-x: -200%;
   }
-}
-
-.hello span:nth-child(1) {
-  font-size: 2.4rem;
-  padding-left: 0.2rem;
-  padding-left: 0.4rem;
 }
 
 .projects {
@@ -336,12 +323,12 @@ li {
 }
 
 .stacks .ico {
-  background-color: var(--neutral-100);
+  background-color: #e6e6e6;
   width: 5.6rem;
   height: 5.6rem;
   align-items: center;
   justify-content: center;
-  border-radius: 0.8rem;
+  border-radius: 1rem;
 
   position: relative;
 }
@@ -424,28 +411,44 @@ li {
   align-items: center;
   flex-direction: column;
   gap: 1rem;
+  background-image: url(./assets/background-blur.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.contact .button {
+  border: none;
+  color: var(--pure-white);
+  font-weight: 600;
+  font-size: 1.6rem;
+  /* text-transform: uppercase; */
+  cursor: pointer;
+}
+
+.contact .button a {
+  border-radius: 1rem;
+  color: var(--neutral);
+  width: 12rem;
+  height: 100%;
+  padding: 1rem;
+  display: block;
+
+  background: rgba(0, 0, 0, 0.26);
+  backdrop-filter: blur(10px);
+
+  transition: 0.3s;
+}
+
+.contact .button a:hover {
+  background: rgba(0, 0, 0, 0.46);
 }
 .contact ul {
   display: flex;
+  align-items: center;
   flex-direction: column;
-  gap: 0.7rem;
-}
-.contact ul li {
-  background: var(--auxiliary-400);
-  font-size: 1.6rem;
-  font-weight: 500;
   text-align: center;
-  color: var(--neutral);
-  border-radius: 20px;
-
-  padding: 1rem;
-}
-.contact ul li a {
-  color: var(--neutral);
-  transition: 0.5s;
-}
-.contact ul li a:hover {
-  background: var(--auxiliary-500);
+  gap: 1rem;
 }
 
 .contact .contact .title {
