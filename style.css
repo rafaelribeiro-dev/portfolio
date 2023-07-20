@@ -8,7 +8,7 @@ html,
 body {
   width: 100%;
   height: 100%;
-  background-color: var(--neutral);
+  background-color: var(--neutral-100);
 }
 @font-face {
   font-family: 'SF Pro Display', sans-serif;
@@ -19,17 +19,23 @@ body {
   font-family: 'SF Pro Display', sans-serif;
   font-size: 62.5%; /* 1rem === 10px*/
 
-  --neutral-700: #02050f;
-  --neutral-600: #1d1d1f;
-  --neutral-500: #3c3c3c;
-  --neutral-400: #676767;
+  --neutral-800: #02050f;
+  --neutral-700: #1d1d1f;
+  --neutral-600: #3c3c3c;
+  --neutral-500: #676767;
+  --neutral-400: #86868b;
   --neutral-300: #b1b1b8;
-
   --neutral-200: #d6d6d6;
   --neutral-100: #f5f5f7;
   --neutral: #fefffe;
 
-  --auxiliary-500: #7c92f8;
+  --linear-gradient: linear-gradient(
+    180deg,
+    #91d4fa 0%,
+    #6c9de2 100%,
+    #6c9de2 100%
+  );
+  --auxiliary-500: #007aff;
   --auxiliary-400: #c3baf9;
   --auxiliary-300: #f9fa9c;
 
@@ -42,6 +48,7 @@ body {
 p {
   font-size: 1.6rem;
   font-weight: 300;
+  color: var(--neutral-400);
 }
 a {
   text-decoration: none;
@@ -64,7 +71,7 @@ li {
 }
 
 .card {
-  background-color: var(--neutral-100);
+  background-color: var(--neutral);
   border-radius: var(--border-radius);
 }
 
@@ -129,7 +136,7 @@ li {
 .welcome p {
   font-size: 3rem;
   font-weight: 700;
-  color: var(--neutral-400);
+  /* color: var(--neutral-400); */
   letter-spacing: -1.5px;
   text-align: center;
 }
@@ -142,14 +149,14 @@ li {
 .profile .profile-avatar {
   width: 14rem;
   height: 14rem;
-  background-color: var(--neutral-600);
+  background-color: var(--neutral-800);
   border-radius: 50%;
 }
 .profile .profile-name h2 {
   font-size: 2.4rem;
   padding-top: 1.2rem;
   font-weight: 400;
-  color: var(--neutral-500);
+  color: var(--neutral-700);
 }
 .profile .profile-name h3 {
   font-size: 1.6rem;
@@ -188,10 +195,6 @@ li {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-}
-
-.resume svg path {
-  fill: var(--neutral-500);
 }
 
 .mail {
@@ -397,14 +400,88 @@ li {
   grid-area: select-mode;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
-  opacity: 0.5;
   border: 2px dashed var(--violet-grad);
+}
+
+.select-mode .avatar {
+  perspective: 1000px;
+}
+
+.memoji-face {
+  transition: all 1.5s cubic-bezier(0.7, -0.5, 0.3, 1.8);
+  transform-style: preserve-3d;
+}
+
+.avatar.active .memoji-face {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+}
+
+.front {
+  width: 100%;
+  backface-visibility: hidden;
+}
+
+.back {
+  transform: rotateY(180deg);
+  position: absolute;
 }
 
 .select-mode .avatar img {
   width: 100%;
+  transition: all 1s;
 }
+
+.toggle-btn {
+  position: relative;
+  width: 7rem;
+  height: 4rem;
+  background: var(--neutral-200);
+  border-radius: 5rem;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.toggle-btn .icon {
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  background: var(--neutral-100);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  left: 0.5rem;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 2rem;
+  color: var(--neutral-500);
+  transition: all 0.4s;
+}
+
+.toggle-btn.active {
+  background: #4cd865;
+  transition: all 0.4s;
+}
+
+.toggle-btn.active .icon {
+  color: var(--neutral-500);
+  left: calc(100% - 50%);
+  transition: all 0.4s;
+}
+
 .contact {
   grid-area: contact;
   justify-content: center;
@@ -417,16 +494,86 @@ li {
   background-size: cover;
 }
 
+/*------------testing--------------*/
+
+.contact .frame {
+  width: 14.8rem;
+  height: 18.2rem;
+  border: 7px solid var(--neutral-500);
+  border-radius: 3.6rem;
+  background-color: #000000;
+  overflow: hidden;
+}
+.contact .frame .title {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1.5rem;
+  color: var(--neutral);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.contact .frame .title span:nth-child(1) {
+  color: var(--auxiliary-500);
+}
+
 .contact .button {
   border: none;
-  color: var(--pure-white);
+  color: var(--neutral);
   font-weight: 600;
   font-size: 1.6rem;
-  /* text-transform: uppercase; */
   cursor: pointer;
 }
 
 .contact .button a {
+  border-radius: 1.2rem;
+  color: var(--neutral);
+  width: 12.5rem;
+  height: 100%;
+  padding: 0.69rem;
+  display: block;
+  background: rgba(255, 255, 255, 0.26);
+  transition: 0.3s;
+  position: relative;
+  /* backdrop-filter: blur(10px); */
+}
+
+.contact .button a::before {
+  content: '';
+  width: 1rem;
+  height: 1rem;
+  background-color: #2094fa;
+  position: absolute;
+  display: flex;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 1rem;
+}
+
+.contact .button a.git::before {
+  background-color: #000;
+}
+
+.contact .button a.insta::before {
+  background-color: #c13584;
+}
+.contact .button a.whats::before {
+  background-color: #04de71;
+}
+.contact .button a:hover {
+  background: rgba(255, 255, 255, 0.46);
+}
+/*----------------------------------*/
+
+/* .contact .button {
+  border: none;
+  color: var(--pure-white);
+  font-weight: 600;
+  font-size: 1.6rem;
+  cursor: pointer;
+} */
+
+/* .contact .button a {
   border-radius: 1rem;
   color: var(--neutral);
   width: 12rem;
@@ -438,25 +585,17 @@ li {
   backdrop-filter: blur(10px);
 
   transition: 0.3s;
-}
+} */
 
-.contact .button a:hover {
-  background: rgba(0, 0, 0, 0.46);
-}
 .contact ul {
   display: flex;
   align-items: center;
   flex-direction: column;
   text-align: center;
-  gap: 1rem;
+  gap: 0.6rem;
 }
 
-.contact .contact .title {
-  color: var(--neutral-500);
-  font-weight: 400;
-}
-
-.contact .contacts-card {
+/* .contact .contacts-card {
   background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(1px);
   border-radius: var(--border-radius);
@@ -467,14 +606,14 @@ li {
   padding: 1rem;
   gap: 1rem;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-}
-.contact img {
+} */
+/* .contact img {
   transition: 0.5s;
-}
-.contact img:hover {
+} */
+/* .contact img:hover {
   transition: 0.5s;
   transform: scale(1.2);
-}
+} */
 
 /*-------------------- MOBILE DEVICES --------------------*/
 

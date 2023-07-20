@@ -14,6 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
     <title>DevRibeiro</title>
   </head>
@@ -50,14 +51,19 @@
               >Baixe meu currículo
               <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_1651_71)">
-                <path d="M19.5 24.258L27.546 16.212L29.667 18.333L18 30L6.33301 18.333L8.45401 16.212L16.5 24.258V6H19.5V24.258Z" fill="#1D1D1D"/>
+                <path d="M19.167 24.258L27.213 16.212L29.334 18.333L17.667 30L6 18.333L8.121 16.212L16.167 24.258V6H19.167V24.258Z" fill="url(#paint0_linear_1651_71)"/>
                 </g>
                 <defs>
+                <linearGradient id="paint0_linear_1651_71" x1="17.667" y1="6" x2="17.667" y2="30" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#91D4FA"/>
+                <stop offset="1" stop-color="#6C9DE2"/>
+                </linearGradient>
                 <clipPath id="clip0_1651_71">
                 <rect width="36" height="36" fill="white"/>
                 </clipPath>
                 </defs>
                 </svg>
+                
               </a>
           </section>
           <section class="mail card flex pd-1">
@@ -341,33 +347,52 @@
           </section>
           <section class="select-mode card flex pd-1">
             <div class="avatar">
-              <img src="./assets/memoji-glasses.svg" alt="avatar sem oculos" />
+              
+              
+              <div class="memoji-face">
+                <div class="front">
+                  <img src="./assets/memoji-glasses.svg" alt="avatar sem oculos" />
+                </div>
+                <div class="back">
+                  <img src="./assets/memoji-without-glasses.svg" alt="avatar sem oculos" />
+                </div>
+              </div>
             </div>
-            <div class="toggle title">switch</div>
+            <div class="toggle-btn">
+              <div class="icon">
+                <i class="ph-bold ph-sun"></i>
+              </div>
+            </div>
           </section>
           <section class="contact card flex pd-1">
-            <ul class="contact-list">
-              <li>
-                <buton class="button">
-                  <a href="https://www.linkedin.com/in/rafael-ribeiro-alves-48293aa2/">Linkedin</a>
-                </buton>
-              </li>
-              <li>
-                <buton class="button">
-                  <a href="https://github.com/rafaelribeiro-dev">Github</a>
-                </buton>
-              </li>
-              <li>
-                <buton class="button">
-                  <a href="https://www.instagram.com/devribeiro/">Instagram</a>
-                </buton>
-              </li>
-              <li>
-                <buton class="button">
-                  <a href="https://wa.me/5511993943715?text=Olá,%20tudo%20bem?">Whatsapp</a>
-                </buton>
-              </li>
-            </ul>
+            <div class="frame">
+              <div class="title">
+                <span>Contatos</span>
+                <span>9:55</span>
+              </div>
+              <ul class="contact-list">
+                <li>
+                  <buton class="button">
+                    <a class="in" href="https://www.linkedin.com/in/rafael-ribeiro-alves-48293aa2/" target="_blank">Linkedin</a>
+                  </buton>
+                </li>
+                <li>
+                  <buton class="button">
+                    <a class="git" href="https://github.com/rafaelribeiro-dev" target="_blank">Github</a>
+                  </buton>
+                </li>
+                <li>
+                  <buton class="button">
+                    <a class="insta" href="https://www.instagram.com/devribeiro/" target="_blank">Instagram</a>
+                  </buton>
+                </li>
+                <li>
+                  <buton class="button">
+                    <a class="whats" href="https://wa.me/5511993943715?text=Olá,%20tudo%20bem?" target="_blank">Whatsapp</a>
+                  </buton>
+                </li>
+              </ul>
+            </div>
           </section>
         </div>
       </div>
@@ -378,24 +403,32 @@
 </html>
 
 
-<!-- 
-  <div class="contacts-card flex">
-              <a
-                href="https://www.linkedin.com/in/rafael-ribeiro-alves-48293aa2/"
-                target="_blank"
-                ><img src="./assets/linkedin.svg" alt="icone linkedin"
-              /></a>
-              <a href="https://github.com/rafaelribeiro-dev" target="_blank"
-                ><img src="./assets/github.svg" alt="icone github"
-              /></a>
-              <a href="https://www.instagram.com/devribeiro/" target="_blank"
-                ><img src="./assets/instagram.svg" alt="icone instagram"
-              /></a>
-              <a
-                href="https://wa.me/5511993943715?text=Olá,%20tudo%20bem?"
-                target="_blank"
-                ><img src="./assets/whatsapp.svg" alt="icone whatsapp"
-              /></a>
-            </div>
-            <span class="title">Contato</span>
- -->
+
+
+
+
+
+
+ <!-- 
+
+  <li>
+                <buton class="button">
+                  <a href="https://www.linkedin.com/in/rafael-ribeiro-alves-48293aa2/" target="_blank">Linkedin</a>
+                </buton>
+              </li>
+              <li>
+                <buton class="button">
+                  <a href="https://github.com/rafaelribeiro-dev" target="_blank">Github</a>
+                </buton>
+              </li>
+              <li>
+                <buton class="button">
+                  <a href="https://www.instagram.com/devribeiro/" target="_blank">Instagram</a>
+                </buton>
+              </li>
+              <li>
+                <buton class="button">
+                  <a href="https://wa.me/5511993943715?text=Olá,%20tudo%20bem?" target="_blank">Whatsapp</a>
+                </buton>
+              </li>
+  -->
