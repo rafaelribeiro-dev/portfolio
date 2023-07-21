@@ -24,12 +24,11 @@ toggleBtn.addEventListener('click', () => {
   const containsActiveClass = toggleBtn.classList.contains('active')
   if (containsActiveClass) {
     avatar.classList.toggle('active')
-
-    // moonIcon.classList.replace('ph-sun', 'ph-moon')
+    moonIcon.classList.replace('ph-sun', 'ph-moon')
     // memoji.setAttribute('src', './assets/memoji-without-glasses.svg')
     return
   }
   avatar.classList.toggle('active')
-  // moonIcon.classList.replace('ph-moon', 'ph-sun')
+  moonIcon.classList.replace('ph-moon', 'ph-sun')
   // memoji.setAttribute('src', './assets/memoji-glasses.svg')
 })

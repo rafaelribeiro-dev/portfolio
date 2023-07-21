@@ -100,7 +100,7 @@ li {
   height: 100%;
   display: grid;
   place-content: center;
-  gap: 0.8rem;
+  gap: 1rem;
   grid-template-columns: 0.5fr 1fr 2.2fr 0.8fr 0.8fr;
   grid-template-rows: 0.6fr 0.6fr 1fr 0.9fr 1.3fr 1fr 1fr;
   grid-auto-flow: row;
@@ -151,22 +151,26 @@ li {
   height: 14rem;
   background-color: var(--neutral-800);
   border-radius: 50%;
+  background-image: url(./assets/me.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .profile .profile-name h2 {
   font-size: 2.4rem;
   padding-top: 1.2rem;
-  font-weight: 400;
+  font-weight: 500;
   color: var(--neutral-700);
 }
 .profile .profile-name h3 {
   font-size: 1.6rem;
-  color: var(--neutral-500);
-  font-weight: 300;
+  color: var(--neutral-400);
+  font-weight: 400;
   text-align: center;
 }
 .profile .profile-about p {
   font-size: 1.6rem;
-  color: var(--neutral-500);
+  color: var(--neutral-400);
   padding-top: 2.8rem;
 }
 .resume {
@@ -253,6 +257,7 @@ li {
   grid-area: hello;
 
   background-image: url(./assets/[WWDC\ 2023]-[Apple\ Watch]-[watchOS\ 10]_cleanup\ 1.png);
+  /* background-image: url(./assets/topographic_bg.png); */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -455,15 +460,15 @@ li {
 
 .toggle-btn .icon {
   position: absolute;
-  width: 3rem;
-  height: 3rem;
+  width: 4rem;
+  height: 4rem;
   background: var(--neutral-100);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   top: 50%;
-  left: 0.5rem;
+  left: 0;
   transform: translateY(-50%);
   cursor: pointer;
   font-size: 2rem;
@@ -493,8 +498,6 @@ li {
   background-position: center;
   background-size: cover;
 }
-
-/*------------testing--------------*/
 
 .contact .frame {
   width: 14.8rem;
@@ -563,29 +566,6 @@ li {
 .contact .button a:hover {
   background: rgba(255, 255, 255, 0.46);
 }
-/*----------------------------------*/
-
-/* .contact .button {
-  border: none;
-  color: var(--pure-white);
-  font-weight: 600;
-  font-size: 1.6rem;
-  cursor: pointer;
-} */
-
-/* .contact .button a {
-  border-radius: 1rem;
-  color: var(--neutral);
-  width: 12rem;
-  height: 100%;
-  padding: 1rem;
-  display: block;
-
-  background: rgba(0, 0, 0, 0.26);
-  backdrop-filter: blur(10px);
-
-  transition: 0.3s;
-} */
 
 .contact ul {
   display: flex;
@@ -594,26 +574,6 @@ li {
   text-align: center;
   gap: 0.6rem;
 }
-
-/* .contact .contacts-card {
-  background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(1px);
-  border-radius: var(--border-radius);
-  width: 75%;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-  gap: 1rem;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-} */
-/* .contact img {
-  transition: 0.5s;
-} */
-/* .contact img:hover {
-  transition: 0.5s;
-  transform: scale(1.2);
-} */
 
 /*-------------------- MOBILE DEVICES --------------------*/
 
