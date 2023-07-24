@@ -73,6 +73,7 @@ li {
 .card {
   background-color: var(--neutral);
   border-radius: var(--border-radius);
+  box-shadow: 0 6px 15px rgba(36, 37, 38, 0.08);
 }
 
 .title {
@@ -101,15 +102,15 @@ li {
   display: grid;
   place-content: center;
   gap: 1rem;
-  grid-template-columns: 0.5fr 1fr 2.2fr 0.8fr 0.8fr;
-  grid-template-rows: 0.6fr 0.6fr 1fr 0.9fr 1.3fr 1fr 1fr;
+  grid-template-columns: 0.5fr 1fr 2.2fr 0.6fr 0.9fr;
+  grid-template-rows: 0.6fr 1.2fr 0.4fr 0.9fr 1.3fr 1fr 1fr;
   grid-auto-flow: row;
   grid-template-areas:
-    'brand welcome mail stacks stacks'
-    'profile profile mail stacks stacks'
+    'brand welcome hello stacks stacks'
     'profile profile hello stacks stacks'
-    'profile profile hello depoiments depoiments'
-    'profile profile projects depoiments depoiments'
+    'profile profile projects stacks stacks'
+    'profile profile projects mail mail'
+    'profile profile projects mail mail'
     'profile profile projects select-mode contact'
     'resume resume projects select-mode contact';
 }
@@ -203,15 +204,41 @@ li {
 
 .mail {
   grid-area: mail;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
-  background-image: url(./assets/mail.svg);
+  /* background-image: url(./assets/mail.svg);
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
 }
-.mail .overlay {
+.mail img {
+  position: relative;
+  top: 50%;
+  transform: translateY(-60%);
+}
+
+.mail .copy-mail {
+  display: none;
+}
+
+.button-copy {
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  background-color: var(--neutral-100);
+  margin-top: 5rem;
+  border-radius: 0 0 1.5rem 1.5rem;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+
+.button-copy:hover {
+  background-color: var(--neutral-200);
+}
+/* .mail .overlay {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -234,9 +261,6 @@ li {
 .mail:hover .overlay {
   opacity: 1;
 }
-.mail .copy-mail {
-  display: none;
-}
 
 .mail .copy {
   background-color: transparent;
@@ -252,16 +276,20 @@ li {
 .mail .copy:hover {
   transition: 0.5s ease;
   cursor: pointer;
-}
+} */
 .hello {
   grid-area: hello;
-
-  background-image: url(./assets/[WWDC\ 2023]-[Apple\ Watch]-[watchOS\ 10]_cleanup\ 1.png);
-  /* background-image: url(./assets/topographic_bg.png); */
+  background-color: var(--neutral);
+  background-image: url(./assets/topographic_bg.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-
+  /* background-image: linear-gradient(
+    -225deg,
+    #ffe29f 0%,
+    #ffa99f 48%,
+    #ff719a 100%
+  ); */
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -273,18 +301,21 @@ li {
   font-style: normal;
   font-weight: 700;
   line-height: 0.9;
-
-  background: linear-gradient(
+  background: linear-gradient(90deg, #757b8f 15.77%, #d2d2d2 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* background: linear-gradient(
     90deg,
     var(--neutral-100),
     var(--neutral),
     var(--neutral-100)
-  );
-  background-clip: text;
+  ); */
+  /* background-clip: text;
   -webkit-background-clip: text;
-  color: transparent;
-  background-size: 200% 100%;
-  animation: 7s skeleton linear infinite;
+  color: transparent; */
+  /* background-size: 200% 100%; */
+  /* animation: 7s skeleton linear infinite; */
 }
 
 @keyframes skeleton {
@@ -331,7 +362,7 @@ li {
 }
 
 .stacks .ico {
-  background-color: #e6e6e6;
+  background-color: var(--neutral-100);
   width: 5.6rem;
   height: 5.6rem;
   align-items: center;
@@ -406,6 +437,55 @@ li {
   flex-direction: column;
   align-items: center;
   border: 2px dashed var(--violet-grad);
+  overflow: hidden;
+
+  border-radius: 20px;
+  background: linear-gradient(180deg, #6c99df 45.37%, #ffd876 100%);
+  position: relative;
+}
+
+.select-mode.mode {
+  border-radius: 20px;
+  background: linear-gradient(180deg, #0c141f 51.56%, #1e4e69 100%);
+}
+
+.moon {
+  display: none;
+
+  position: absolute;
+  top: 13.5rem;
+  animation: moonshine 1s ease-out;
+}
+
+.select-mode .sun {
+  display: block;
+  position: absolute;
+  top: 8rem;
+  animation: sunrise 1s ease-out;
+}
+
+@keyframes sunrise {
+  0% {
+    top: 20rem;
+  }
+  100% {
+    top: 8rem;
+  }
+  0% {
+    top: 20rem;
+  }
+}
+
+@keyframes moonshine {
+  0% {
+    top: 30rem;
+  }
+  100% {
+    top: 13.5rem;
+  }
+  0% {
+    top: 30rem;
+  }
 }
 
 .select-mode .avatar {
@@ -445,30 +525,33 @@ li {
 
 .select-mode .avatar img {
   width: 100%;
+
   transition: all 1s;
 }
 
 .toggle-btn {
   position: relative;
-  width: 7rem;
-  height: 4rem;
+  width: 5rem;
+  height: 3rem;
   background: var(--neutral-200);
   border-radius: 5rem;
   cursor: pointer;
   transition: all 0.4s;
+  z-index: 100;
+  bottom: -1rem;
 }
 
 .toggle-btn .icon {
   position: absolute;
-  width: 4rem;
-  height: 4rem;
+  width: 2.6rem;
+  height: 2.6rem;
   background: var(--neutral-100);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   top: 50%;
-  left: 0;
+  left: 0.2rem;
   transform: translateY(-50%);
   cursor: pointer;
   font-size: 2rem;
@@ -477,13 +560,13 @@ li {
 }
 
 .toggle-btn.active {
-  background: #4cd865;
+  background: #6cd86b;
   transition: all 0.4s;
 }
 
 .toggle-btn.active .icon {
   color: var(--neutral-500);
-  left: calc(100% - 50%);
+  left: calc(100% - 55%);
   transition: all 0.4s;
 }
 
@@ -493,32 +576,56 @@ li {
   align-items: center;
   flex-direction: column;
   gap: 1rem;
-  background-image: url(./assets/background-blur.png);
+  background: var(--neutral-200);
+  background-image: url(./assets/Topographic.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  position: relative;
+}
+
+.contact::before {
+  content: '';
+  top: 0;
+  /* left: 9px; */
+  width: 78%;
+  height: 100%;
+  background-image: url(./assets/watch.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  /* align-items: center; */
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .contact .frame {
-  width: 14.8rem;
-  height: 18.2rem;
-  border: 7px solid var(--neutral-500);
+  width: 12.8rem;
+  height: 15.5rem;
+  display: flex;
+  border: 4px solid transparent;
   border-radius: 3.6rem;
-  background-color: #000000;
+  background-color: transparent;
   overflow: hidden;
+  left: 3.9rem;
+  top: 2.5rem;
+  position: absolute;
 }
-.contact .frame .title {
+
+/* .contact .frame .title {
   display: flex;
   justify-content: space-between;
   padding: 0.5rem 1.5rem;
   color: var(--neutral);
   font-size: 1rem;
   font-weight: 700;
-}
+} */
 
-.contact .frame .title span:nth-child(1) {
+/* .contact .frame .title span:nth-child(1) {
   color: var(--auxiliary-500);
-}
+} */
 
 .contact .button {
   border: none;
@@ -526,6 +633,7 @@ li {
   font-weight: 600;
   font-size: 1.6rem;
   cursor: pointer;
+  display: block;
 }
 
 .contact .button a {
@@ -538,7 +646,6 @@ li {
   background: rgba(255, 255, 255, 0.26);
   transition: 0.3s;
   position: relative;
-  /* backdrop-filter: blur(10px); */
 }
 
 .contact .button a::before {
@@ -558,7 +665,7 @@ li {
 }
 
 .contact .button a.insta::before {
-  background-color: #c13584;
+  background-color: #ff6596;
 }
 .contact .button a.whats::before {
   background-color: #04de71;
@@ -568,11 +675,12 @@ li {
 }
 
 .contact ul {
+  width: 100%;
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   text-align: center;
-  gap: 0.6rem;
 }
 
 /*-------------------- MOBILE DEVICES --------------------*/
