@@ -1,15 +1,21 @@
 let button = document.querySelector('.button-copy')
 let input = document.querySelector('.copy-mail')
+let checkmark = document.querySelector('.checkmark-svg')
 
 button.addEventListener('click', () => {
   input.select()
   navigator.clipboard
     .writeText(input.value)
     .then(() => {
-      button.textContent = 'Texto copiado com sucesso!'
+      // button.textContent = 'Texto copiado com sucesso!'
       setTimeout(() => {
-        button.textContent = 'Copiar E-mail'
-      }, 2000)
+        checkmark.style.display = 'flex'
+        button.textContent = ''
+        setTimeout(() => {
+          checkmark.style.display = 'none'
+          button.textContent = 'Copiar e-mail'
+        }, 3000)
+      }, 100)
       console.log('Texto copiado com sucesso!')
     })
     .catch(err => {

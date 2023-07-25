@@ -43,6 +43,8 @@ body {
   --logo-color-2: #ffd876;
 
   --border-radius: 2rem;
+
+  --checkmark-animation-time: 500ms;
 }
 
 p {
@@ -233,11 +235,40 @@ li {
   align-items: center;
   justify-content: center;
   font-size: 1.4rem;
+  position: relative;
 }
 
 .button-copy:hover {
   background-color: var(--neutral-200);
 }
+
+.checkmark-container {
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.checkmark-svg {
+  stroke: white;
+  width: 2rem;
+  stroke-dashoffset: 40.84104919433594;
+  stroke-dasharray: 40.84104919433594;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 4px;
+  animation: checkmark var(--checkmark-animation-time) forwards;
+
+  position: absolute;
+  bottom: 2rem;
+  display: none;
+}
+
+@keyframes checkmark {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
 /* .mail .overlay {
   display: flex;
   justify-content: center;
@@ -446,15 +477,16 @@ li {
 
 .select-mode.mode {
   border-radius: 20px;
-  background: linear-gradient(180deg, #0c141f 51.56%, #1e4e69 100%);
+  background: linear-gradient(180deg, #0c141f 51.56%, #91d4fa 100%);
 }
 
 .moon {
   display: none;
 
   position: absolute;
-  top: 13.5rem;
+  top: 8rem;
   animation: moonshine 1s ease-out;
+  animation-fill-mode: forwards;
 }
 
 .select-mode .sun {
@@ -462,29 +494,36 @@ li {
   position: absolute;
   top: 8rem;
   animation: sunrise 1s ease-out;
+  animation-fill-mode: forwards;
 }
 
 @keyframes sunrise {
   0% {
     top: 20rem;
+    opacity: 0;
   }
   100% {
     top: 8rem;
+    opacity: 1;
   }
   0% {
     top: 20rem;
+    opacity: 0;
   }
 }
 
 @keyframes moonshine {
   0% {
-    top: 30rem;
+    top: 20rem;
+    opacity: 0;
   }
   100% {
-    top: 13.5rem;
+    top: 8rem;
+    opacity: 1;
   }
   0% {
-    top: 30rem;
+    top: 20rem;
+    opacity: 0;
   }
 }
 
@@ -637,9 +676,9 @@ li {
 }
 
 .contact .button a {
-  border-radius: 1.2rem;
+  border-radius: 0.9rem;
   color: var(--neutral);
-  width: 12.5rem;
+  width: 12rem;
   height: 100%;
   padding: 0.69rem;
   display: block;
