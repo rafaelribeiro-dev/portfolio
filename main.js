@@ -1,19 +1,21 @@
-let button = document.querySelector('.button-copy')
-let input = document.querySelector('.copy-mail')
+let buttonCopy = document.querySelector('.button-copy')
 let checkmark = document.querySelector('.checkmark-svg')
 
-button.addEventListener('click', () => {
+const copyEmailToClipboard = () => {
+  const input = document.querySelector('.copy-mail')
   input.select()
   navigator.clipboard
     .writeText(input.value)
     .then(() => {
-      // button.textContent = 'Texto copiado com sucesso!'
+      // buttonCopy.textContent = 'Texto copiado com sucesso!'
       setTimeout(() => {
         checkmark.style.display = 'flex'
-        button.textContent = ''
+        buttonCopy.textContent = ''
+        buttonCopy.style.background = '#6cd86b'
         setTimeout(() => {
           checkmark.style.display = 'none'
-          button.textContent = 'Copiar e-mail'
+          buttonCopy.textContent = 'Copiar Email'
+          buttonCopy.style.background = ''
         }, 3000)
       }, 100)
       console.log('Texto copiado com sucesso!')
@@ -21,7 +23,9 @@ button.addEventListener('click', () => {
     .catch(err => {
       console.error('Falha ao copiar o texto:', err)
     })
-})
+}
+
+buttonCopy.addEventListener('click', copyEmailToClipboard)
 
 const toggleBtn = document.querySelector('.toggle-btn')
 const moonIcon = document.querySelector('.icon i')
@@ -33,13 +37,12 @@ const avatar = document.querySelector('.avatar')
 toggleBtn.addEventListener('click', () => {
   toggleBtn.classList.toggle('active')
 
-  const containsActiveClass = toggleBtn.classList.contains('active')
+  const isActiveClass = toggleBtn.classList.contains('active')
 
-  if (containsActiveClass) {
+  if (isActiveClass) {
     avatar.classList.toggle('active')
     section.classList.toggle('mode')
     sun.style.display = 'none'
-
     moon.style.display = 'block'
     moonIcon.classList.replace('ph-sun', 'ph-moon')
     return
