@@ -6,9 +6,7 @@
 
 html,
 body {
-  width: 100%;
-  height: 100%;
-  background-color: var(--neutral-100);
+  background-color: var(--neutral);
 }
 @font-face {
   font-family: 'SF Pro Display', sans-serif;
@@ -29,19 +27,6 @@ body {
   --neutral-100: #f5f5f7;
   --neutral: #fefffe;
 
-  --linear-gradient: linear-gradient(
-    180deg,
-    #91d4fa 0%,
-    #6c9de2 100%,
-    #6c9de2 100%
-  );
-  --auxiliary-500: #007aff;
-  --auxiliary-400: #c3baf9;
-  --auxiliary-300: #f9fa9c;
-
-  --logo-color-1: #ff6596;
-  --logo-color-2: #ffd876;
-
   --border-radius: 2rem;
 }
 
@@ -50,18 +35,16 @@ p {
   font-weight: 300;
   color: var(--neutral-400);
 }
+
 a {
   text-decoration: none;
 }
+
 ul,
 li {
   list-style: none;
 }
 
-::selection {
-  background-color: var(--auxiliary-500);
-  color: var(--neutral-100);
-}
 .flex {
   display: flex;
 }
@@ -71,29 +54,28 @@ li {
 }
 
 .card {
-  background-color: var(--neutral);
+  background-color: var(--neutral-100);
   border-radius: var(--border-radius);
-  box-shadow: 0 6px 15px rgba(36, 37, 38, 0.08);
+  /* box-shadow: 0 6px 15px rgba(36, 37, 38, 0.08); */
 }
 
 .title {
-  font-size: 1.8rem;
-  font-weight: 400;
-  color: var(--neutral-500);
-  letter-spacing: -0.5px;
+  font-size: 2.8rem;
+  font-weight: 500;
+  color: var(--neutral-600);
+  letter-spacing: -0.9px;
 }
 
-.container {
-  max-width: 1300px;
+.apple-grid {
   height: 100vh;
-  padding-block: 4rem;
-  margin-inline: 11.6rem;
+
+  padding: 4rem 10rem;
 
   display: grid;
   place-content: center;
   gap: 1rem;
   grid-template-columns: 0.5fr 1fr 2.2fr 0.6fr 0.9fr;
-  grid-template-rows: 0.6fr 1.2fr 0.4fr 0.9fr 1.3fr 1fr 1fr;
+  grid-template-rows: 0.7fr 1.2fr 0.4fr 0.9fr 1.3fr 1fr 1fr;
   grid-auto-flow: row;
   grid-template-areas:
     'brand welcome hello stacks stacks'
@@ -105,13 +87,10 @@ li {
     'resume resume projects select-mode contact';
 }
 
-.apple-grid {
-}
-
 .brand {
   grid-area: brand;
-  padding: 0.5rem;
 }
+
 .brand-logo {
   align-items: center;
   justify-content: center;
@@ -121,25 +100,16 @@ li {
 }
 .welcome {
   grid-area: welcome;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  padding: 0.5rem;
 }
 
-.welcome p {
-  font-size: 3rem;
-  font-weight: 700;
-  /* color: var(--neutral-400); */
-  letter-spacing: -1.5px;
-  text-align: center;
-}
 .profile {
   grid-area: profile;
+
   align-items: center;
   flex-direction: column;
   padding: 1.5rem 3rem;
 }
+
 .profile .profile-avatar {
   width: 14rem;
   height: 14rem;
@@ -148,15 +118,15 @@ li {
   background: url(./assets/me.png) no-repeat center/cover;
 }
 .profile .profile-name h2 {
-  font-size: 2.4rem;
+  font-size: 2.8rem;
   padding-top: 1.2rem;
-  font-weight: 500;
-  color: var(--neutral-700);
-  letter-spacing: -0.5px;
+  font-weight: 700;
+  color: var(--neutral-600);
+  letter-spacing: -1px;
 }
 .profile .profile-name h3 {
   font-size: 1.6rem;
-  color: var(--neutral-400);
+  color: var(--neutral-500);
   font-weight: 400;
   text-align: center;
   letter-spacing: -0.5px;
@@ -165,19 +135,24 @@ li {
   font-size: 1.6rem;
   color: var(--neutral-400);
   padding-top: 2rem;
-  font-weight: 400;
+  font-weight: 300;
 }
+
 .resume {
   grid-area: resume;
-  align-items: center;
-  justify-content: center;
+  transition: all 1s;
 }
+
 .resume a {
   font-size: 3rem;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
   letter-spacing: -0.75px;
+}
+
+.resume:hover {
+  transition: all 1s;
 }
 .resume a.fill {
   height: 100%;
@@ -189,10 +164,97 @@ li {
 
 .resume .fill {
   background: linear-gradient(180deg, #91d4fa 0%, #6c9de2 100%, #6c9de2 100%);
-
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+}
+
+.hello {
+  grid-area: hello;
+  background-image: url(./assets/topographic_bg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-items: center;
+  justify-content: center;
+}
+
+.hello-message h1 {
+  font-size: 7rem;
+  text-align: center;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 0.9;
+  background: linear-gradient(90deg, #ff719a 15.77%, #ffe29f 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.projects {
+  grid-area: projects;
+}
+
+.stacks {
+  grid-area: stacks;
+  gap: 2rem;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  padding-top: 2rem;
+  overflow: hidden;
+}
+
+.stacks .title {
+  font-size: 5rem;
+  font-weight: 700;
+  top: 20.3rem;
+  position: absolute;
+  color: var(--neutral-200);
+}
+
+.stacks-icons {
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.stacks .ico {
+  background-color: var(--neutral);
+  width: 5.6rem;
+  height: 5.6rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+
+  position: relative;
+}
+
+.stacks .description p {
+  color: var(--neutral);
+  font-size: 1.2rem;
+  font-weight: 400;
+
+  background-color: var(--neutral-400);
+  border-radius: 0.9rem;
+  padding: 0.8rem;
+}
+
+.stacks .ico:nth-child(n + 6) svg path {
+  fill: var(--neutral-400);
+}
+
+.stacks .typescript svg path:nth-child(2) {
+  fill: var(--neutral);
+}
+.stacks .description {
+  width: 85%;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  gap: 1rem;
 }
 
 .mail {
@@ -202,13 +264,11 @@ li {
   justify-content: center;
   position: relative;
   overflow: hidden;
-  /* background-image: url(./assets/mail.svg);
-  background-position: center;
-  background-repeat: no-repeat; */
 }
+
 .mail img {
   position: relative;
-  top: 50%;
+  top: 40%;
   transform: translateY(-60%);
 }
 
@@ -220,9 +280,9 @@ li {
   width: 100%;
   height: 5rem;
   display: flex;
-  background-color: var(--neutral-100);
-  margin-top: 5rem;
-  border-radius: 0 0 1.5rem 1.5rem;
+  background: var(--neutral-200);
+  margin-top: 4rem;
+  border-radius: 1.5rem;
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
@@ -231,10 +291,12 @@ li {
   color: var(--neutral-400);
   position: relative;
   transition: all 1s ease;
+  cursor: pointer;
 }
 
 .button-copy:hover {
-  background-color: var(--neutral-200);
+  background-color: var(--neutral-300);
+  color: var(--neutral-100);
 }
 
 .checkmark-container {
@@ -264,200 +326,6 @@ li {
   }
 }
 
-/* .mail .overlay {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
-  opacity: 0;
-  transition: 0.5s;
-  gap: 1.8rem;
-}
-.mail .overlay p {
-  font-size: 1.8rem;
-  color: var(--neutral-600);
-  font-weight: 200;
-}
-.mail:hover .overlay {
-  opacity: 1;
-}
-
-.mail .copy {
-  background-color: transparent;
-  border: none;
-  padding: 1rem;
-  transition: 0.5s ease;
-}
-
-.mail .copy svg {
-  fill: var(--neutral-600);
-}
-
-.mail .copy:hover {
-  transition: 0.5s ease;
-  cursor: pointer;
-} */
-.hello {
-  grid-area: hello;
-  background-color: var(--neutral);
-  background-image: url(./assets/topographic_bg.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  /* background-image: linear-gradient(
-    -225deg,
-    #ffe29f 0%,
-    #ffa99f 48%,
-    #ff719a 100%
-  ); */
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.hello-message h1 {
-  font-size: 7rem;
-  text-align: center;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 0.9;
-  background: linear-gradient(90deg, #ff719a 15.77%, #ffe29f 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  /* background: linear-gradient(
-    90deg,
-    var(--neutral-100),
-    var(--neutral),
-    var(--neutral-100)
-  ); */
-  /* background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent; */
-  /* background-size: 200% 100%; */
-  /* animation: 7s skeleton linear infinite; */
-}
-
-@keyframes skeleton {
-  to {
-    background-position-x: -200%;
-  }
-}
-
-.projects {
-  grid-area: projects;
-  align-items: center;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.projects .slider {
-  width: 45rem;
-  height: 28rem;
-  border-radius: var(--border-radius);
-}
-
-.projects .slider img {
-  width: 100%;
-  height: 100%;
-  border-radius: 1rem;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.stacks {
-  grid-area: stacks;
-  gap: 2rem;
-  align-items: center;
-  flex-direction: column;
-}
-
-.stacks-icons {
-  width: 100%;
-  flex-wrap: wrap;
-  gap: 1rem;
-  align-items: center;
-  justify-content: center;
-}
-
-.stacks .ico {
-  background-color: var(--neutral-100);
-  width: 5.6rem;
-  height: 5.6rem;
-  align-items: center;
-  justify-content: center;
-  border-radius: 1rem;
-
-  position: relative;
-}
-
-.stacks .description p {
-  color: var(--neutral-100);
-  font-size: 1.2rem;
-  font-weight: 400;
-
-  background-color: var(--neutral-400);
-  border-radius: 0.9rem;
-  padding: 0.8rem;
-}
-
-.stacks .ico:nth-child(n + 6) svg path {
-  fill: var(--neutral-400);
-}
-
-.stacks .typescript svg path:nth-child(2) {
-  fill: var(--neutral);
-}
-.stacks .description {
-  width: 85%;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  gap: 1rem;
-}
-
-/* [data-tooltip] {
-  position: relative;
-  cursor: pointer;
-} */
-
-/* [data-tooltip]::after {
-  position: absolute;
-  width: 20rem;
-  top: -9rem;
-  text-align: center;
-
-  content: attr(data-tooltip);
-  color: var(--neutral-200);
-  background-color: var(--neutral-600);
-  padding: 1rem;
-  font-size: 1.4rem;
-  border-radius: 1.2rem;
-
-  visibility: hidden;
-  opacity: 0;
-  transform: translateY(3rem);
-  transition: all 0.4s ease-in-out;
-} */
-
-/* [data-tooltip]:hover::after {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-  transition: all 0.5s ease-in-out;
-} */
-
-.depoiments {
-  grid-area: depoiments;
-  justify-content: center;
-}
 .select-mode {
   grid-area: select-mode;
   flex-direction: column;
@@ -466,14 +334,14 @@ li {
   overflow: hidden;
   transition: all 1s ease;
   border-radius: 20px;
-  background: #6c99df;
+  background: #58a9ee;
 
   position: relative;
 }
 
 .select-mode.mode {
   border-radius: 20px;
-  background: #0c141f;
+  background: #172334;
 }
 
 input {
@@ -486,7 +354,7 @@ input {
 .moon {
   display: none;
   position: absolute;
-  top: 8rem;
+  top: 7rem;
   animation: moonshine 1s ease-out;
   transition: all 1s ease;
 }
@@ -494,7 +362,7 @@ input {
 .select-mode .sun {
   display: block;
   position: absolute;
-  top: 7.5rem;
+  top: 6.8rem;
   animation: sunrise 1s ease-out;
 }
 
@@ -504,7 +372,7 @@ input {
     opacity: 0;
   }
   100% {
-    top: 7.5rem;
+    top: 6.8rem;
     opacity: 1;
   }
 }
@@ -515,7 +383,7 @@ input {
     opacity: 0;
   }
   100% {
-    top: 8rem;
+    top: 7rem;
     opacity: 1;
   }
   0% {
@@ -525,6 +393,8 @@ input {
 }
 
 .select-mode .avatar {
+  position: absolute;
+  top: 0;
   perspective: 1000px;
   z-index: 999;
 }
@@ -566,7 +436,7 @@ input {
 }
 
 .toggle-btn {
-  position: relative;
+  position: absolute;
   width: 5rem;
   height: 3rem;
   background: var(--neutral-200);
@@ -574,7 +444,8 @@ input {
   cursor: pointer;
   transition: all 0.4s;
   z-index: 100;
-  bottom: -1rem;
+  left: 5rem;
+  bottom: 1.2rem;
 }
 
 .toggle-btn .icon {
@@ -611,7 +482,7 @@ input {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 1rem;
+  /* gap: 1rem; */
   background: var(--neutral-200);
   background-image: url(./assets/Topographic.png);
   background-repeat: no-repeat;
@@ -622,31 +493,31 @@ input {
 
 .contact::before {
   content: '';
-  top: 0;
+  /* top: 0; */
   /* left: 9px; */
-  width: 78%;
+  width: 100%;
   height: 100%;
   background-image: url(./assets/watch.png);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   /* align-items: center; */
   position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
 }
 
 .contact .frame {
-  width: 12.8rem;
-  height: 15.5rem;
+  width: 12.5rem;
+  height: 15rem;
   display: flex;
-  border: 4px solid transparent;
+  border: 5px solid transparent;
   border-radius: 3.6rem;
   background-color: transparent;
   overflow: hidden;
-  left: 3.9rem;
-  top: 2.5rem;
+  left: 4.35rem;
+  top: 2.6rem;
   position: absolute;
 }
 
@@ -662,8 +533,8 @@ input {
 .contact .button a {
   border-radius: 0.9rem;
   color: var(--neutral);
-  width: 12rem;
-  height: 100%;
+  width: 11.2rem;
+  height: 78%;
   padding: 0.69rem;
   display: block;
   background: rgba(255, 255, 255, 0.26);
@@ -671,7 +542,7 @@ input {
   position: relative;
 }
 
-.contact .button a::before {
+/* .contact .button a::before {
   content: '';
   width: 1rem;
   height: 1rem;
@@ -681,16 +552,20 @@ input {
   top: 50%;
   transform: translateY(-50%);
   border-radius: 1rem;
+} */
+
+.contact .button a.in:hover {
+  background-color: #2094fa;
 }
 
-.contact .button a.git::before {
-  background-color: #000;
+.contact .button a.git:hover {
+  background-color: #1b1b1c;
 }
 
-.contact .button a.insta::before {
+.contact .button a.insta:hover {
   background-color: #ff6596;
 }
-.contact .button a.whats::before {
+.contact .button a.whats:hover {
   background-color: #04de71;
 }
 .contact .button a:hover {
@@ -706,20 +581,81 @@ input {
   text-align: center;
 }
 
-/*-------------------- MOBILE DEVICES --------------------*/
-
-@media (max-width: 820px) {
-  .container {
-    max-height: 1300px;
-    height: 100vh;
-    padding-block: 0.5rem;
+/* ---------------  MOBILE DEVICE --------------- */
+@media (max-width: 767px) {
+  .apple-grid {
     margin: 0 auto;
+    height: fit-content;
+    padding: 1rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.1fr 0.1fr 1fr 0.2fr 0.54fr 0.5fr 1fr 0.2fr 0.2fr;
+    grid-template-areas:
+      'brand welcome'
+      'hello hello'
+      'profile profile'
+      'resume resume'
+      'stacks stacks'
+      'mail mail'
+      'projects projects'
+      'select-mode contact'
+      'select-mode contact';
+  }
+
+  .stacks .title {
+    font-size: 5rem;
+    font-weight: 700;
+    top: 21rem;
+    position: absolute;
+    color: var(--neutral-200);
+  }
+
+  .button-copy {
+    margin-top: 5.5rem;
+  }
+
+  .toggle-btn {
+    left: 6.5rem;
+  }
+
+  .contact .frame {
+    top: 2.35rem;
+    left: 3.2rem;
   }
 }
 
-/*-------------------- LARGEST DISPLAY --------------------*/
-@media (max-width: 520px) {
-  .container {
-    margin: auto;
+/* ---------------  TABLETS --------------- */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .apple-grid {
+    padding: 1rem 2rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.05fr 0.3fr 0.5fr 0.5fr;
+    grid-template-areas:
+      'brand hello'
+      'profile stacks'
+      'profile stacks'
+      'profile mail'
+      'resume resume'
+      'projects projects'
+      'select-mode contact';
+    margin-block: 1rem;
+  }
+
+  .welcome {
+    display: none;
+  }
+}
+/* ---------------  MEDIUM DISPLAYS --------------- */
+@media (min-width: 1025px) and (max-width: 1900px) {
+  .apple-grid {
+    height: 100vh;
+    padding-inline: 10rem;
+  }
+}
+
+/* ---------------  LARGE DISPLAYS --------------- */
+@media (min-width: 1901px) {
+  .apple-grid {
+    height: 100vh;
+    padding-inline: 20rem;
   }
 }
