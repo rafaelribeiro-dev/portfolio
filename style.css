@@ -185,10 +185,11 @@ li {
   font-style: normal;
   font-weight: 700;
   line-height: 0.9;
-  background: linear-gradient(90deg, #ff719a 15.77%, #ffe29f 100%);
-  background-clip: text;
+  color: var(--neutral-500);
+  /* background: linear-gradient(90deg, #ff719a 15.77%, #ffe29f 100%); */
+  /* background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent; */
 }
 
 .projects {
@@ -444,8 +445,9 @@ input {
   cursor: pointer;
   transition: all 0.4s;
   z-index: 100;
-  left: 5rem;
-  bottom: 1.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 1.8rem;
 }
 
 .toggle-btn .icon {
@@ -614,13 +616,21 @@ input {
   }
 
   .toggle-btn {
-    left: 6.5rem;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .contact .frame {
+    width: 13.5rem;
+    height: 15rem;
     position: relative;
     top: 0.1rem;
     left: -0.4rem;
+  }
+
+  .contact .button a {
+    width: 11.5rem;
+    padding: 0.5rem;
   }
 }
 
@@ -649,7 +659,7 @@ input {
 @media (min-width: 1025px) and (max-width: 1900px) {
   .apple-grid {
     height: 100vh;
-    padding-inline: 2rem;
+    padding-inline: 8rem;
   }
 
   .contact .frame {
