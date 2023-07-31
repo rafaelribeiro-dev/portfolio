@@ -618,8 +618,9 @@ input {
   }
 
   .contact .frame {
-    top: 2.75rem;
-    left: 2.3rem;
+    position: relative;
+    top: 0.1rem;
+    left: -0.4rem;
   }
 }
 
@@ -648,7 +649,13 @@ input {
 @media (min-width: 1025px) and (max-width: 1900px) {
   .apple-grid {
     height: 100vh;
-    padding-inline: 10rem;
+    padding-inline: 2rem;
+  }
+
+  .contact .frame {
+    position: relative;
+    top: 0.1rem;
+    left: -0.4rem;
   }
 }
 
@@ -657,5 +664,11 @@ input {
   .apple-grid {
     height: 100vh;
     padding-inline: 20rem;
+  }
+
+  .contact .frame {
+    position: relative;
+    top: 0.1rem;
+    left: -0.4rem;
   }
 }
