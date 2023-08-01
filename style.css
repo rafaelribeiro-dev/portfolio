@@ -70,7 +70,7 @@ li {
   height: 100vh;
 
   padding: 4rem 10rem;
-
+  background-color: #58a9ee;
   display: grid;
   place-content: center;
   gap: 1rem;
@@ -177,6 +177,8 @@ li {
   background-size: cover;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .hello-message h1 {
@@ -186,10 +188,6 @@ li {
   font-weight: 700;
   line-height: 0.9;
   color: var(--neutral-500);
-  /* background: linear-gradient(90deg, #ff719a 15.77%, #ffe29f 100%); */
-  /* background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
 }
 
 .projects {
@@ -606,7 +604,7 @@ input {
   .stacks .title {
     font-size: 5rem;
     font-weight: 700;
-    top: 21rem;
+    top: 22rem;
     position: absolute;
     color: var(--neutral-200);
   }
@@ -621,7 +619,7 @@ input {
   }
 
   .contact .frame {
-    width: 13.5rem;
+    width: 12.5rem;
     height: 15rem;
     position: relative;
     top: 0.1rem;
@@ -637,18 +635,31 @@ input {
 /* ---------------  TABLETS --------------- */
 @media (min-width: 927px) and (max-width: 1024px) {
   .apple-grid {
+    height: 100vh;
+
     padding: 1rem 2rem;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 0.05fr 0.3fr 0.5fr 0.5fr;
+
+    display: grid;
+    place-content: center;
+    gap: 1rem;
+    grid-template-columns: 0.8fr 1fr 0.8fr 0.9fr 0.9fr 0.9fr;
+    grid-template-rows: 0.7fr 1.4fr 0.9fr 1fr 0.5fr 1fr;
+    grid-auto-flow: row;
     grid-template-areas:
-      'brand hello'
-      'profile stacks'
-      'profile stacks'
-      'profile mail'
-      'resume resume'
-      'projects projects'
-      'select-mode contact';
-    margin-block: 1rem;
+      'profile profile stacks stacks mail mail'
+      'profile profile stacks stacks mail mail'
+      'profile profile brand hello hello hello'
+      'profile profile resume resume select-mode contact'
+      'profile profile resume resume select-mode contact'
+      'projects projects projects projects projects projects';
+  }
+
+  .stacks .ico {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .brand {
   }
 
   .welcome {
@@ -659,7 +670,16 @@ input {
 @media (min-width: 1025px) and (max-width: 1900px) {
   .apple-grid {
     height: 100vh;
-    padding-inline: 8rem;
+    padding-inline: 10rem;
+  }
+
+  .profile {
+    padding: 1rem 4rem;
+  }
+
+  .profile .profile-avatar {
+    width: 12rem;
+    height: 12rem;
   }
 
   .contact .frame {
