@@ -7,7 +7,13 @@
 html,
 body {
   background-color: var(--neutral);
+  transition: background 2s ease;
 }
+
+body.dark {
+  background-color: var(--neutral-800);
+}
+
 @font-face {
   font-family: 'SF Pro Display', sans-serif;
   src: url(./assets/SF-Pro-Display-Bold.otf) format('opentype');
@@ -17,8 +23,8 @@ body {
   font-family: 'SF Pro Display', sans-serif;
   font-size: 62.5%; /* 1rem === 10px*/
 
-  --neutral-800: #02050f;
-  --neutral-700: #1d1d1f;
+  --neutral-800: #1d1d1f;
+  --neutral-700: #2f3034;
   --neutral-600: #3c3c3c;
   --neutral-500: #676767;
   --neutral-400: #86868b;
@@ -26,7 +32,10 @@ body {
   --neutral-200: #d6d6d6;
   --neutral-100: #f5f5f7;
   --neutral: #fefffe;
+  --dark: #061f2d;
 
+  --sweet-pink: #f7c0df;
+  --sweet-orange: #fcbca5;
   --border-radius: 2rem;
 }
 
@@ -67,10 +76,10 @@ li {
 }
 
 .apple-grid {
+  max-width: 1512px;
   height: 100vh;
-
   padding: 4rem 10rem;
-  background-color: #58a9ee;
+  margin: 0 auto;
   display: grid;
   place-content: center;
   gap: 1rem;
@@ -141,6 +150,7 @@ li {
 .resume {
   grid-area: resume;
   transition: all 1s;
+  border: 1px solid var(--neutral-200);
 }
 
 .resume a {
@@ -152,6 +162,7 @@ li {
 }
 
 .resume:hover {
+  background-color: var(--neutral-100);
   transition: all 1s;
 }
 .resume a.fill {
@@ -170,8 +181,10 @@ li {
 }
 
 .hello {
+  width: 100%;
+  height: 100%;
   grid-area: hello;
-  background-image: url(./assets/topographic_bg.png);
+  background-image: url(./assets/[WWDC\ 2023]-[Apple\ Watch]-[watchOS\ 10]_cleanup\ 1.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -181,13 +194,24 @@ li {
   overflow: hidden;
 }
 
+/* .hello video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.1;
+} */
+
 .hello-message h1 {
   font-size: 7rem;
   text-align: center;
   font-style: normal;
   font-weight: 700;
   line-height: 0.9;
-  color: var(--neutral-500);
+  color: var(--neutral);
+  z-index: 100;
 }
 
 .projects {
@@ -232,11 +256,11 @@ li {
 }
 
 .stacks .description p {
-  color: var(--neutral);
+  color: var(--neutral-400);
   font-size: 1.2rem;
   font-weight: 400;
 
-  background-color: var(--neutral-400);
+  background: rgba(45, 53, 60, 0.1);
   border-radius: 0.9rem;
   padding: 0.8rem;
 }
@@ -263,6 +287,18 @@ li {
   justify-content: center;
   position: relative;
   overflow: hidden;
+
+  background: linear-gradient(
+    143deg,
+    rgba(221, 246, 255, 1) 0%,
+    rgba(255, 234, 239, 1) 100%
+  );
+}
+
+.mail span {
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: var(--neutral-600);
 }
 
 .mail img {
@@ -279,23 +315,29 @@ li {
   width: 100%;
   height: 5rem;
   display: flex;
-  background: var(--neutral-200);
-  margin-top: 4rem;
+  border: 1px solid var(--neutral-200);
+  background: rgba(45, 53, 60, 0.1);
+  margin-top: 2rem;
   border-radius: 1.5rem;
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
-  color: var(--neutral-400);
+  color: #1f2429;
   position: relative;
   transition: all 1s ease;
   cursor: pointer;
+  gap: 0.6rem;
 }
 
 .button-copy:hover {
-  background-color: var(--neutral-300);
-  color: var(--neutral-100);
+  background-color: var(--neutral-200);
+  color: var(--neutral-400);
+}
+
+.button-copy i {
+  font-size: 1.2rem;
 }
 
 .checkmark-container {
@@ -313,7 +355,7 @@ li {
   stroke-linejoin: round;
   stroke-width: 4px;
   animation: checkmark 800ms forwards;
-
+  align-items: center;
   position: absolute;
   bottom: 2rem;
   display: none;
@@ -338,7 +380,7 @@ li {
   position: relative;
 }
 
-.select-mode.mode {
+.select-mode.night {
   border-radius: 20px;
   background: #172334;
 }
@@ -484,7 +526,7 @@ input {
   flex-direction: column;
   /* gap: 1rem; */
   background: var(--neutral-200);
-  background-image: url(./assets/Topographic.png);
+  background-image: url(./assets/topographic_bg.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -601,6 +643,10 @@ input {
       'select-mode contact';
   }
 
+  .hello {
+    padding: 4rem;
+  }
+
   .stacks .title {
     font-size: 5rem;
     font-weight: 700;
@@ -692,13 +738,26 @@ input {
 /* ---------------  LARGE DISPLAYS --------------- */
 @media (min-width: 1901px) {
   .apple-grid {
+    max-width: 1600px;
+
     height: 100vh;
-    padding-inline: 20rem;
   }
 
+  /* .select-mode .sun {
+    width: 30rem;
+    bottom: -14rem;
+  } */
+
   .contact .frame {
+    width: 15rem;
+    height: 18.5rem;
     position: relative;
     top: 0.1rem;
-    left: -0.4rem;
+    left: -0.6rem;
+  }
+
+  .contact .button a {
+    width: 14rem;
+    padding: 1rem;
   }
 }
