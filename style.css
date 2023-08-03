@@ -10,10 +10,6 @@ body {
   transition: background 2s ease;
 }
 
-body.dark {
-  background-color: var(--neutral-800);
-}
-
 @font-face {
   font-family: 'SF Pro Display', sans-serif;
   src: url(./assets/SF-Pro-Display-Bold.otf) format('opentype');
@@ -743,21 +739,69 @@ input {
     height: 100vh;
   }
 
-  /* .select-mode .sun {
-    width: 30rem;
-    bottom: -14rem;
-  } */
+  .mail img {
+    width: 100%;
+  }
+
+  .button-copy {
+    bottom: -12%;
+  }
+
+  .select-mode .avatar {
+    width: 13rem;
+    top: -0.2rem;
+  }
+
+  .select-mode .sun {
+    top: 8.8rem;
+  }
+
+  .select-mode .moon {
+    top: 9rem;
+  }
 
   .contact .frame {
-    width: 15rem;
-    height: 18.5rem;
+    width: 13.5rem;
+    height: 16.3rem;
     position: relative;
     top: 0.1rem;
-    left: -0.6rem;
+    left: -0.4rem;
+  }
+
+  @keyframes sunrise {
+    0% {
+      top: 20rem;
+      opacity: 0;
+    }
+    100% {
+      top: 8.8rem;
+      opacity: 1;
+    }
+  }
+
+  @keyframes moonshine {
+    0% {
+      top: 20rem;
+      opacity: 0;
+    }
+    100% {
+      top: 9rem;
+      opacity: 1;
+    }
+    0% {
+      top: 20rem;
+      opacity: 0;
+    }
   }
 
   .contact .button a {
-    width: 14rem;
-    padding: 1rem;
+    width: 12.5rem;
+    padding: 0.8rem;
   }
+}
+
+/*-----------------DARK MODE -------------------*/
+
+body.dark {
+  background-color: var(--neutral-800);
 }

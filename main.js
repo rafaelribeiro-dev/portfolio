@@ -38,9 +38,14 @@ const body = document.querySelector('body')
 
 let getMode = localStorage.getItem('mode')
 
-if (getMode && getMode === 'dark') {
+if (getMode === 'dark') {
   body.classList.add('dark')
   toggleBtn.classList.add('active')
+  moonIcon.classList.replace('ph-sun', 'ph-moon')
+  sun.style.display = 'none'
+  moon.style.display = 'block'
+  avatar.classList.toggle('active')
+  section.classList.toggle('night')
 }
 
 const handleBackgroundMode = () => {
@@ -62,6 +67,7 @@ const handleSwitchMode = () => {
     sun.style.display = 'none'
     moon.style.display = 'block'
     moonIcon.classList.replace('ph-sun', 'ph-moon')
+    console.log('modo dark ativo')
     return
   }
   avatar.classList.toggle('active')
@@ -69,6 +75,7 @@ const handleSwitchMode = () => {
   moon.style.display = 'none'
   sun.style.display = 'block'
   moonIcon.classList.replace('ph-moon', 'ph-sun')
+  console.log('modo light ativo')
 }
 
 toggleBtn.addEventListener('click', handleSwitchMode)
