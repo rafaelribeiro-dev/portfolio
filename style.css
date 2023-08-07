@@ -298,6 +298,7 @@ li {
 }
 
 .mail img {
+  width: 100%;
   position: relative;
   top: 40%;
   transform: translateY(-60%);
@@ -313,7 +314,7 @@ li {
   display: flex;
   border: 1px solid var(--neutral-200);
   background: rgba(45, 53, 60, 0.1);
-  margin-top: 2rem;
+  bottom: -1rem;
   border-radius: 1.5rem;
   align-items: center;
   justify-content: center;
@@ -327,10 +328,10 @@ li {
   gap: 0.6rem;
 }
 
-.button-copy:hover {
-  background-color: var(--neutral-200);
+/* .button-copy:hover {
+  background-color: rgba(45, 53, 60, 0.2);
   color: var(--neutral-400);
-}
+} */
 
 .button-copy i {
   font-size: 1.2rem;
@@ -372,7 +373,6 @@ li {
   transition: all 1s ease;
   border-radius: 20px;
   background: #58a9ee;
-
   position: relative;
 }
 
@@ -661,7 +661,7 @@ input {
   }
 
   .contact .frame {
-    width: 12.5rem;
+    width: 12.8rem;
     height: 15rem;
     position: relative;
     top: 0.1rem;
@@ -670,7 +670,7 @@ input {
 
   .contact .button a {
     width: 11.5rem;
-    padding: 0.5rem;
+    padding: 0.6rem;
   }
 }
 
@@ -804,4 +804,20 @@ input {
 
 body.dark {
   background-color: var(--neutral-800);
+}
+
+.dark .resume,
+.projects,
+.brand,
+.welcome,
+.profile {
+  background-color: var(--neutral-700);
+}
+
+.dark .card p {
+  color: white;
+}
+
+.dark .profile .profile-name h2 {
+  color: #2094fa;
 }

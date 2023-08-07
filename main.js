@@ -3,6 +3,7 @@ const checkmark = document.querySelector('.checkmark-svg')
 
 const copyEmailToClipboard = () => {
   const input = document.querySelector('.copy-mail')
+  let changeColor = (buttonCopy.style.background = '#6cd86b')
   input.select()
   navigator.clipboard
     .writeText(input.value)
@@ -10,12 +11,13 @@ const copyEmailToClipboard = () => {
       // buttonCopy.textContent = 'Texto copiado com sucesso!'
       setTimeout(() => {
         checkmark.style.display = 'flex'
-        buttonCopy.textContent = ''
-        buttonCopy.style.background = '#6cd86b'
+        buttonCopy.innerText = 'Email copiado!'
+        ch
         setTimeout(() => {
           checkmark.style.display = 'none'
-          buttonCopy.textContent = `Copiar Email`
-          buttonCopy.style.background = 'var(--neutral-100)'
+          // buttonCopy.innerText = `Copiar Email`
+          buttonCopy.innerText = `Copiar Email`
+          // buttonCopy.style.background = 'rgba(45, 53, 60, 0.1)'
         }, 3000)
       }, 100)
       console.log('Texto copiado com sucesso!')
@@ -39,12 +41,12 @@ const body = document.querySelector('body')
 let getMode = localStorage.getItem('mode')
 
 if (getMode === 'dark') {
+  avatar.classList.toggle('active')
   body.classList.add('dark')
   toggleBtn.classList.add('active')
   moonIcon.classList.replace('ph-sun', 'ph-moon')
   sun.style.display = 'none'
   moon.style.display = 'block'
-  avatar.classList.toggle('active')
   section.classList.toggle('night')
 }
 
