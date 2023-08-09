@@ -7,7 +7,7 @@
 html,
 body {
   background-color: var(--neutral);
-  transition: background 2s ease;
+  transition: background 1s ease;
 }
 
 @font-face {
@@ -146,7 +146,6 @@ li {
 .resume {
   grid-area: resume;
   transition: all 1s;
-  border: 1px solid var(--neutral-200);
 }
 
 .resume a {
@@ -227,9 +226,9 @@ li {
 .stacks .title {
   font-size: 5rem;
   font-weight: 700;
-  top: 20.3rem;
   position: absolute;
-  color: var(--neutral-200);
+  color: var(--neutral-300);
+  bottom: 0;
 }
 
 .stacks-icons {
@@ -251,16 +250,6 @@ li {
   position: relative;
 }
 
-.stacks .description p {
-  color: var(--neutral-400);
-  font-size: 1.2rem;
-  font-weight: 400;
-
-  background: rgba(45, 53, 60, 0.1);
-  border-radius: 0.9rem;
-  padding: 0.8rem;
-}
-
 .stacks .ico:nth-child(n + 6) svg path {
   fill: var(--neutral-400);
 }
@@ -274,6 +263,15 @@ li {
   align-items: center;
   position: relative;
   gap: 1rem;
+}
+
+.stacks .description p {
+  color: var(--neutral-400);
+  font-size: 1.2rem;
+  font-weight: 400;
+  background: rgba(45, 53, 60, 0.1);
+  border-radius: 0.9rem;
+  padding: 0.8rem;
 }
 
 .mail {
@@ -743,8 +741,12 @@ input {
     width: 100%;
   }
 
+  .stacks {
+    padding: 3rem 1rem 0 1rem;
+  }
+
   .button-copy {
-    bottom: -12%;
+    bottom: -15%;
   }
 
   .select-mode .avatar {
@@ -761,11 +763,11 @@ input {
   }
 
   .contact .frame {
-    width: 13.5rem;
-    height: 16.3rem;
+    width: 15rem;
+    height: 18rem;
     position: relative;
     top: 0.1rem;
-    left: -0.4rem;
+    left: -0.6rem;
   }
 
   @keyframes sunrise {
@@ -795,8 +797,8 @@ input {
   }
 
   .contact .button a {
-    width: 12.5rem;
-    padding: 0.8rem;
+    width: 14rem;
+    padding: 0.9rem;
   }
 }
 
@@ -807,17 +809,32 @@ body.dark {
 }
 
 .dark .resume,
-.projects,
-.brand,
-.welcome,
-.profile {
+.dark .stacks,
+.dark .projects,
+.dark .brand,
+.dark .welcome,
+.dark .profile {
   background-color: var(--neutral-700);
 }
 
 .dark .card p {
-  color: white;
+  color: var(--neutral-300);
 }
 
 .dark .profile .profile-name h2 {
-  color: #2094fa;
+  color: var(--neutral-100);
+}
+
+.dark .profile .profile-name h3 {
+  color: var(--neutral-300);
+}
+
+.dark .stacks .ico,
+.dark .stacks .description p {
+  background-color: var(--neutral-800);
+}
+
+.dark .stacks .title {
+  bottom: 0;
+  color: var(--neutral-100);
 }
