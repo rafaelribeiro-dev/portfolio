@@ -7,7 +7,7 @@
 html,
 body {
   background-color: var(--neutral);
-  transition: background 1s ease;
+  transition: background 0.3s ease;
 }
 
 @font-face {
@@ -19,8 +19,8 @@ body {
   font-family: 'SF Pro Display', sans-serif;
   font-size: 62.5%; /* 1rem === 10px*/
 
-  --neutral-800: #1d1d1f;
-  --neutral-700: #2f3034;
+  --neutral-800: #02050f;
+  --neutral-700: #1c1c1d;
   --neutral-600: #3c3c3c;
   --neutral-500: #676767;
   --neutral-400: #86868b;
@@ -137,7 +137,7 @@ li {
   letter-spacing: -0.5px;
 }
 .profile .profile-about p {
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   color: var(--neutral-400);
   padding-top: 2rem;
   font-weight: 300;
@@ -145,7 +145,11 @@ li {
 
 .resume {
   grid-area: resume;
-  transition: all 1s;
+  background-color: #e4f6ff;
+  /* background-image: url(./assets/Base.png); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .resume a {
@@ -156,10 +160,6 @@ li {
   letter-spacing: -0.75px;
 }
 
-.resume:hover {
-  background-color: var(--neutral-100);
-  transition: all 1s;
-}
 .resume a.fill {
   height: 100%;
   width: 100%;
@@ -211,6 +211,10 @@ li {
 
 .projects {
   grid-area: projects;
+  background-image: url(./assets/Base.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .stacks {
@@ -697,9 +701,6 @@ input {
   .stacks .ico {
     width: 4rem;
     height: 4rem;
-  }
-
-  .brand {
   }
 
   .welcome {
