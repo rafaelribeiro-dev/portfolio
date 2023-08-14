@@ -27,12 +27,12 @@ body {
   --neutral-300: #b1b1b8;
   --neutral-200: #d6d6d6;
   --neutral-100: #f5f5f7;
-  --neutral: #fefffe;
+  --neutral: #fff;
   --dark: #061f2d;
 
   --sweet-pink: #f7c0df;
   --sweet-orange: #fcbca5;
-  --border-radius: 2rem;
+  --border-radius: 2.4rem;
 }
 
 p {
@@ -145,17 +145,15 @@ li {
 
 .resume {
   grid-area: resume;
-  background-color: #e4f6ff;
-  /* background-image: url(./assets/Base.png); */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: #f4edc3;
+  position: relative;
+  overflow: hidden;
 }
 
 .resume a {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   line-height: normal;
   letter-spacing: -0.75px;
 }
@@ -166,13 +164,31 @@ li {
   text-decoration: none;
   align-items: center;
   justify-content: center;
+  color: #28282b;
 }
 
-.resume .fill {
-  background: linear-gradient(180deg, #91d4fa 0%, #6c9de2 100%, #6c9de2 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
+.resume svg {
+  display: none;
+  transition: 1s all ease;
+}
+
+.resume:hover svg {
+  display: block;
+  opacity: 1;
+  position: absolute;
+
+  stroke-dasharray: 4000;
+  stroke-dashoffset: 4000;
+  animation: animate 3s forwards;
+}
+
+@keyframes animate {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.resume .fill:hover {
 }
 
 .hello {
@@ -211,10 +227,18 @@ li {
 
 .projects {
   grid-area: projects;
+
+  justify-content: center;
   background-image: url(./assets/Base.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.projects span {
+  font-size: 2rem;
+  color: var(--neutral-500);
+  font-weight: 600;
 }
 
 .stacks {
@@ -228,11 +252,10 @@ li {
 }
 
 .stacks .title {
-  font-size: 5rem;
+  font-size: 2rem;
   font-weight: 700;
-  position: absolute;
-  color: var(--neutral-300);
-  bottom: 0;
+
+  color: var(--neutral-600);
 }
 
 .stacks-icons {
@@ -285,12 +308,7 @@ li {
   justify-content: center;
   position: relative;
   overflow: hidden;
-
-  background: linear-gradient(
-    143deg,
-    rgba(221, 246, 255, 1) 0%,
-    rgba(255, 234, 239, 1) 100%
-  );
+  background: linear-gradient(159deg, #ddf6ff 25.32%, #ffeaef 68.56%);
 }
 
 .mail span {
@@ -300,9 +318,9 @@ li {
 }
 
 .mail img {
-  width: 100%;
+  /* width: 100%; */
   position: relative;
-  top: 40%;
+  top: 30%;
   transform: translateY(-60%);
 }
 
@@ -315,8 +333,8 @@ li {
   height: 5rem;
   display: flex;
   border: 1px solid var(--neutral-200);
-  background: rgba(45, 53, 60, 0.1);
-  bottom: -1rem;
+  background: rgba(255, 255, 255, 0.1);
+  bottom: -1.5rem;
   border-radius: 1.5rem;
   align-items: center;
   justify-content: center;
@@ -328,6 +346,7 @@ li {
   transition: all 1s ease;
   cursor: pointer;
   gap: 0.6rem;
+  backdrop-filter: blur(10px);
 }
 
 /* .button-copy:hover {
@@ -646,11 +665,10 @@ input {
   }
 
   .stacks .title {
-    font-size: 5rem;
-    font-weight: 700;
-    top: 22rem;
-    position: absolute;
-    color: var(--neutral-200);
+    font-size: 2rem;
+    font-weight: 600;
+
+    color: var(--neutral-700);
   }
 
   .button-copy {
@@ -809,13 +827,16 @@ body.dark {
   background-color: var(--neutral-800);
 }
 
-.dark .resume,
 .dark .stacks,
 .dark .projects,
 .dark .brand,
 .dark .welcome,
 .dark .profile {
   background-color: var(--neutral-700);
+}
+
+.dark .resume {
+  background-color: #ededed;
 }
 
 .dark .card p {
