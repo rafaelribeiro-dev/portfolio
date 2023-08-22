@@ -3,23 +3,18 @@ const checkmark = document.querySelector('.checkmark-svg')
 
 const copyEmailToClipboard = () => {
   const input = document.querySelector('.copy-mail')
-  let changeColor = (buttonCopy.style.background = '#6cd86b')
+  const previousHTML = buttonCopy.innerHTML
+
   input.select()
   navigator.clipboard
     .writeText(input.value)
     .then(() => {
-      // buttonCopy.textContent = 'Texto copiado com sucesso!'
+      buttonCopy.classList.add('copied')
+      buttonCopy.innerHTML = `COPIADO!`
       setTimeout(() => {
-        checkmark.style.display = 'flex'
-        buttonCopy.innerText = 'Email copiado!'
-        ch
-        setTimeout(() => {
-          checkmark.style.display = 'none'
-          // buttonCopy.innerText = `Copiar Email`
-          buttonCopy.innerText = `Copiar Email`
-          // buttonCopy.style.background = 'rgba(45, 53, 60, 0.1)'
-        }, 3000)
-      }, 100)
+        buttonCopy.innerHTML = previousHTML
+        buttonCopy.classList.remove('copied')
+      }, 2000)
       console.log('Texto copiado com sucesso!')
     })
     .catch(err => {
@@ -83,3 +78,14 @@ const handleSwitchMode = () => {
 toggleBtn.addEventListener('click', handleSwitchMode)
 
 toggleBtn.addEventListener('click', handleBackgroundMode)
+
+li.addEventListener('click', function (e) {
+  const previousHTML = li.innerHTML
+  li.classList.add('copied')
+  copyToClipboard(`box-shadow: ${li.style.boxShadow};`)
+  li.innerHTML = 'Copied!'
+  setTimeout(() => {
+    li.innerHTML = previousHTML
+    li.classList.remove('copied')
+  }, 1000)
+})
