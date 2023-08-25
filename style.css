@@ -294,6 +294,74 @@ li {
   position: absolute;
 }
 
+.container {
+  max-width: 1120px;
+  width: 100%;
+  padding: 40px 0;
+}
+
+.slide-container {
+  margin: 0 60px;
+  overflow: hidden;
+}
+
+.card-slide {
+  width: 312px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.card-slide .image-box {
+  width: 100%;
+}
+
+.card-slide .image-box img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px 8px 0 0;
+}
+
+.card-slide .profile-details {
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+  padding: 15px;
+}
+
+.card-slide .profile-details img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.profile-details .name {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.profile-details .job {
+  font-size: 12px;
+  font-weight: 400;
+  color: #4d4d4d;
+}
+
+.swiper-navBtn {
+  color: #000;
+  height: 40px;
+  width: 40px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.swiper-navBtn::before,
+.swiper-navBtn::after {
+  font-size: 18px;
+}
+
+.swiper-pagination-bullet {
+  background-color: #000;
+}
+
 .stacks {
   grid-area: stacks;
   gap: 1.5rem;
@@ -398,9 +466,6 @@ li {
 
 .button-copy.copied {
   background-color: #4cd864;
-}
-
-.button-copy:hover {
 }
 
 /* .button-copy:hover > :not(:hover) {
