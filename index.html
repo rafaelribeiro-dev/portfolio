@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
     
     <link rel="icon" type="image/x-icon" href="./assets/fav_icon.png" />
     
@@ -14,7 +15,13 @@
     <title>DevRibeiro</title>
   </head>
   <body>
-    <div class="preload"></div>
+   <div class="loader_bg" data-js="preloader">
+    <div class="animation" data-js="animation">
+    </div>
+    <div class="loader">
+      <div class="progress-bar"></div>
+    </div>
+   </div>
     <main>
       <div class="apple-grid">
         <section class="brand card pd-1">
@@ -66,6 +73,7 @@
         </section>
 
         <section class="projects card flex pd-1">
+
           <span>Projetos</span>
 
           <div class="container">
@@ -73,68 +81,33 @@
               <div class="card-wrapper swiper-wrapper">
                 <div class="card-slide swiper-slide">
                   <div class="image-box">
-                    <img src="https://placehold.co/600x400" alt="placeholder image" />
+                    <img src="./assets/frioprime.png" alt="placeholder image" />
                   </div>
                   <div class="profile-details">
-                    <img src="./assets/avatar.svg" alt="avatar" />
                     <div class="name-job">
-                      <h3 class="name">Rafael Ribeiro</h3>
-                      <h4 class="job">Full Stack Developer</h4>
+                      <h3 class="name">Frioprime</h3>
+                      <h4 class="job">Website desenvolvido para a empresa especializada na 
+                        manutenção e instalação de equipamentos de refrigeração de ambientes.
+                      </h4>
+                    </div>
+                    <div class="stack-details">
+                      <h3 class="stack-title">Stack</h3>
+                      <div class="stack-icons">
+                        <img src="./assets/html5.svg" alt="">
+                        <img src="./assets/css3.svg" alt="">
+                        <img src="./assets/js.svg" alt="">
+                      </div> 
+                    </div>
+                    <div class="project-preview">
+                      <h3 class="preview-title">Preview</h3>
+                      <div class="preview-icons">
+                        <a href="https://www.frioprime.com.br" target="_blank"><img src="./assets/eye.svg" alt="icone olho"></a>
+                        <a href="https://github.com/rafaelribeiro-dev/frioprime_v2" target="_blank"><img src="./assets/github.svg" alt="icone github"></a>
+                      </div>
                     </div>
                   </div>
                 </div>
       
-                <div class="card-slide swiper-slide">
-                  <div class="image-box">
-                    <img src="https://placehold.co/600x400" alt="placeholder image" />
-                  </div>
-                  <div class="profile-details">
-                    <img src="./assets/avatar.svg" alt="avatar" />
-                    <div class="name-job">
-                      <h3 class="name">Rafael Ribeiro</h3>
-                      <h4 class="job">Full Stack Developer</h4>
-                    </div>
-                  </div>
-                </div>
-      
-                <div class="card-slide swiper-slide">
-                  <div class="image-box">
-                    <img src="https://placehold.co/600x400" alt="placeholder image" />
-                  </div>
-                  <div class="profile-details">
-                    <img src="./assets/avatar.svg" alt="avatar" />
-                    <div class="name-job">
-                      <h3 class="name">Rafael Ribeiro</h3>
-                      <h4 class="job">Full Stack Developer</h4>
-                    </div>
-                  </div>
-                </div>
-      
-                <div class="card-slide swiper-slide">
-                  <div class="image-box">
-                    <img src="https://placehold.co/600x400" alt="placeholder image" />
-                  </div>
-                  <div class="profile-details">
-                    <img src="./assets/avatar.svg" alt="avatar" />
-                    <div class="name-job">
-                      <h3 class="name">Rafael Ribeiro</h3>
-                      <h4 class="job">Full Stack Developer</h4>
-                    </div>
-                  </div>
-                </div>
-      
-                <div class="card-slide swiper-slide">
-                  <div class="image-box">
-                    <img src="https://placehold.co/600x400" alt="placeholder image" />
-                  </div>
-                  <div class="profile-details">
-                    <img src="./assets/avatar.svg" alt="avatar" />
-                    <div class="name-job">
-                      <h3 class="name">Rafael Ribeiro</h3>
-                      <h4 class="job">Full Stack Developer</h4>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
             <div class="swiper-button-next swiper-navBtn"></div>
@@ -481,6 +454,11 @@
         </section>
       </div>
     </main>
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"></script>
     <script src="./swiper-bundle.min.js"></script>
     <script src="./vanilla-tilt.min.js"></script>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>

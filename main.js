@@ -32,6 +32,25 @@ var swiper = new Swiper('.slide-container', {
   }
 })
 
+/* PRE LOADER */
+const preload = document.querySelector('[data-js="preloader"]')
+
+setTimeout(() => {
+  $('.loader_bg').fadeToggle()
+}, 5500)
+
+const animationContainer = document.querySelector('[data-js="animation"]')
+
+const animation = bodymovin.loadAnimation({
+  container: animationContainer,
+  path: 'animation_hello.json',
+  render: 'svg',
+  autoplay: true,
+  loop: true,
+  name: 'hello animation',
+  speed: '1'
+})
+
 const buttonCopy = document.querySelector('.button-copy')
 const checkmark = document.querySelector('.checkmark-svg')
 
@@ -112,14 +131,3 @@ const handleSwitchMode = () => {
 toggleBtn.addEventListener('click', handleSwitchMode)
 
 toggleBtn.addEventListener('click', handleBackgroundMode)
-
-li.addEventListener('click', function (e) {
-  const previousHTML = li.innerHTML
-  li.classList.add('copied')
-  copyToClipboard(`box-shadow: ${li.style.boxShadow};`)
-  li.innerHTML = 'Copied!'
-  setTimeout(() => {
-    li.innerHTML = previousHTML
-    li.classList.remove('copied')
-  }, 1000)
-})
