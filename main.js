@@ -32,12 +32,9 @@ var swiper = new Swiper('.slide-container', {
   }
 })
 
-/* PRE LOADER */
-const preload = document.querySelector('[data-js="preloader"]')
-
 setTimeout(() => {
   $('.loader_bg').fadeToggle()
-}, 5500)
+}, 6000)
 
 const animationContainer = document.querySelector('[data-js="animation"]')
 
@@ -46,10 +43,11 @@ const animation = bodymovin.loadAnimation({
   path: 'animation_hello.json',
   render: 'svg',
   autoplay: true,
-  loop: true,
+  loop: false,
   name: 'hello animation',
-  speed: '1'
+  speed: 1
 })
+animation.setSpeed(1)
 
 const buttonCopy = document.querySelector('.button-copy')
 const checkmark = document.querySelector('.checkmark-svg')

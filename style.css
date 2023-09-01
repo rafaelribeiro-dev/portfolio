@@ -24,6 +24,7 @@ body {
   height: 100%;
 }
 .animation{
+
 }
 .loader{
   display: flex;
@@ -35,38 +36,60 @@ body {
   background-color: #888888;
   border: 1px solid #888888;
   border-radius: 1rem;
-
-  /* left: 50%;
-  transform: translateX(-50%); */
 }
 
 .loader .progress-bar{
   margin-inline: .1rem;
-  /* position: absolute; */
   background-color: #fff;
   width: 0px;
   height: .6rem;
   border-radius: 1rem;
-  animation: progress 4.5s forwards linear ;
+  animation: progress 5s forwards linear;
+
 }
  
-
 @keyframes progress{
-  0%{
-    width: 0%;
-  }
-  25%{
-    width: 50%;
-  }
-  50%{
-    width: 75%;
-  }
-  75%{
-    width: 85%;
-  }
-  100%{
-    width: 100%;
-  }
+  0% {
+		width: 0;
+	}
+
+	20% {
+		width: 3%;
+	}
+
+	25% {
+		width: 10%;
+	}
+
+	43% {
+		width: 26%;
+	}
+
+	56% {
+		width: 42%;
+	}
+
+	66% {
+		width: 52%;
+	}
+
+	71% {
+		width: 60%;
+	}
+
+	75% {
+		width: 76%;
+    
+	}
+
+	94% {
+		width: 86%;
+	}
+
+	100% {
+		width: 100%;
+	}
+
 }
 
 @font-face {
@@ -340,7 +363,7 @@ li {
   position: relative;
   overflow: hidden;
 
-  background-image: url(./assets/grids.svg);
+  background-image: url(./assets/dimensional_grid.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -404,7 +427,7 @@ li {
 }
 
 .profile-details .job {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
   color: #4d4d4d;
 }
@@ -532,7 +555,7 @@ li {
   display: flex;
   border: 1px solid var(--neutral-200);
   background: rgba(255, 255, 255, 0.2);
-  bottom: -1.8rem;
+  bottom: -1rem;
   border-radius: 1.5rem;
   align-items: center;
   justify-content: center;
@@ -757,8 +780,8 @@ input {
 }
 
 .contact .frame {
-  width: 12.5rem;
-  height: 15rem;
+  width: 12rem;
+  height: 14.5rem;
   display: flex;
   border: 5px solid transparent;
   border-radius: 3.6rem;
@@ -781,9 +804,9 @@ input {
 .contact .button a {
   border-radius: 0.9rem;
   color: var(--neutral);
-  width: 11.2rem;
-  height: 78%;
-  padding: 0.69rem;
+  width: 11.1rem;
+  /* height: 78%; */
+  padding: 0.6rem;
   display: block;
   background: rgba(255, 255, 255, 0.26);
   transition: 0.3s;
@@ -801,23 +824,8 @@ input {
   transform: translateY(-50%);
   border-radius: 1rem;
 } */
-
-.contact .button a.in:hover {
-  background-color: #2094fa;
-}
-
-.contact .button a.git:hover {
-  background-color: #1b1b1c;
-}
-
-.contact .button a.insta:hover {
-  background-color: #ff6596;
-}
-.contact .button a.whats:hover {
-  background-color: #04de71;
-}
-.contact .button a:hover {
-  background: rgba(255, 255, 255, 0.46);
+.contact .button a:hover{
+  background: rgba(255, 255, 255, 0.4);
 }
 
 .contact ul {
@@ -931,7 +939,7 @@ input {
 /* ---------------  LARGE DISPLAYS --------------- */
 @media (min-width: 1901px) {
   .apple-grid {
-    max-width: 1600px;
+    max-width: 1900px;
 
     height: 100vh;
   }
@@ -1040,6 +1048,10 @@ body.dark {
 
 .dark .projects span {
   color: var(--neutral-100);
+}
+
+.dark .swiper-pagination-bullet {
+  background-color: #DC7599;
 }
 
 .dark .stacks .title {
