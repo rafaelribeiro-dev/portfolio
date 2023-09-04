@@ -66,10 +66,9 @@ const copyEmailToClipboard = () => {
         buttonCopy.innerHTML = previousHTML
         buttonCopy.classList.remove('copied')
       }, 2000)
-      console.log('Texto copiado com sucesso!')
     })
     .catch(err => {
-      console.error('Falha ao copiar o texto:', err)
+      console.error(err)
     })
 }
 

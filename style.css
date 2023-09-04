@@ -23,9 +23,7 @@ body {
   width: 100%;
   height: 100%;
 }
-.animation{
 
-}
 .loader{
   display: flex;
   align-items: center;
@@ -838,15 +836,14 @@ input {
 }
 
 /* ---------------  MOBILE DEVICE --------------- */
-@media (max-width: 926px) {
+@media (max-width: 767px) {
   .apple-grid {
     margin: 0 auto;
     height: fit-content;
     padding: 1rem;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 0.1fr 0.1fr 1fr 0.2fr 0.54fr 0.5fr 1fr 0.2fr 0.2fr;
+    grid-template-rows: 0.1fr 1fr 0.2fr 0.54fr 0.5fr 1fr 0.2fr 0.2fr;
     grid-template-areas:
-      'brand welcome'
       'hello hello'
       'profile profile'
       'resume resume'
@@ -857,8 +854,55 @@ input {
       'select-mode contact';
   }
 
+  .brand, .welcome{
+    display: none;
+  }
+
   .hello {
     padding: 4rem;
+  }
+
+  .profile{
+    padding: 1.5rem 4rem;
+  }
+
+  .resume a{
+    font-size: 3.5rem;
+  }
+
+  .slide-container{
+    margin: 0 1rem;
+  }
+
+  .card-slide .profile-details{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+    'description description'
+    'stack preview';
+    gap: 1rem;
+  }
+
+  .name-job{
+    grid-area: description;
+  }
+
+  .stack-details{
+    grid-area: stack;
+    border-right: 1px solid var(--neutral-200);
+  }
+
+  .project-preview{
+    grid-area: preview;
+  }
+
+  .project-preview{
+    margin-left: 5rem;
+  }
+
+  .swiper-navBtn{
+    display: none;
   }
 
   .stacks .title {
@@ -866,6 +910,14 @@ input {
     font-weight: 600;
 
     color: var(--neutral-700);
+  }
+
+  .stack-details .stack-icons, .preview-icons{
+    gap: 1rem;
+  }
+
+  .stack-details .stack-icons img, .project-preview .preview-icons img{
+    width: 2.5rem;
   }
 
   .button-copy {
@@ -892,25 +944,37 @@ input {
 }
 
 /* ---------------  TABLETS --------------- */
-@media (min-width: 927px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1023px) {
   .apple-grid {
-    height: 100vh;
-
-    padding: 1rem 2rem;
-
-    display: grid;
-    place-content: center;
-    gap: 1rem;
-    grid-template-columns: 0.8fr 1fr 0.8fr 0.9fr 0.9fr 0.9fr;
-    grid-template-rows: 0.7fr 1.4fr 0.9fr 1fr 0.5fr 1fr;
-    grid-auto-flow: row;
+    margin: 0 auto;
+    height: fit-content;
+    padding: 1rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.1fr 1fr 0.2fr 0.5fr 1fr 0.2fr 0.2fr;
     grid-template-areas:
-      'profile profile stacks stacks mail mail'
-      'profile profile stacks stacks mail mail'
-      'profile profile brand hello hello hello'
-      'profile profile resume resume select-mode contact'
-      'profile profile resume resume select-mode contact'
-      'projects projects projects projects projects projects';
+      'hello hello'
+      'profile profile'
+      'resume resume'
+      'stacks mail'
+      'projects projects'
+      'select-mode contact'
+      'select-mode contact';
+  }
+
+  .profile{
+    padding: 1.5rem 9rem;
+  }
+
+  .profile .profile-about p{
+    font-size: 2.4rem;
+  }
+
+  .resume a{
+    font-size: 4.5rem;
+  }
+
+  .resume:hover svg{
+    visibility: hidden;
   }
 
   .stacks .ico {
@@ -918,12 +982,44 @@ input {
     height: 4rem;
   }
 
-  .welcome {
+  .brand ,.welcome {
     display: none;
+  }
+
+  
+  .stacks .ico{
+    width: 6rem;
+    height: 6rem;
+  }
+  
+  .swiper-navBtn{
+    display: none;
+  }
+
+  .contact .frame{
+    width: 14rem;
+    height: 16.5rem;
+    left: 11rem;
+    top: 3.4rem;
+  }
+
+  .contact .button a{
+    width: 13rem;
+    padding: .7rem;
+  }
+
+  .select-mode .avatar img{
+    height: 17rem;
+  }
+  .sun{
+    width: 100%;
+  }
+  .moon{
+    width: 100%;
   }
 }
 /* ---------------  MEDIUM DISPLAYS --------------- */
-@media (min-width: 1025px) and (max-width: 1900px) {
+@media (min-width: 1024px) and (max-width: 1900px) {
   .apple-grid {
     height: 100vh;
     padding-inline: 10rem;
