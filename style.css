@@ -203,11 +203,11 @@ li {
   flex-direction: column;
   padding: 1.5rem 2rem;
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
   background-image: url(./assets/dot.svg);
 }
 
-.profile::before {
+/* .profile::before {
   content: '';
   width: 10rem;
   height: 14rem;
@@ -215,13 +215,13 @@ li {
   left: -5rem;
   top: 2rem;
   opacity: 0.5;
-}
+} */
 
 .profile .profile-avatar img {
   width: 13rem;
   position: relative;
   border-radius: 50%;
-  /* background: url(./assets/me.png) no-repeat center/cover; */
+
 }
 
 .profile .profile-avatar::before {
@@ -401,16 +401,42 @@ li {
   border-radius: 1rem 1rem 0 0;
 }
 
-.card-slide .profile-details {
+/* .card-slide .profile-details {
   display: flex;
   column-gap: 3rem;
   padding: 1rem;
+} */
+
+.card-slide .profile-details{
+  display: grid;
+  /* grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr; */
+  /* gap: 1rem; */
+  grid-template-areas:
+  'description description stack preview';
+  padding: 1rem;
 }
 
+.name-job{
+  grid-area: description;
+}
+
+.stack-details{
+  grid-area: stack;
+
+}
+
+.project-preview{
+  grid-area: preview;
+  padding-left: 5rem;
+}
+
+
+
 .card-slide .profile-details img {
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
+  /* height: 40px;
+  width: 40px; */
+  /* border-radius: 50%; */
 }
 
 .profile-details .name {
@@ -422,6 +448,7 @@ li {
 .preview-title {
   font-size: 15px;
   font-weight: 500;
+
 }
 
 .profile-details .job {
@@ -433,7 +460,10 @@ li {
 .stack-details {
   display: flex;
   flex-direction: column;
+  padding-left: 4rem;
 }
+
+
 
 .stack-details .stack-icons,
 .preview-icons {
@@ -842,7 +872,7 @@ input {
     height: fit-content;
     padding: 1rem;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 0.1fr 1fr 0.2fr 0.54fr 0.5fr 1fr 0.2fr 0.2fr;
+    grid-template-rows: .5fr 1.5fr 0.3fr 0.5fr 0.5fr 1fr 0.2fr 0.2fr;
     grid-template-areas:
       'hello hello'
       'profile profile'
@@ -862,12 +892,30 @@ input {
     padding: 4rem;
   }
 
+  .hello-message h1{
+    font-size: 6rem;
+  }
+
   .profile{
     padding: 1.5rem 4rem;
   }
 
+  .profile .profile-about p{
+    font-size: 2rem;
+    color: red;
+  }
+
   .resume a{
     font-size: 3.5rem;
+  }
+
+  .stacks .ico{
+    width: 6rem;
+    height: 6rem;
+  }
+
+  .stacks .description p{
+    font-size: 1.6rem;
   }
 
   .slide-container{
@@ -897,12 +945,14 @@ input {
     grid-area: preview;
   }
 
-  .project-preview{
-    margin-left: 5rem;
-  }
+  
 
   .swiper-navBtn{
     display: none;
+  }
+
+  .swiper-pagination{
+    margin-top: -2rem;
   }
 
   .stacks .title {
@@ -921,7 +971,7 @@ input {
   }
 
   .button-copy {
-    margin-top: 3rem;
+    margin-top: 2rem;
   }
 
   .toggle-btn {
@@ -930,15 +980,15 @@ input {
   }
 
   .contact .frame {
-    width: 12.8rem;
-    height: 15rem;
+    width: 13.3rem;
+    height: 15.8rem;
     position: relative;
     top: 0.1rem;
-    left: -0.4rem;
+    left: -0.5rem;
   }
 
   .contact .button a {
-    width: 11.5rem;
+    width: 12.5rem;
     padding: 0.6rem;
   }
 }
