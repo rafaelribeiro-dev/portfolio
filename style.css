@@ -827,13 +827,14 @@ input {
   font-size: 1.6rem;
   cursor: pointer;
   display: block;
+  background: transparent
 }
 
 .contact .button a {
-  border-radius: 0.9rem;
+  border-radius: 1rem;
   color: var(--neutral);
-  width: 11.1rem;
-  /* height: 78%; */
+  width: 11rem;
+  height: 78%;
   padding: 0.6rem;
   display: block;
   background: rgba(255, 255, 255, 0.26);
@@ -841,17 +842,6 @@ input {
   position: relative;
 }
 
-/* .contact .button a::before {
-  content: '';
-  width: 1rem;
-  height: 1rem;
-  background-color: #2094fa;
-  position: absolute;
-  display: flex;
-  top: 50%;
-  transform: translateY(-50%);
-  border-radius: 1rem;
-} */
 .contact .button a:hover{
   background: rgba(255, 255, 255, 0.4);
 }
@@ -939,21 +929,30 @@ input {
   .stack-details{
     grid-area: stack;
     border-right: 1px solid var(--neutral-200);
+
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
   }
 
   .project-preview{
     grid-area: preview;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
   }
-
-  
 
   .swiper-navBtn{
     display: none;
   }
 
-  .swiper-pagination{
+  /* .swiper-pagination{
     margin-top: -2rem;
-  }
+  } */
 
   .stacks .title {
     font-size: 2rem;
@@ -964,6 +963,7 @@ input {
 
   .stack-details .stack-icons, .preview-icons{
     gap: 1rem;
+
   }
 
   .stack-details .stack-icons img, .project-preview .preview-icons img{
@@ -980,21 +980,28 @@ input {
   }
 
   .contact .frame {
-    width: 13.3rem;
-    height: 15.8rem;
+    width: 12rem;
+    height: 14.5rem;
     position: relative;
     top: 0.1rem;
-    left: -0.5rem;
+    left: -0.4rem;
+    border-radius: 3.6rem;
   }
 
-  .contact .button a {
-    width: 12.5rem;
-    padding: 0.6rem;
+  .contact .button{
+    border-radius: 3rem;
   }
+  .contact .button a {
+    width: 12rem;
+    padding: 0.6rem;
+    border-radius: 3rem;
+
+  }
+
 }
 
 /* ---------------  TABLETS --------------- */
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 768px) and (max-width: 900px) {
   .apple-grid {
     margin: 0 auto;
     height: fit-content;
@@ -1072,7 +1079,7 @@ input {
 @media (min-width: 1024px) and (max-width: 1900px) {
   .apple-grid {
     height: 100vh;
-    padding-inline: 10rem;
+    padding-inline: 3rem;
   }
 
   .contact .frame {
