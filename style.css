@@ -374,7 +374,7 @@ li {
   position: absolute;
 }
 
-.container {
+.card-container {
   max-width: 1120px;
   width: 100%;
   padding: 50px 0;
@@ -407,7 +407,7 @@ li {
   padding: 1rem;
 } */
 
-.card-slide .profile-details{
+.card-slide .project-details{
   display: grid;
   /* grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr; */
@@ -415,6 +415,10 @@ li {
   grid-template-areas:
   'description description stack preview';
   padding: 1rem;
+  border-radius: 0 0 1rem 1rem;
+  background-color: var(--neutral-100);
+
+  border-top: 1px solid var(--neutral-200);
 }
 
 .name-job{
@@ -424,22 +428,18 @@ li {
 .stack-details{
   grid-area: stack;
 
+  display: flex;
+  flex-direction: column;
+  padding-inline: 2rem;
+
 }
 
 .project-preview{
   grid-area: preview;
-  padding-left: 5rem;
+  padding-inline: 2rem;
 }
 
-
-
-.card-slide .profile-details img {
-  /* height: 40px;
-  width: 40px; */
-  /* border-radius: 50%; */
-}
-
-.profile-details .name {
+.project-details .name {
   font-size: 15px;
   font-weight: 500;
 }
@@ -451,19 +451,11 @@ li {
 
 }
 
-.profile-details .job {
+.project-details .job {
   font-size: 14px;
   font-weight: 400;
   color: #4d4d4d;
 }
-
-.stack-details {
-  display: flex;
-  flex-direction: column;
-  padding-left: 4rem;
-}
-
-
 
 .stack-details .stack-icons,
 .preview-icons {
@@ -521,8 +513,8 @@ li {
 
 .stacks .ico {
   background-color: var(--neutral-100);
-  width: 5.6rem;
-  height: 5.6rem;
+  width: 4.6rem;
+  height: 4.6rem;
   align-items: center;
   justify-content: center;
   border-radius: 1rem;
@@ -572,6 +564,9 @@ li {
   top: 30%;
   transform: translateY(-60%);
 }
+.mail .img img{
+  width: 100%;
+}
 
 .mail .copy-mail {
   display: none;
@@ -583,7 +578,7 @@ li {
   display: flex;
   border: 1px solid var(--neutral-200);
   background: rgba(255, 255, 255, 0.2);
-  bottom: -1rem;
+  bottom: -1.4rem;
   border-radius: 1.5rem;
   align-items: center;
   justify-content: center;
@@ -815,7 +810,7 @@ input {
   border-radius: 3.6rem;
   background-color: transparent;
   overflow: hidden;
-  left: 4.35rem;
+  left: 3.36rem;
   top: 2.6rem;
   position: absolute;
 }
@@ -892,7 +887,6 @@ input {
 
   .profile .profile-about p{
     font-size: 2rem;
-    color: red;
   }
 
   .resume a{
@@ -912,7 +906,7 @@ input {
     margin: 0 1rem;
   }
 
-  .card-slide .profile-details{
+  .card-slide .project-details{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -928,7 +922,7 @@ input {
 
   .stack-details{
     grid-area: stack;
-    border-right: 1px solid var(--neutral-200);
+
 
     padding: 0;
     display: flex;
@@ -950,10 +944,6 @@ input {
     display: none;
   }
 
-  /* .swiper-pagination{
-    margin-top: -2rem;
-  } */
-
   .stacks .title {
     font-size: 2rem;
     font-weight: 600;
@@ -970,8 +960,14 @@ input {
     width: 2.5rem;
   }
 
+  .mail .img img{
+   width: 35rem;
+   top: 10%;
+   position: relative;
+  }
+
   .button-copy {
-    margin-top: 3rem;
+    margin-top: 2rem;
   }
 
   .toggle-btn {
@@ -1001,7 +997,7 @@ input {
 }
 
 /* ---------------  TABLETS --------------- */
-@media (min-width: 768px) and (max-width: 900px) {
+@media (min-width: 767px) and (max-width: 1023px) {
   .apple-grid {
     margin: 0 auto;
     height: fit-content;
@@ -1027,7 +1023,7 @@ input {
   }
 
   .resume a{
-    font-size: 4.5rem;
+    font-size: 6rem;
   }
 
   .resume:hover svg{
@@ -1042,11 +1038,14 @@ input {
   .brand ,.welcome {
     display: none;
   }
-
-  
+ 
   .stacks .ico{
     width: 6rem;
     height: 6rem;
+  }
+
+  .button-copy {
+    margin-top: 7rem;
   }
   
   .swiper-navBtn{
@@ -1076,10 +1075,10 @@ input {
   }
 }
 /* ---------------  MEDIUM DISPLAYS --------------- */
-@media (min-width: 1024px) and (max-width: 1900px) {
+@media (min-width: 1024px) and (max-width: 1400px) {
   .apple-grid {
     height: 100vh;
-    padding-inline: 3rem;
+    padding-inline: 10rem;
   }
 
   .contact .frame {
@@ -1087,10 +1086,16 @@ input {
     top: 0.1rem;
     left: -0.4rem;
   }
+
+  .stacks{
+    background-color: blue;
+  }
+
+  
 }
 
 /* ---------------  LARGE DISPLAYS --------------- */
-@media (min-width: 1901px) {
+@media (min-width: 1600px) {
   .apple-grid {
     max-width: 1900px;
 
@@ -1103,6 +1108,8 @@ input {
 
   .stacks {
     padding: 3rem 1rem 0 1rem;
+    background-color: purple;
+
   }
 
   .button-copy {
