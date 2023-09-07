@@ -803,14 +803,14 @@ input {
 }
 
 .contact .frame {
-  width: 12rem;
-  height: 14.5rem;
+  width: 12.5rem;
+  height: 15rem;
   display: flex;
   border: 5px solid transparent;
   border-radius: 3.6rem;
   background-color: transparent;
   overflow: hidden;
-  left: 3.36rem;
+  left: 3.3rem;
   top: 2.6rem;
   position: absolute;
 }
@@ -967,7 +967,7 @@ input {
   }
 
   .button-copy {
-    margin-top: 2rem;
+    margin-top: 1.8rem;
   }
 
   .toggle-btn {
