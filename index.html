@@ -15,13 +15,13 @@
     <title>DevRibeiro</title>
   </head>
   <body>
-   <div class="loader_bg" data-js="preloader">
+   <!-- <div class="loader_bg" data-js="preloader">
     <div class="animation" data-js="animation">
     </div>
     <div class="loader">
       <div class="progress-bar"></div>
     </div>
-   </div>
+   </div> -->
     <main>
       <div class="apple-grid">
         <section class="brand card pd-1">
@@ -74,7 +74,7 @@
 
         <section class="projects card flex pd-1">
 
-          <span>Projetos</span>
+          <span class="title">Projetos</span>
 
           <div class="card-container">
             <div class="slide-container swiper">
@@ -118,7 +118,8 @@
                     <div class="name-job">
                       <h3 class="name">Portfolio</h3>
                       <h4 class="job">
-                        Projeto portfolio pessoal, colocando em prática tudo aquilo que adiquiri de conhecimento.
+                        Portfolio pessoal, projeto ao qual desenvolvi para colocar o meu conhecimento em 
+                        prática e, demonstrar um pouco das minhas habilidades.
                       </h4>
                     </div>
                     <div class="stack-details">
@@ -152,8 +153,7 @@
         <section class="stacks card flex pd-1">
           <span class="title">Habilidades</span>
           <div class="stacks-icons flex">
-            <div
-              class="html5 ico flex"
+            <div class="html5 ico flex"
               data-tooltip="Bons conhecimentos na linguagem de marcação"
             >
               <svg
@@ -387,7 +387,15 @@
           </div>
           <!-- <img src="./assets/mail.svg" alt="endereço de email devribeiro"> -->
             <input class="copy-mail" type="text" value="rafael@devribeiro.com" disabled></input>
-            <div class="button-copy">Copiar Email</div>
+            <div class="button-copy">
+              <div class="words">
+                <span>Olá, tudo bem?</span>
+                <span>Vamos conversar?</span>
+                <span>Clique aqui para</span>
+                <span>Copiar meu e-mail</span>
+                <span>Olá, tudo bem?</span>
+              </div>
+            </div>
             
         </section>
 
@@ -468,6 +476,7 @@
       </div>
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
