@@ -26,13 +26,13 @@ body {
   --neutral-400: #6e6e73;
   --neutral-300: #dcdcdc;
   --neutral-200: #e7e7e7;
-  --neutral-100: #f7f7f7;
+  --neutral-100: #f2f3f4;
   --pure-white: #ffffff;
   --light-yellow-1: #faf1cf;
   --light-yellow-2: #fefae5;
   --logo-pink: #ff3d7b;
   --logo-yellow: #ffd876;
-  --blue-sky: #8dd5ff;
+  --blue-sky: #beebff;
   --midnight-sky: #172334;
   --border-radius: 2.4rem;
 }
@@ -244,11 +244,12 @@ li {
 
 .resume {
   grid-area: resume;
-  background: linear-gradient(
+  background-color: #f2f3f4;
+  /* background: linear-gradient(
     86deg,
     var(--light-yellow-1) 12.67%,
     var(--light-yellow-2) 141.62%
-  );
+  ); */
 
   position: relative;
   overflow: hidden;
@@ -394,9 +395,6 @@ li {
 
 .card-slide .project-details {
   display: grid;
-  /* grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr; */
-  /* gap: 1rem; */
   grid-template-areas: 'description description stack preview';
   padding: 1rem;
   border-radius: 0 0 1rem 1rem;
@@ -517,9 +515,9 @@ li {
 
 .stacks .description p {
   color: var(--neutral-400);
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 400;
-  background: var(--neutral-200);
+  border: 1px solid #ccc;
   border-radius: 2rem;
   padding: 1.3rem;
 }
@@ -545,7 +543,7 @@ li {
   position: relative;
   cursor: pointer;
   backdrop-filter: blur(10px);
-  transition: 0.8s ease-in-out;
+  transition: 0.8s all ease;
   text-transform: uppercase;
   font-size: 1.4rem;
   overflow: hidden;
@@ -554,8 +552,7 @@ li {
 .button-copy.copied {
   display: flex;
   align-items: center;
-  background: #9580ff;
-  color: var(--pure-white);
+  background: rgba(159, 159, 159, 0.2);
 }
 
 .button-copy i {
@@ -736,7 +733,7 @@ input {
   position: absolute;
   width: 5rem;
   height: 3rem;
-  background: var(--logo-yellow);
+  background: #feef88;
   border-radius: 5rem;
   cursor: pointer;
   transition: all 0.4s;
@@ -780,7 +777,7 @@ input {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: var(--neutral-200);
+  background: var(--neutral-100);
   background-image: url(./assets/topographic_bg.png);
   background-repeat: no-repeat;
   background-position: center;
@@ -1254,6 +1251,5 @@ body.dark {
 }
 
 .dark .button-copy.copied {
-  background: #9580ff;
-  color: var(--pure-white);
+  background: rgba(255, 255, 255, 0.4);
 }

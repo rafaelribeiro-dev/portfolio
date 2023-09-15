@@ -142,77 +142,6 @@ timeline
     '-=2.8'
   )
 
-// gsap.from('.select-mode', {
-//   y: 200,
-//   opacity: 0,
-//   duration: 2,
-//   delay: 0.3,
-//   ease: 'expo.out'
-// })
-// gsap.from('.projects', {
-//   y: 320,
-//   opacity: 0,
-//   duration: 2,
-//   delay: 0.6,
-//   ease: 'expo.out'
-// })
-// gsap.from('.resume', {
-//   x: -200,
-//   opacity: 0,
-//   duration: 2,
-//   delay: 0.85,
-//   ease: 'expo.out'
-// })
-// gsap.from('.profile', {
-//   y: -200,
-//   opacity: 0,
-//   duration: 2,
-//   delay: 0.8,
-//   ease: 'expo.out'
-// })
-// gsap.from('.hello', {
-//   y: -200,
-//   opacity: 0,
-//   duration: 2,
-//   delay: 0.95,
-//   ease: 'expo.out'
-// })
-// gsap.from('.stacks', {
-//   x: 200,
-//   opacity: 0,
-//   duration: 2,
-//   delay: 1,
-//   ease: 'expo.out'
-// })
-// gsap.from('.mail', {
-//   x: 200,
-//   opacity: 0,
-//   duration: 2,
-//   delay: 0.4,
-//   ease: 'expo.out'
-// })
-// gsap.from('.contact', {
-//   x: 200,
-//   opacity: 0,
-//   duration: 2,
-//   delay: 0.7,
-//   ease: 'expo.out'
-// })
-// gsap.from('.brand', {
-//   y: -200,
-//   opacity: 0,
-//   duration: 2,
-//   delay: 1,
-//   ease: 'expo.out'
-// })
-// gsap.from('.welcome', {
-//   y: -200,
-//   opacity: 0,
-//   duration: 2,
-//   delay: 0.8,
-//   ease: 'expo.out'
-// })
-
 const linkList = document.querySelectorAll('.contact-list li')
 const stackIcons = document.querySelectorAll('.stacks-icons .ico')
 
@@ -220,48 +149,62 @@ var tl = gsap.timeline()
 const time = 1
 
 // TIMELINE GSAP ANIMAÇÃO LISTA DE REDES SOCIAIS E CONTATOS
-tl.from(linkList[0], time, {
-  y: 200,
-  opacity: 0,
-  ease: 'circ.out',
-  delay: 4
+linkList.forEach((list, i) => {
+  gsap.from(
+    list,
+    1,
+    {
+      y: 200,
+      opacity: 0,
+      ease: 'circ.out',
+      delay: i * 0.06
+    },
+    '-=.9'
+  )
 })
-  .from(
-    linkList[1],
-    time,
-    {
-      y: 200,
-      opacity: 0,
-      ease: 'circ.out'
-    },
-    '-=.65'
-  )
-  .from(
-    linkList[2],
-    time,
-    {
-      y: 200,
-      opacity: 0,
-      ease: 'circ.out'
-    },
-    '-=.65'
-  )
-  .from(
-    linkList[3],
-    time,
-    {
-      y: 200,
-      opacity: 0,
-      ease: 'circ.out'
-    },
-    '-=.65'
-  )
+
+// tl.from(linkList[0], time, {
+//   y: 200,
+//   opacity: 0,
+//   ease: 'circ.out',
+//   delay: 4
+// })
+//   .from(
+//     linkList[1],
+//     time,
+//     {
+//       y: 200,
+//       opacity: 0,
+//       ease: 'circ.out'
+//     },
+//     '-=.65'
+//   )
+//   .from(
+//     linkList[2],
+//     time,
+//     {
+//       y: 200,
+//       opacity: 0,
+//       ease: 'circ.out'
+//     },
+//     '-=.65'
+//   )
+//   .from(
+//     linkList[3],
+//     time,
+//     {
+//       y: 200,
+//       opacity: 0,
+//       ease: 'circ.out'
+//     },
+//     '-=.65'
+//   )
 
 // TIMELINE GSAP ANIMAÇÃO APRESENTAÇÃO DAS STACKS
-stackIcons.forEach(item => {
-  tl.from(
+stackIcons.forEach((item, i) => {
+  gsap.from(
     item,
-    time,
+    1,
     {
       y: 200,
       opacity: 0,
@@ -269,6 +212,14 @@ stackIcons.forEach(item => {
     },
     '-=.8'
   )
+})
+
+gsap.from('.description', {
+  y: 400,
+  opacity: 0,
+  duration: 3,
+  delay: 7,
+  ease: 'expo.out'
 })
 
 // CONTROLA O TEMPO DE AANIMAÇÃO TELA DE LOADING
