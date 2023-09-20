@@ -473,14 +473,8 @@ li {
   gap: 1.5rem;
   align-items: center;
   flex-direction: column;
+  overflow: hidden;
 }
-
-/* .stacks .title {
-  font-size: 3rem;
-  font-weight: 700;
-
-  color: var(--neutral-600);
-} */
 
 .stacks-icons {
   width: 100%;
@@ -1067,8 +1061,8 @@ input {
     width: 100%;
   }
 }
-/* ---------------  MEDIUM DISPLAYS --------------- */
-@media (min-width: 1024px) and (max-width: 1400px) {
+/* ---------------  MEDIUM DISPLAYS --------------   and (max-width: 1366px) - */
+@media (min-width: 1024px) and (max-width: 1365px) {
   .apple-grid {
     height: 100vh;
     padding-inline: 2rem;
@@ -1116,6 +1110,27 @@ input {
   }
 }
 
+@media (max-width: 1366px) {
+  .button-copy {
+    bottom: -1.5rem;
+  }
+
+  .stacks .ico {
+    width: 4rem;
+    height: 4rem;
+    padding: 0.6rem;
+  }
+
+  .contact .frame {
+    width: 12.5rem;
+    height: 15rem;
+    left: 2.1rem;
+  }
+
+  .contact .button a {
+    width: 11.5rem;
+  }
+}
 /* ---------------  LARGE DISPLAYS --------------- */
 @media (min-width: 1600px) {
   .apple-grid {

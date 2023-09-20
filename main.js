@@ -34,113 +34,193 @@ var swiper = new Swiper('.slide-container', {
 
 // TIMELINE GSAP QUE ANIMA OS CARDS DE ABERTURA
 gsap.from('.apple-grid', {
-  scale: 1.2,
-  delay: 1,
+  scale: 1.5,
+  // delay: 7,
   opacity: 0,
+  duration: 1,
+  ease: 'expo.out'
+})
+
+// var timeline = gsap.timeline()
+
+// timeline
+//   .from('.profile', 2, {
+//     y: -200,
+//     opacity: 0,
+//     // delay: 7,
+//     duration: 3,
+//     ease: 'expo.out'
+//   })
+//   .from(
+//     '.brand',
+//     {
+//       y: -200,
+//       opacity: 0,
+//       duration: 2,
+//       ease: 'expo.out'
+//     },
+//     '-=1'
+//   )
+//   .from(
+//     '.mail',
+//     {
+//       x: 200,
+//       opacity: 0,
+//       duration: 3,
+//       ease: 'expo.out'
+//     },
+//     '-=2.4'
+//   )
+//   .from(
+//     '.welcome',
+//     {
+//       y: -200,
+//       opacity: 0,
+//       duration: 2,
+//       ease: 'expo.out'
+//     },
+//     '-=2.3'
+//   )
+//   .from(
+//     '.hello',
+//     {
+//       y: -200,
+//       opacity: 0,
+//       duration: 2,
+//       ease: 'expo.out'
+//     },
+//     '-=2.1'
+//   )
+//   .from(
+//     '.resume',
+//     {
+//       x: -200,
+//       opacity: 0,
+//       duration: 2,
+//       ease: 'expo.out'
+//     },
+//     '-=1' //1.8
+//   )
+//   .from(
+//     '.projects',
+//     {
+//       y: 320,
+//       opacity: 0,
+//       duration: 2,
+//       ease: 'expo.out'
+//     },
+//     '-=2.4'
+//   )
+//   .from(
+//     '.stacks',
+//     {
+//       x: 200,
+//       opacity: 0,
+//       duration: 3,
+//       ease: 'expo.out'
+//     },
+//     '-=1.6' //2.6
+//   )
+//   .from(
+//     '.select-mode',
+//     {
+//       y: 100,
+//       opacity: 0,
+//       duration: 3,
+//       ease: 'expo.out'
+//     },
+//     '-=2.7'
+//   )
+//   .from(
+//     '.contact',
+//     {
+//       x: 100,
+//       opacity: 0,
+//       duration: 3,
+//       ease: 'expo.out'
+//     },
+//     '-=2.8'
+//   )
+
+gsap.from('.profile', {
+  x: -200,
+  opacity: 0,
+  // delay: 7,
   duration: 3,
   ease: 'expo.out'
 })
 
-var timeline = gsap.timeline()
+gsap.from('.stacks', {
+  x: 200,
+  opacity: 0,
+  delay: 0.2,
+  duration: 3,
+  ease: 'expo.out'
+})
 
-timeline
-  .from('.profile', 2, {
-    y: -200,
-    opacity: 0,
-    delay: 1.3,
-    duration: 3,
-    ease: 'expo.out'
-  })
-  .from(
-    '.resume',
-    {
-      x: -200,
-      opacity: 0,
-      duration: 2,
-      ease: 'expo.out'
-    },
-    '-=1.8'
-  )
-  .from(
-    '.brand',
-    {
-      y: -200,
-      opacity: 0,
-      duration: 2,
-      ease: 'expo.out'
-    },
-    '-=1.5'
-  )
-  .from(
-    '.welcome',
-    {
-      y: -200,
-      opacity: 0,
-      duration: 2,
-      ease: 'expo.out'
-    },
-    '-=2.3'
-  )
-  .from(
-    '.hello',
-    {
-      y: -200,
-      opacity: 0,
-      duration: 2,
-      ease: 'expo.out'
-    },
-    '-=2.1'
-  )
-  .from(
-    '.projects',
-    {
-      y: 320,
-      opacity: 0,
-      duration: 2,
-      ease: 'expo.out'
-    },
-    '-=2.4'
-  )
-  .from(
-    '.stacks',
-    {
-      x: 200,
-      opacity: 0,
-      duration: 2,
-      ease: 'expo.out'
-    },
-    '-=2.6'
-  )
-  .from(
-    '.mail',
-    {
-      x: 200,
-      opacity: 0,
-      duration: 3,
-      ease: 'expo.out'
-    },
-    '-=2.4'
-  )
-  .from(
-    '.select-mode',
-    {
-      y: 100,
-      opacity: 0,
-      duration: 3,
-      ease: 'expo.out'
-    },
-    '-=2.7'
-  )
-  .from(
-    '.contact',
-    {
-      x: 100,
-      opacity: 0,
-      duration: 3,
-      ease: 'expo.out'
-    },
-    '-=2.8'
-  )
+gsap.from('.resume', {
+  y: 200,
+  opacity: 0,
+  // delay: 7,
+  duration: 3,
+  ease: 'expo.out'
+})
+
+gsap.from('.contact', {
+  x: 200,
+  opacity: 0,
+  // delay: 7,
+  duration: 3.5,
+  ease: 'expo.out'
+})
+
+gsap.from('.projects', {
+  scale: 1.2,
+  opacity: 0,
+  // delay: 7,
+  duration: 3,
+  ease: 'expo.out'
+})
+
+gsap.from('.select-mode', {
+  y: 200,
+  opacity: 0,
+  // delay: 7,
+  duration: 2.5,
+  ease: 'expo.out'
+})
+
+gsap.from('.hello', {
+  y: -200,
+  opacity: 0,
+  delay: 0.2,
+  duration: 3,
+  ease: 'expo.out'
+})
+
+gsap.from('.mail', {
+  x: 200,
+  opacity: 0,
+  delay: 0.3,
+  duration: 4,
+  ease: 'expo.out'
+})
+
+gsap.from('.brand', {
+  y: -200,
+  opacity: 0,
+  delay: 0.6,
+  duration: 3,
+  ease: 'expo.out'
+})
+
+gsap.from('.welcome', {
+  y: -200,
+  opacity: 0,
+  duration: 3,
+  delay: 0.4,
+  ease: 'expo.out'
+})
 
 const linkList = document.querySelectorAll('.contact-list li')
 const stackIcons = document.querySelectorAll('.stacks-icons .ico')
@@ -163,43 +243,6 @@ linkList.forEach((list, i) => {
   )
 })
 
-// tl.from(linkList[0], time, {
-//   y: 200,
-//   opacity: 0,
-//   ease: 'circ.out',
-//   delay: 4
-// })
-//   .from(
-//     linkList[1],
-//     time,
-//     {
-//       y: 200,
-//       opacity: 0,
-//       ease: 'circ.out'
-//     },
-//     '-=.65'
-//   )
-//   .from(
-//     linkList[2],
-//     time,
-//     {
-//       y: 200,
-//       opacity: 0,
-//       ease: 'circ.out'
-//     },
-//     '-=.65'
-//   )
-//   .from(
-//     linkList[3],
-//     time,
-//     {
-//       y: 200,
-//       opacity: 0,
-//       ease: 'circ.out'
-//     },
-//     '-=.65'
-//   )
-
 // TIMELINE GSAP ANIMAÇÃO APRESENTAÇÃO DAS STACKS
 stackIcons.forEach((item, i) => {
   gsap.from(
@@ -218,7 +261,7 @@ gsap.from('.description', {
   y: 400,
   opacity: 0,
   duration: 3,
-  delay: 7,
+  delay: 7, //delay 12
   ease: 'expo.out'
 })
 
@@ -227,7 +270,7 @@ gsap.from('.description', {
 //   $('.loader_bg').fadeToggle()
 // }, 6000)
 
-// const animationContainer = document.querySelector('[data-js="animation"]')
+const animationContainer = document.querySelector('[data-js="animation"]')
 
 // CONTROLA A ANIMAÇÃO LOTTIE DE LOADING DA PAGINA
 // const animation = bodymovin.loadAnimation({
