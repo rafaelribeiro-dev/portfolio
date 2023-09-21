@@ -32,7 +32,7 @@ var swiper = new Swiper('.slide-container', {
   }
 })
 
-// TIMELINE GSAP QUE ANIMA OS CARDS DE ABERTURA
+// TIMELINE GSAP QUE ANIMA OS CARDS NA ABERTURA DO SITE
 gsap.from('.apple-grid', {
   scale: 1.5,
   // delay: 7,
@@ -40,107 +40,6 @@ gsap.from('.apple-grid', {
   duration: 1,
   ease: 'expo.out'
 })
-
-// var timeline = gsap.timeline()
-
-// timeline
-//   .from('.profile', 2, {
-//     y: -200,
-//     opacity: 0,
-//     // delay: 7,
-//     duration: 3,
-//     ease: 'expo.out'
-//   })
-//   .from(
-//     '.brand',
-//     {
-//       y: -200,
-//       opacity: 0,
-//       duration: 2,
-//       ease: 'expo.out'
-//     },
-//     '-=1'
-//   )
-//   .from(
-//     '.mail',
-//     {
-//       x: 200,
-//       opacity: 0,
-//       duration: 3,
-//       ease: 'expo.out'
-//     },
-//     '-=2.4'
-//   )
-//   .from(
-//     '.welcome',
-//     {
-//       y: -200,
-//       opacity: 0,
-//       duration: 2,
-//       ease: 'expo.out'
-//     },
-//     '-=2.3'
-//   )
-//   .from(
-//     '.hello',
-//     {
-//       y: -200,
-//       opacity: 0,
-//       duration: 2,
-//       ease: 'expo.out'
-//     },
-//     '-=2.1'
-//   )
-//   .from(
-//     '.resume',
-//     {
-//       x: -200,
-//       opacity: 0,
-//       duration: 2,
-//       ease: 'expo.out'
-//     },
-//     '-=1' //1.8
-//   )
-//   .from(
-//     '.projects',
-//     {
-//       y: 320,
-//       opacity: 0,
-//       duration: 2,
-//       ease: 'expo.out'
-//     },
-//     '-=2.4'
-//   )
-//   .from(
-//     '.stacks',
-//     {
-//       x: 200,
-//       opacity: 0,
-//       duration: 3,
-//       ease: 'expo.out'
-//     },
-//     '-=1.6' //2.6
-//   )
-//   .from(
-//     '.select-mode',
-//     {
-//       y: 100,
-//       opacity: 0,
-//       duration: 3,
-//       ease: 'expo.out'
-//     },
-//     '-=2.7'
-//   )
-//   .from(
-//     '.contact',
-//     {
-//       x: 100,
-//       opacity: 0,
-//       duration: 3,
-//       ease: 'expo.out'
-//     },
-//     '-=2.8'
-//   )
 
 gsap.from('.profile', {
   x: -200,
@@ -257,6 +156,7 @@ stackIcons.forEach((item, i) => {
   )
 })
 
+// ANIMA O BOTÃO DE DESCRIÇÃO NA SESSÃO DE STACKS
 gsap.from('.description', {
   y: 400,
   opacity: 0,
@@ -270,7 +170,7 @@ gsap.from('.description', {
 //   $('.loader_bg').fadeToggle()
 // }, 6000)
 
-const animationContainer = document.querySelector('[data-js="animation"]')
+// const animationContainer = document.querySelector('[data-js="animation"]')
 
 // CONTROLA A ANIMAÇÃO LOTTIE DE LOADING DA PAGINA
 // const animation = bodymovin.loadAnimation({
