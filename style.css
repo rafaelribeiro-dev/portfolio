@@ -300,6 +300,7 @@ li {
   grid-area: hello;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .hello-message {
@@ -799,8 +800,8 @@ input {
   border-radius: 3.6rem;
   background-color: transparent;
   overflow: hidden;
-  left: 3.3rem;
-  top: 2.6rem;
+  left: 2.5rem;
+  top: 2.4rem;
   position: absolute;
 }
 
@@ -1126,10 +1127,18 @@ input {
     bottom: -3rem;
   }
 }
-/* 
-@media (max-width: 1366px) {
+
+@media (min-width: 1366px) and (max-width: 1400px) {
   .button-copy {
-    bottom: -1.5rem;
+    bottom: -2rem;
+  }
+
+  .card {
+    border: 2px solid orange;
+  }
+
+  .profile .profile-about p {
+    font-size: 1.6rem;
   }
 
   .stacks .ico {
@@ -1141,13 +1150,14 @@ input {
   .contact .frame {
     width: 12.5rem;
     height: 15rem;
-    left: 2.1rem;
+    left: 1.9rem;
   }
 
   .contact .button a {
     width: 11.5rem;
   }
-} */
+}
+
 /* ---------------  LARGE DISPLAYS --------------- */
 @media (min-width: 1600px) {
   .apple-grid {
