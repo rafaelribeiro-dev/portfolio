@@ -1095,15 +1095,15 @@ input {
   }
 
   .contact .frame {
-    width: 11.5rem;
-    height: 14rem;
+    width: 130px;
+    height: 152px;
     position: relative;
-    top: 0.1rem;
-    left: -0.4rem;
+    top: 0;
+    left: -4.5px;
   }
 
   .contact .button a {
-    width: 10.5rem;
+    width: 115px;
   }
 
   .title {
@@ -1118,13 +1118,13 @@ input {
   }
 
   .stacks .ico {
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 4rem;
+    height: 4rem;
     padding: 0.6rem;
   }
 
   .button-copy {
-    bottom: -3rem;
+    bottom: -25px;
   }
 }
 
