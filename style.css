@@ -152,8 +152,8 @@ li {
 
 .apple-grid {
   max-width: 1512px;
-  height: 100vh;
-  padding: 4rem 10rem;
+  height: fit-content;
+  padding: 1rem;
   margin: 0 auto;
   display: grid;
   place-content: center;
