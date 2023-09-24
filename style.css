@@ -798,15 +798,15 @@ input {
 }
 
 .contact .frame {
-  width: 127px;
-  height: 153px;
+  width: 128px;
+  height: 155px;
   display: flex;
   border: 6px solid transparent;
   border-radius: 3.6rem;
   background-color: transparent;
   overflow: hidden;
-  left: 30px;
-  top: 29px;
+  left: 22px;
+  top: 30px;
   position: absolute;
 }
 
