@@ -114,11 +114,11 @@ body {
   }
 }
 
-p {
+/* p {
   font-size: 1.6rem;
   font-weight: 300;
   color: var(--neutral-400);
-}
+} */
 
 a {
   text-decoration: none;
@@ -140,7 +140,6 @@ li {
 .card {
   background-color: var(--neutral-100);
   border-radius: var(--border-radius);
-  border: 2px solid red;
 }
 
 .title {
@@ -159,22 +158,27 @@ li {
   display: grid;
   place-content: center;
   gap: 1rem;
-  grid-template-columns: 0.5fr 1fr 0.5fr 2.2fr 0.6fr 0.9fr;
-  grid-template-rows: 1fr 1fr 0.4fr 0.9fr 1.3fr 1fr 1fr;
-  grid-auto-flow: row;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.5fr 1.5fr 0.3fr 0.55fr 0.52fr 1fr 0.2fr 0.2fr;
   grid-template-areas:
-    'profile profile brand hello stacks stacks'
-    'profile profile welcome hello stacks stacks'
-    'profile profile projects projects stacks stacks'
-    'profile profile projects projects mail mail'
-    'profile profile projects projects mail mail'
-    'profile profile projects projects select-mode contact'
-    'resume resume projects projects select-mode contact';
+    'hello hello'
+    'profile profile'
+    'resume resume'
+    'stacks stacks'
+    'mail mail'
+    'projects projects'
+    'select-mode contact'
+    'select-mode contact';
 }
 
 .brand {
   grid-area: brand;
   overflow: hidden;
+}
+
+.brand,
+.welcome {
+  display: none;
 }
 
 .brand-logo {
@@ -191,7 +195,6 @@ li {
 
 .welcome .container {
   width: 100%;
-
   border-radius: 2rem;
 }
 
@@ -199,7 +202,7 @@ li {
   grid-area: profile;
   align-items: center;
   flex-direction: column;
-  padding: 1.5rem 2rem;
+  padding: 3rem 1.5rem;
   position: relative;
   background-image: url(./assets/dot.svg);
 }
@@ -207,14 +210,13 @@ li {
 .profile .profile-avatar img {
   width: 13rem;
   position: relative;
-  border-radius: 50%;
 }
 
 .profile .profile-avatar::before {
   content: '';
   width: 18rem;
   height: 18rem;
-  border-radius: 50%;
+  border-radius: 15px;
   background-color: var(--logo-pink);
   opacity: 0.4;
   position: absolute;
@@ -222,46 +224,52 @@ li {
   transform: translateX(-50%);
 }
 
-.profile .profile-name h2 {
-  font-size: 3rem;
-  padding-top: 1.2rem;
+.profile .profile-name {
+  display: flex;
+  flex-direction: column;
+  width: 40rem;
+  line-height: 25px;
+  text-align: center;
+}
+
+.profile .profile-name h1 {
+  font-size: 3.5rem;
+  padding-top: 4rem;
   font-weight: 700;
   color: var(--neutral-600);
   letter-spacing: -1px;
 }
-.profile .profile-name h3 {
-  font-size: 1.6rem;
+.profile .profile-name .role {
+  font-size: 2rem;
   color: var(--neutral-600);
   font-weight: 400;
   text-align: center;
   letter-spacing: -0.5px;
 }
 .profile .profile-about p {
-  font-size: 1.7rem;
   color: var(--neutral-400);
-  padding-top: 2rem;
+  padding-top: 2.3rem;
+  font-size: 2rem;
+  font-style: normal;
   font-weight: 300;
+  line-height: 24px;
+  letter-spacing: 1px;
 }
 
 .resume {
   grid-area: resume;
   background-color: #f2f3f4;
-  /* background: linear-gradient(
-    86deg,
-    var(--light-yellow-1) 12.67%,
-    var(--light-yellow-2) 141.62%
-  ); */
-
   position: relative;
   overflow: hidden;
 }
 
 .resume a {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
   letter-spacing: -0.75px;
+  color: var(--neutral-600);
 }
 
 .resume a.fill {
@@ -270,7 +278,6 @@ li {
   text-decoration: none;
   align-items: center;
   justify-content: center;
-  color: var(--neutral-600);
 }
 
 .resume svg {
@@ -375,7 +382,7 @@ li {
 }
 
 .slide-container {
-  margin: 0 35px;
+  margin: 0 10px;
   overflow: hidden;
 }
 
@@ -397,7 +404,12 @@ li {
 
 .card-slide .project-details {
   display: grid;
-  grid-template-areas: 'description description stack preview';
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 0.7fr;
+  grid-template-areas:
+    'description description'
+    'stack preview';
+  gap: 1.5rem;
   padding: 1rem;
   border-radius: 0 0 1rem 1rem;
   background-color: var(--pure-white);
@@ -422,18 +434,20 @@ li {
 }
 
 .project-details .name {
-  font-size: 15px;
+  font-size: 1.8rem;
   font-weight: 500;
+  padding-bottom: 5px;
 }
 
 .stack-details .stack-title,
 .preview-title {
-  font-size: 15px;
+  font-size: 1.8rem;
   font-weight: 500;
+  padding-bottom: 5px;
 }
 
 .project-details .job {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   color: var(--neutral-400);
 }
@@ -451,6 +465,10 @@ li {
 
 .project-preview .preview-icons img {
   cursor: pointer;
+}
+
+.swiper-navBtn {
+  display: none;
 }
 
 .swiper-navBtn {
@@ -488,12 +506,11 @@ li {
 
 .stacks .ico {
   background-color: var(--neutral-200);
-  width: 4.6rem;
-  height: 4.6rem;
+  width: 6rem;
+  height: 6rem;
   align-items: center;
   justify-content: center;
   border-radius: 1rem;
-
   position: relative;
 }
 
@@ -507,15 +524,16 @@ li {
 .stacks .description {
   justify-content: center;
   align-items: center;
+  margin-top: 10px;
 }
 
 .stacks .description p {
   color: var(--neutral-400);
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 400;
   border: 1px solid var(--neutral-400);
-  border-radius: 2rem;
-  padding: 1.3rem;
+  border-radius: 3rem;
+  padding: 1.5rem;
 }
 
 .mail {
@@ -524,24 +542,33 @@ li {
   align-items: center;
   justify-content: center;
   position: relative;
-  overflow: hidden;
+}
+
+.mail .img {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-60%);
+}
+
+.mail .img img {
+  width: 380px;
 }
 
 .button-copy {
   display: flex;
-  justify-content: center;
   width: 100%;
-  height: 5rem;
+  height: 50px;
+  justify-content: center;
   border: 1px solid var(--neutral-300);
   background: rgba(255, 255, 255, 0.2);
-  bottom: -1.4rem;
+  bottom: -39%;
   border-radius: 1.5rem;
   position: relative;
   cursor: pointer;
-  backdrop-filter: blur(10px);
+  /* backdrop-filter: blur(10px);  */
   transition: 0.8s all ease;
   text-transform: uppercase;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   overflow: hidden;
 }
 
@@ -559,7 +586,7 @@ li {
   display: block;
   text-align: center;
   padding-block: 1.5rem;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 600;
   color: var(--neutral-400);
   animation: spin_words 15s infinite;
@@ -592,30 +619,8 @@ li {
   }
 }
 
-.mail .img {
-  position: relative;
-  top: 30%;
-  transform: translateY(-60%);
-}
-.mail .img img {
-  width: 100%;
-}
-
 .mail .copy-mail {
   display: none;
-}
-
-.checkmark-container {
-  border-radius: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@keyframes checkmark {
-  100% {
-    stroke-dashoffset: 0;
-  }
 }
 
 .select-mode {
@@ -793,15 +798,15 @@ input {
 }
 
 .contact .frame {
-  width: 12.5rem;
-  height: 15rem;
+  width: 127px;
+  height: 153px;
   display: flex;
-  border: 5px solid transparent;
+  border: 6px solid transparent;
   border-radius: 3.6rem;
   background-color: transparent;
   overflow: hidden;
-  left: 3.1rem;
-  top: 2.4rem;
+  left: 30px;
+  top: 29px;
   position: absolute;
 }
 
@@ -818,9 +823,9 @@ input {
 .contact .button a {
   border-radius: 1rem;
   color: var(--neutral-100);
-  width: 11rem;
-  height: 78%;
-  padding: 0.6rem;
+  width: 111px;
+  height: 34px;
+  padding: 7px;
   display: block;
   background: rgba(255, 255, 255, 0.26);
   transition: 0.3s;
@@ -836,404 +841,9 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   text-align: center;
-}
-
-/* ---------------  MOBILE DEVICE --------------- */
-@media (max-width: 767px) {
-  .apple-grid {
-    margin: 0 auto;
-    height: fit-content;
-    padding: 1rem;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 0.5fr 1.5fr 0.3fr 0.55fr 0.52fr 1fr 0.2fr 0.2fr;
-    grid-template-areas:
-      'hello hello'
-      'profile profile'
-      'resume resume'
-      'stacks stacks'
-      'mail mail'
-      'projects projects'
-      'select-mode contact'
-      'select-mode contact';
-  }
-
-  .card {
-    border: 2px solid green;
-  }
-
-  .brand,
-  .welcome {
-    display: none;
-  }
-
-  .hello {
-    padding: 4rem;
-  }
-
-  .hello-message h1 {
-    font-size: 6rem;
-  }
-
-  .profile {
-    padding: 1.5rem 4rem;
-  }
-
-  .profile .profile-about p {
-    font-size: 2rem;
-  }
-
-  .resume a {
-    font-size: 3.5rem;
-  }
-
-  .stacks .ico {
-    width: 6rem;
-    height: 6rem;
-  }
-
-  .stacks .description p {
-    font-size: 1.6rem;
-  }
-
-  .stacks .description {
-    margin-bottom: 1rem;
-  }
-
-  .slide-container {
-    margin: 0 1rem;
-  }
-
-  .card-slide .project-details {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas:
-      'description description'
-      'stack preview';
-    gap: 1rem;
-  }
-
-  .name-job {
-    grid-area: description;
-  }
-
-  .stack-details {
-    grid-area: stack;
-
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-
-  .project-preview {
-    grid-area: preview;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-
-  .swiper-navBtn {
-    display: none;
-  }
-
-  .stacks .title {
-    font-size: 2rem;
-    font-weight: 600;
-    color: var(--neutral-600);
-  }
-
-  .stack-details .stack-icons,
-  .preview-icons {
-    gap: 1rem;
-  }
-
-  .stack-details .stack-icons img,
-  .project-preview .preview-icons img {
-    width: 2.5rem;
-  }
-
-  .mail .img img {
-    width: 35rem;
-    top: 10%;
-    position: relative;
-  }
-
-  .button-copy {
-    margin-top: 1.8rem;
-  }
-
-  .toggle-btn {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .contact .frame {
-    width: 12rem;
-    height: 14.5rem;
-    position: relative;
-    top: 0.1rem;
-    left: -0.4rem;
-    border-radius: 3.6rem;
-  }
-
-  .contact .button {
-    border-radius: 3rem;
-  }
-  .contact .button a {
-    width: 11rem;
-    padding: 0.6rem;
-    border-radius: 1rem;
-  }
-}
-
-/* ---------------  TABLETS --------------- */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .apple-grid {
-    margin: 0 auto;
-    height: fit-content;
-    padding: 1rem;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 0.1fr 1fr 0.2fr 0.5fr 1fr 0.2fr 0.2fr;
-    grid-template-areas:
-      'hello hello'
-      'profile profile'
-      'resume resume'
-      'stacks mail'
-      'projects projects'
-      'select-mode contact'
-      'select-mode contact';
-  }
-
-  .card {
-    border: 2px solid blue;
-  }
-
-  .profile {
-    padding: 1.5rem 9rem;
-  }
-
-  .profile .profile-about p {
-    font-size: 2.4rem;
-  }
-
-  .resume a {
-    font-size: 6rem;
-  }
-
-  .resume:hover svg {
-    visibility: hidden;
-  }
-
-  .stacks .ico {
-    width: 4rem;
-    height: 4rem;
-  }
-
-  .brand,
-  .welcome {
-    display: none;
-  }
-
-  .stacks .ico {
-    width: 6rem;
-    height: 6rem;
-  }
-
-  .button-copy {
-    margin-top: 7rem;
-  }
-
-  .swiper-navBtn {
-    display: none;
-  }
-
-  .contact .frame {
-    width: 14rem;
-    height: 17rem;
-    left: 11rem;
-    top: 3.4rem;
-  }
-
-  .contact .button a {
-    width: 13rem;
-    padding: 0.7rem;
-  }
-
-  .select-mode .avatar img {
-    height: 17rem;
-  }
-  .sun {
-    width: 100%;
-  }
-  .moon {
-    width: 100%;
-  }
-}
-/* ---------------  MEDIUM DISPLAYS --------------   and (max-width: 1366px) - */
-@media (min-width: 1024px) and (max-width: 1365px) {
-  .apple-grid {
-    height: 100vh;
-    padding-inline: 2rem;
-  }
-
-  .card {
-    border: 2px solid purple;
-  }
-
-  .profile .profile-name h2 {
-    font-size: 2.5rem;
-  }
-
-  .profile .profile-about p {
-    font-size: 1.4rem;
-  }
-
-  .contact .frame {
-    width: 130px;
-    height: 152px;
-    position: relative;
-    top: 0;
-    left: -4.5px;
-  }
-
-  .contact .button a {
-    width: 115px;
-  }
-
-  .title {
-    font-size: 2.4rem;
-  }
-
-  .card-slide .project-details {
-    grid-template-areas:
-      'description description'
-      'stack preview';
-    gap: 1rem;
-  }
-
-  .stacks .ico {
-    width: 4rem;
-    height: 4rem;
-    padding: 0.6rem;
-  }
-
-  .button-copy {
-    bottom: -25px;
-  }
-}
-
-@media (min-width: 1366px) and (max-width: 1400px) {
-  .button-copy {
-    bottom: -2rem;
-  }
-
-  .card {
-    border: 2px solid orange;
-  }
-
-  .profile .profile-about p {
-    font-size: 1.6rem;
-  }
-
-  .stacks .ico {
-    width: 4rem;
-    height: 4rem;
-    padding: 0.6rem;
-  }
-
-  .contact .frame {
-    width: 12.5rem;
-    height: 15rem;
-    left: 1.9rem;
-  }
-
-  .contact .button a {
-    width: 11.5rem;
-  }
-}
-
-/* ---------------  LARGE DISPLAYS --------------- */
-@media (min-width: 1600px) {
-  .apple-grid {
-    max-width: 1900px;
-
-    height: 100vh;
-  }
-
-  .card {
-    border: 2px solid pink;
-  }
-
-  .mail img {
-    width: 100%;
-  }
-
-  .stacks {
-    padding: 3rem 1rem 0 1rem;
-    /* background-color: purple; */
-  }
-
-  .button-copy {
-    bottom: -15%;
-  }
-
-  .select-mode .avatar {
-    width: 13rem;
-    top: -0.2rem;
-  }
-
-  .select-mode .sun {
-    top: 8.8rem;
-  }
-
-  .select-mode .moon {
-    top: 9rem;
-  }
-
-  .contact .frame {
-    width: 15rem;
-    height: 18rem;
-    position: relative;
-    top: 0.1rem;
-    left: -0.6rem;
-  }
-
-  @keyframes sunrise {
-    0% {
-      top: 20rem;
-      opacity: 0;
-    }
-    100% {
-      top: 8.8rem;
-      opacity: 1;
-    }
-  }
-
-  @keyframes moonshine {
-    0% {
-      top: 20rem;
-      opacity: 0;
-    }
-    100% {
-      top: 9rem;
-      opacity: 1;
-    }
-    0% {
-      top: 20rem;
-      opacity: 0;
-    }
-  }
-
-  .contact .button a {
-    width: 14rem;
-    padding: 0.9rem;
-  }
+  gap: 3px;
 }
 
 /*-----------------DARK MODE -------------------*/
