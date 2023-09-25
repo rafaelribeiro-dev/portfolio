@@ -502,7 +502,7 @@ li {
 }
 
 .stacks-icons {
-  width: 100%;
+  width: 90%;
   flex-wrap: wrap;
   gap: 1rem;
   align-items: center;
@@ -542,6 +542,7 @@ li {
 }
 
 .mail {
+  background-color: palevioletred;
   grid-area: mail;
   flex-direction: column;
   align-items: center;
@@ -804,14 +805,14 @@ input {
 
 .contact .frame {
   width: 128px;
-  height: 155px;
+  height: 157px;
   display: flex;
   border: 6px solid transparent;
   border-radius: 3.6rem;
   background-color: transparent;
   overflow: hidden;
   left: 22px;
-  top: 30px;
+  top: 29px;
   position: absolute;
 }
 
