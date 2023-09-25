@@ -151,7 +151,6 @@ li {
 }
 
 .apple-grid {
-  background-color: #d8f6ff;
   max-width: 1512px;
   height: fit-content;
   padding: 1rem;
@@ -209,17 +208,16 @@ li {
 }
 
 .profile .profile-avatar img {
-  width: 13rem;
+  width: 12rem;
   position: relative;
 }
 
 .profile .profile-avatar::before {
   content: '';
-  width: 18rem;
-  height: 18rem;
-  border-radius: 15px;
-  background-color: var(--logo-pink);
-  opacity: 0.4;
+  width: 19rem;
+  height: 19rem;
+  border-radius: 50%;
+  background-color: var(--pure-white);
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -270,7 +268,7 @@ li {
   font-weight: 700;
   line-height: normal;
   letter-spacing: -0.75px;
-  color: var(--neutral-600);
+  color: #6491c6;
 }
 
 .resume a.fill {
@@ -542,7 +540,6 @@ li {
 }
 
 .mail {
-  background-color: palevioletred;
   grid-area: mail;
   flex-direction: column;
   align-items: center;
@@ -571,10 +568,9 @@ li {
   border-radius: 1.5rem;
   position: absolute;
   cursor: pointer;
-  /* backdrop-filter: blur(10px);  */
   transition: 0.8s all ease;
   text-transform: uppercase;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   overflow: hidden;
 }
 
@@ -592,7 +588,7 @@ li {
   display: block;
   text-align: center;
   padding-block: 1.5rem;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 600;
   color: var(--neutral-400);
   animation: spin_words 15s infinite;
@@ -642,7 +638,7 @@ li {
 
 .select-mode.night {
   border-radius: 20px;
-  background-color: var(--midnight-sky);
+  background-color: var(--pure-black);
 }
 
 input {
@@ -785,31 +781,29 @@ input {
   align-items: center;
   flex-direction: column;
   background: var(--neutral-100);
-  background-image: url(./assets/topographic_bg.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   position: relative;
 }
 
-.contact::before {
-  content: '';
+.contact .watch {
+  position: fixed;
   width: 100%;
   height: 100%;
   background-image: url(./assets/watch.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  position: absolute;
 }
 
 .contact .frame {
   width: 128px;
   height: 157px;
   display: flex;
-  border: 6px solid transparent;
+  border: 6px solid var(--neutral-600);
   border-radius: 3.6rem;
-  background-color: transparent;
+  background-color: var(--neutral-600);
   overflow: hidden;
   left: 22px;
   top: 29px;
@@ -829,8 +823,8 @@ input {
 .contact .button a {
   border-radius: 1rem;
   color: var(--neutral-100);
-  width: 111px;
-  height: 34px;
+  width: 100px;
+  height: 30px;
   padding: 7px;
   display: block;
   background: rgba(255, 255, 255, 0.26);
@@ -856,8 +850,6 @@ input {
 
 @media (min-width: 576px) {
   .apple-grid {
-    background-color: blue;
-
     margin: 0 auto;
     height: fit-content;
     padding: 1rem;
@@ -869,8 +861,8 @@ input {
       'resume resume'
       'stacks mail'
       'projects projects'
-      'select-mode contact'
-      'select-mode contact';
+      'select-mode select-mode'
+      'contact contact';
   }
 
   .stacks .ico {
@@ -883,8 +875,6 @@ input {
 
 @media (min-width: 1024px) {
   .apple-grid {
-    background-color: yellow;
-
     margin: 0 auto;
     height: fit-content;
     padding: 1rem;
@@ -900,22 +890,15 @@ input {
       'profile profile projects projects select-mode contact'
       'resume resume projects projects select-mode contact';
   }
-
-  .card {
-    background-color: var(--neutral-100);
-    border-radius: var(--border-radius);
-  }
 }
 
 /* --------------- MEDIUM DISPLAYS --------------- */
 
 @media (min-width: 1366px) {
   .apple-grid {
-    background-color: #e8e2f7;
-    max-width: 1512px;
+    max-width: 150rem;
     height: 100vh;
     padding: 4rem 10rem;
-    margin: 0 auto;
     display: grid;
     place-content: center;
     gap: 1rem;
@@ -942,12 +925,12 @@ input {
   }
 
   .profile .profile-avatar img {
-    width: 12rem;
+    width: 10rem;
   }
 
   .profile .profile-avatar::before {
-    width: 16rem;
-    height: 16rem;
+    width: 14rem;
+    height: 14rem;
   }
   .profile .profile-name {
     width: 30rem;
@@ -1054,8 +1037,8 @@ input {
   }
 
   .contact .frame {
-    width: 127px;
-    height: 157px;
+    width: 124px;
+    height: 147px;
     left: 32px;
     top: 27px;
   }
