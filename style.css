@@ -32,7 +32,7 @@ body {
   --light-yellow-2: #fefae5;
   --logo-pink: #ff3d7b;
   --logo-yellow: #ffd876;
-  --blue-sky: #beebff;
+  --blue-sky: #62bfeb;
   --midnight-sky: #172334;
   --border-radius: 2.4rem;
 }
@@ -151,6 +151,7 @@ li {
 }
 
 .apple-grid {
+  background-color: #d8f6ff;
   max-width: 1512px;
   height: fit-content;
   padding: 1rem;
@@ -242,7 +243,7 @@ li {
 .profile .profile-name .role {
   font-size: 2rem;
   color: var(--neutral-600);
-  font-weight: 400;
+  font-weight: 300;
   text-align: center;
   letter-spacing: -0.5px;
 }
@@ -321,8 +322,8 @@ li {
   transform: translateZ(20px);
 }
 
-.hello-message h1 {
-  font-size: 6.3rem;
+.hello-message h2 {
+  font-size: 6.7rem;
   text-align: center;
   font-style: normal;
   font-weight: 700;
@@ -343,7 +344,11 @@ li {
   transform: translateZ(20px);
 }
 
-.hello-message h1::before {
+.hello-message .stroke {
+  width: 320px;
+}
+
+.hello-message h2::before {
   content: '';
   position: absolute;
   top: 0;
@@ -506,8 +511,8 @@ li {
 
 .stacks .ico {
   background-color: var(--neutral-200);
-  width: 6rem;
-  height: 6rem;
+  width: 5rem;
+  height: 5rem;
   align-items: center;
   justify-content: center;
   border-radius: 1rem;
@@ -551,19 +556,19 @@ li {
 }
 
 .mail .img img {
-  width: 380px;
+  width: 340px;
 }
 
 .button-copy {
   display: flex;
-  width: 100%;
+  width: 95%;
   height: 50px;
   justify-content: center;
   border: 1px solid var(--neutral-300);
   background: rgba(255, 255, 255, 0.2);
-  bottom: -39%;
+  bottom: 10px;
   border-radius: 1.5rem;
-  position: relative;
+  position: absolute;
   cursor: pointer;
   /* backdrop-filter: blur(10px);  */
   transition: 0.8s all ease;
@@ -846,6 +851,327 @@ input {
   gap: 3px;
 }
 
+/* --------------- SMALL DISPLAYS --------------- */
+
+@media (min-width: 768px) {
+  .apple-grid {
+    background-color: #ffe5f4;
+    margin: 0 auto;
+    height: fit-content;
+    padding: 1rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.1fr 1fr 0.2fr 0.5fr 1fr 0.2fr 0.2fr;
+    grid-template-areas:
+      'hello hello'
+      'profile profile'
+      'resume resume'
+      'stacks mail'
+      'projects projects'
+      'select-mode contact'
+      'select-mode contact';
+  }
+
+  .card {
+    background-color: var(--neutral-100);
+    border-radius: var(--border-radius);
+  }
+}
+
+/* --------------- MEDIUM DISPLAYS --------------- */
+
+@media (min-width: 1366px) {
+  .apple-grid {
+    background-color: #e8e2f7;
+    max-width: 1512px;
+    height: 100vh;
+    padding: 4rem 10rem;
+    margin: 0 auto;
+    display: grid;
+    place-content: center;
+    gap: 1rem;
+    grid-template-columns: 0.5fr 1fr 0.5fr 2.2fr 0.6fr 0.9fr;
+    grid-template-rows: 1fr 1fr 0.4fr 0.9fr 1.3fr 1fr 1fr;
+    grid-auto-flow: row;
+    grid-template-areas:
+      'profile profile brand hello stacks stacks'
+      'profile profile welcome hello stacks stacks'
+      'profile profile projects projects stacks stacks'
+      'profile profile projects projects mail mail'
+      'profile profile projects projects mail mail'
+      'profile profile projects projects select-mode contact'
+      'resume resume projects projects select-mode contact';
+  }
+
+  .brand,
+  .welcome {
+    display: flex;
+  }
+
+  .profile {
+    padding: 2rem 1.5rem;
+  }
+
+  .profile .profile-avatar img {
+    width: 12rem;
+  }
+
+  .profile .profile-avatar::before {
+    width: 16rem;
+    height: 16rem;
+  }
+  .profile .profile-name {
+    width: 30rem;
+  }
+
+  .profile .profile-name h1 {
+    font-size: 2.6rem;
+    padding-top: 2rem;
+  }
+
+  .profile .profile-name .role {
+    font-size: 1.8rem;
+  }
+
+  .profile .profile-about p {
+    font-size: 1.6rem;
+    padding-top: 1rem;
+    line-height: 20px;
+  }
+
+  .resume a {
+    font-size: 2.8rem;
+  }
+
+  .brand {
+    align-items: center;
+    justify-content: center;
+    padding-left: 7px;
+  }
+
+  .swiper-navBtn {
+    display: flex;
+  }
+
+  .card-container {
+    max-width: 1120px;
+    width: 100%;
+    padding: 35px 0;
+  }
+
+  .slide-container {
+    margin: 0 33px;
+    overflow: hidden;
+  }
+
+  .card-slide {
+    width: 300px;
+    background-color: var(--pure-white);
+    border-radius: 8px;
+  }
+
+  .card-slide .image-box {
+    width: 100%;
+  }
+
+  .card-slide .image-box img {
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem 1rem 0 0;
+  }
+
+  .card-slide .project-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 'description description stack preview';
+    padding: 1rem;
+    border-radius: 0 0 1rem 1rem;
+    background-color: var(--pure-white);
+    border-top: 2px dashed var(--neutral-300);
+  }
+  .project-details .name,
+  .stack-details .stack-title,
+  .preview-title {
+    font-size: 1.6rem;
+  }
+
+  .project-details .job {
+    font-size: 1.4rem;
+  }
+
+  .stacks .ico {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .stacks .description p {
+    font-size: 1.4rem;
+    padding: 1.3rem;
+  }
+
+  .mail .img img {
+    width: 320px;
+  }
+
+  .button-copy {
+    width: 94%;
+    position: absolute;
+    bottom: 10px;
+  }
+
+  .contact .frame {
+    width: 122px;
+    height: 147px;
+    left: 34px;
+    top: 27px;
+  }
+}
+
+/* --------------- LARGE DISPLAYS --------------- */
+
+@media (min-width: 1600px) {
+  .apple-grid {
+    background-color: #fdf3ce;
+    max-width: 1600px;
+    height: 100vh;
+    padding: 4rem 5rem;
+    margin: 0 auto;
+    display: grid;
+    place-content: center;
+    gap: 1rem;
+    grid-template-columns: 0.5fr 1fr 0.5fr 2.2fr 0.6fr 0.9fr;
+    grid-template-rows: 1fr 1fr 0.4fr 0.9fr 1.3fr 1fr 1fr;
+    grid-auto-flow: row;
+    grid-template-areas:
+      'profile profile brand hello stacks stacks'
+      'profile profile welcome hello stacks stacks'
+      'profile profile projects projects stacks stacks'
+      'profile profile projects projects mail mail'
+      'profile profile projects projects mail mail'
+      'profile profile projects projects select-mode contact'
+      'resume resume projects projects select-mode contact';
+  }
+
+  .card {
+    background-color: var(--neutral-100);
+    border-radius: var(--border-radius);
+  }
+
+  .brand,
+  .welcome {
+    display: block;
+  }
+
+  .hello-message h2 {
+    font-size: 8rem;
+  }
+
+  .hello-message .stroke {
+    width: 390px;
+  }
+
+  .profile .profile-about p {
+    font-size: 1.8rem;
+    padding: 2rem 1.2rem;
+  }
+
+  .brand {
+    display: grid;
+    place-items: center;
+  }
+
+  .brand-logo img {
+    height: 100px;
+    padding-left: 10px;
+  }
+
+  .stacks .description p {
+    margin-top: 2rem;
+  }
+
+  .swiper-navBtn {
+    display: flex;
+  }
+
+  .slide-container {
+    margin: 0 35px;
+  }
+
+  .card-slide .project-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 0.1fr;
+    grid-template-areas: 'description description stack preview';
+    gap: 1.5rem;
+    padding: 1rem;
+    border-radius: 0 0 1rem 1rem;
+    background-color: var(--pure-white);
+    border-top: 2px dashed var(--neutral-300);
+  }
+
+  .mail .img img {
+    width: 370px;
+  }
+
+  .contact .frame {
+    width: 153px;
+    height: 186px;
+    display: flex;
+    border: 6px solid transparent;
+    border-radius: 4.6rem;
+    background-color: transparent;
+    overflow: hidden;
+    left: 32px;
+    top: 33px;
+    position: absolute;
+  }
+
+  .contact .button a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    color: var(--neutral-100);
+    width: 140px;
+    height: 34px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.26);
+    transition: 0.3s;
+    position: relative;
+  }
+
+  .select-mode {
+    background: var(--blue-sky);
+  }
+
+  .select-mode .avatar img {
+    width: 140px;
+    transition: all 1s;
+  }
+
+  @keyframes sunrise {
+    0% {
+      top: 20rem;
+      opacity: 0;
+    }
+    100% {
+      top: 9.8rem;
+      opacity: 1;
+    }
+  }
+
+  @keyframes moonshine {
+    0% {
+      top: 20rem;
+      opacity: 0;
+    }
+    100% {
+      top: 9.8rem;
+      opacity: 1;
+    }
+  }
+}
+
 /*-----------------DARK MODE -------------------*/
 
 body.dark {
@@ -870,12 +1196,13 @@ body.dark {
   color: var(--neutral-300);
 }
 
-.dark .profile .profile-name h2 {
+.dark .profile .profile-name h1 {
   color: var(--neutral-100);
 }
 
-.dark .profile .profile-name h3 {
+.dark .profile .profile-name .role {
   color: var(--neutral-100);
+  font-weight: 300;
 }
 
 .dark .stacks .ico,
