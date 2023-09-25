@@ -854,9 +854,10 @@ input {
 
 /* --------------- SMALL DISPLAYS --------------- */
 
-@media (min-width: 768px) {
+@media (min-width: 576px) {
   .apple-grid {
-    background-color: #ffe5f4;
+    background-color: blue;
+
     margin: 0 auto;
     height: fit-content;
     padding: 1rem;
@@ -870,6 +871,34 @@ input {
       'projects projects'
       'select-mode contact'
       'select-mode contact';
+  }
+
+  .stacks .ico {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+}
+
+/* --------------- SMALL DISPLAYS --------------- */
+
+@media (min-width: 1024px) {
+  .apple-grid {
+    background-color: yellow;
+
+    margin: 0 auto;
+    height: fit-content;
+    padding: 1rem;
+    grid-template-columns: 0.5fr 1fr 0.5fr 2.2fr 0.6fr 0.9fr;
+    grid-template-rows: 1fr 1fr 0.4fr 0.9fr 1.3fr 1fr 1fr;
+    grid-auto-flow: row;
+    grid-template-areas:
+      'profile profile brand hello stacks stacks'
+      'profile profile welcome hello stacks stacks'
+      'profile profile projects projects stacks stacks'
+      'profile profile projects projects mail mail'
+      'profile profile projects projects mail mail'
+      'profile profile projects projects select-mode contact'
+      'resume resume projects projects select-mode contact';
   }
 
   .card {
@@ -1005,6 +1034,10 @@ input {
     height: 5rem;
   }
 
+  .stacks-icons {
+    width: 100%;
+  }
+
   .stacks .description p {
     font-size: 1.4rem;
     padding: 1.3rem;
@@ -1021,9 +1054,9 @@ input {
   }
 
   .contact .frame {
-    width: 122px;
-    height: 147px;
-    left: 34px;
+    width: 127px;
+    height: 157px;
+    left: 32px;
     top: 27px;
   }
 }
