@@ -777,33 +777,70 @@ input {
 
 .contact {
   grid-area: contact;
-  display: grid;
-  place-content: center;
+  align-items: center;
   position: relative;
   overflow: hidden;
 }
 
-.interface img {
-  width: 96%;
-  position: absolute;
-  top: -29px;
+.contact img{
+  position: relative;
+  width: 70%;
+  display: flex;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%);
+  transform: translate(-50%, -50%);
+  z-index: 3;
 }
 
-.clock-background {
-  background-color: var(--logo-pink);
+.contact .frame {
+  width: 125px;
+  height: 152px;
+  display: flex;
+  border-radius: 3.6rem;
+  overflow: hidden;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   position: absolute;
-  width: 133px;
-  height: 162px;
-  border-radius: 39px;
+  background-color: black;
+  z-index: 1;
 }
 
-.clock-menu {
+.contact .button {
+  border: none;
+  font-weight: 600;
+  font-size: 1.6rem;
+  cursor: pointer;
+  display: flex;
+  background: transparent;
 }
+
+.contact .button a {
+  border-radius: 1rem;
+  color: var(--neutral-100);
+  width: 10rem;
+  padding: 0.7rem;
+  display: flex;
+  justify-content: center;
+  background: lightpink;
+  transition: 0.3s;
+  position: relative;
+}
+
+.contact .button a:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.contact ul {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+
+}
+
 
 /* --------------- SMALL DISPLAYS --------------- */
 
@@ -843,25 +880,6 @@ input {
 
   .select-mode .avatar img {
     width: 140px;
-  }
-
-  .interface img {
-    width: 53%;
-    position: absolute;
-    top: -30px;
-    left: 50%;
-    transform: translate(-50%, 2%);
-  }
-
-  .clock-background {
-    background-color: lightgreen;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    width: 150px;
-    height: 185px;
-    border-radius: 39px;
   }
 
   .select-mode .sun {
@@ -1031,24 +1049,22 @@ input {
     bottom: 10px;
   }
 
-  .interface img {
-    width: 80%;
-    position: absolute;
-    top: -30px;
-    left: 50%;
-    transform: translate(-50%, 2%);
-  }
+  
 
-  .clock-background {
-    background-color: #cdb4db;
+  .contact img{
+    position: relative;
+    width: 83%;
+    display: flex;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    position: absolute;
-    width: 130px;
-    height: 155px;
-    border-radius: 39px;
+    z-index: 3;
   }
+
+
+
+
+
 
   .select-mode .avatar img {
     width: 115px;
@@ -1180,26 +1196,7 @@ input {
       top: 9.8rem;
       opacity: 1;
     }
-  }
-
-  .interface img {
-    width: 70%;
-    position: absolute;
-    top: -35px;
-    left: 50%;
-    transform: translate(-50%, 2%);
-  }
-
-  .clock-background {
-    background-color: #748cab;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    width: 130px;
-    height: 155px;
-    border-radius: 39px;
-  }
+  
 }
 
 /*-----------------DARK MODE -------------------*/
