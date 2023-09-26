@@ -428,7 +428,7 @@ li {
 
   display: flex;
   flex-direction: column;
-  padding-inline: 2rem;
+  padding-inline: 1rem;
 }
 
 .project-preview {
@@ -458,6 +458,7 @@ li {
 .stack-details .stack-icons,
 .preview-icons {
   display: flex;
+  flex-direction: column;
   gap: 0.5rem;
 }
 
@@ -527,7 +528,6 @@ li {
 .stacks .description {
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
 }
 
 .stacks .description p {
@@ -784,7 +784,7 @@ input {
 }
 
 .interface img {
-  width: 15.1rem;
+  width: 96%;
   position: absolute;
   top: -20px;
   left: 50%;
@@ -943,6 +943,7 @@ input {
     font-size: 1.6rem;
     padding-top: 1rem;
     line-height: 20px;
+    padding-inline: 2rem;
   }
 
   .resume a {
@@ -988,7 +989,7 @@ input {
 
   .card-slide .project-details {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 0.1fr;
     grid-template-rows: 1fr;
     grid-template-areas: 'description description stack preview';
     padding: 1rem;
@@ -1047,6 +1048,22 @@ input {
     width: 130px;
     height: 155px;
     border-radius: 39px;
+  }
+
+  .select-mode .avatar img {
+    width: 115px;
+  }
+
+  .select-mode .sun,
+  .moon {
+    width: fit-content;
+  }
+
+  .stack-icons span {
+    border: 1px solid black;
+    border-radius: 2px;
+    padding: 0.2rem;
+    width: fit-content;
   }
 }
 
