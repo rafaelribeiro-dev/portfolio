@@ -792,13 +792,13 @@ input {
 }
 
 .clock-background {
-  background-color: lightskyblue;
+  background-color: var(--logo-pink);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   position: absolute;
-  width: 132px;
-  height: 160px;
+  width: 133px;
+  height: 162px;
   border-radius: 39px;
 }
 
