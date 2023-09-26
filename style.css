@@ -794,10 +794,11 @@ input {
 }
 
 .contact .frame {
-  width: 135px;
-  height: 160px;
+  width: 140px;
+  height: 170px;
   display: flex;
   border-radius: 3.6rem;
+  padding: 10px;
 
   overflow: hidden;
   top: 50%;
