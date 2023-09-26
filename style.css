@@ -786,19 +786,19 @@ input {
 .interface img {
   width: 96%;
   position: absolute;
-  top: -20px;
+  top: -29px;
   left: 50%;
   transform: translate(-50%);
 }
 
 .clock-background {
-  background-color: lightcoral;
+  background-color: lightskyblue;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   position: absolute;
-  width: 130px;
-  height: 150px;
+  width: 132px;
+  height: 160px;
   border-radius: 39px;
 }
 
