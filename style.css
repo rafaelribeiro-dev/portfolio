@@ -1,7 +1,7 @@
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 html,
@@ -777,73 +777,32 @@ input {
 
 .contact {
   grid-area: contact;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background: var(--neutral-100);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  display: grid;
+  place-content: center;
   position: relative;
-}
-
-.contact .watch {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background-image: url(./assets/watch.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-}
-
-.contact .frame {
-  width: 128px;
-  height: 157px;
-  display: flex;
-  border: 6px solid var(--neutral-600);
-  border-radius: 3.6rem;
-  background-color: var(--neutral-600);
   overflow: hidden;
-  left: 22px;
-  top: 29px;
+}
+
+.interface img {
+  width: 15.1rem;
   position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translate(-50%);
 }
 
-.contact .button {
-  border: none;
-  color: var(--neutral-100);
-  font-weight: 600;
-  font-size: 1.6rem;
-  cursor: pointer;
-  display: block;
-  background: transparent;
+.clock-background {
+  background-color: lightcoral;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: 130px;
+  height: 150px;
+  border-radius: 39px;
 }
 
-.contact .button a {
-  border-radius: 1rem;
-  color: var(--neutral-100);
-  width: 100px;
-  height: 30px;
-  padding: 7px;
-  display: block;
-  background: rgba(255, 255, 255, 0.26);
-  transition: 0.3s;
-  position: relative;
-}
-
-.contact .button a:hover {
-  background: rgba(255, 255, 255, 0.4);
-}
-
-.contact ul {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  text-align: center;
-  gap: 3px;
+.clock-menu {
 }
 
 /* --------------- SMALL DISPLAYS --------------- */
@@ -854,20 +813,62 @@ input {
     height: fit-content;
     padding: 1rem;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 0.1fr 1fr 0.2fr 0.5fr 1fr 0.2fr 0.2fr;
+    grid-template-rows: 0.3fr 1fr 0.2fr 0.4fr 1fr 0.2fr 0.2fr;
     grid-template-areas:
       'hello hello'
       'profile profile'
       'resume resume'
       'stacks mail'
       'projects projects'
-      'select-mode select-mode'
-      'contact contact';
+      'select-mode contact'
+      'select-mode contact';
+  }
+
+  .profile .profile-about p {
+    padding-inline: 6rem;
+  }
+
+  .resume a {
+    font-size: 5rem;
+  }
+
+  .stacks-icons {
+    margin-bottom: 0.5rem;
   }
 
   .stacks .ico {
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .select-mode .avatar img {
+    width: 140px;
+  }
+
+  .interface img {
+    width: 53%;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translate(-50%, 2%);
+  }
+
+  .clock-background {
+    background-color: lightgreen;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 150px;
+    height: 185px;
+    border-radius: 39px;
+  }
+
+  .select-mode .sun {
+    width: -webkit-fill-available;
+  }
+  .moon {
+    width: -webkit-fill-available;
   }
 }
 
@@ -878,17 +879,10 @@ input {
     margin: 0 auto;
     height: fit-content;
     padding: 1rem;
-    grid-template-columns: 0.5fr 1fr 0.5fr 2.2fr 0.6fr 0.9fr;
-    grid-template-rows: 1fr 1fr 0.4fr 0.9fr 1.3fr 1fr 1fr;
+    grid-template-columns: 0.6fr 0.6fr 2.2fr 0.6fr 0.5fr;
+    grid-template-rows: 0.3fr 0.3fr 0.2fr 0.9fr 1.3fr 1fr 1fr;
     grid-auto-flow: row;
-    grid-template-areas:
-      'profile profile brand hello stacks stacks'
-      'profile profile welcome hello stacks stacks'
-      'profile profile projects projects stacks stacks'
-      'profile profile projects projects mail mail'
-      'profile profile projects projects mail mail'
-      'profile profile projects projects select-mode contact'
-      'resume resume projects projects select-mode contact';
+    grid-template-areas: '';
   }
 }
 
@@ -1036,11 +1030,23 @@ input {
     bottom: 10px;
   }
 
-  .contact .frame {
-    width: 124px;
-    height: 147px;
-    left: 32px;
-    top: 27px;
+  .interface img {
+    width: 80%;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translate(-50%, 2%);
+  }
+
+  .clock-background {
+    background-color: #cdb4db;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 130px;
+    height: 155px;
+    border-radius: 39px;
   }
 }
 
@@ -1048,7 +1054,6 @@ input {
 
 @media (min-width: 1600px) {
   .apple-grid {
-    background-color: #fdf3ce;
     max-width: 1600px;
     height: 100vh;
     padding: 4rem 5rem;
@@ -1067,11 +1072,6 @@ input {
       'profile profile projects projects mail mail'
       'profile profile projects projects select-mode contact'
       'resume resume projects projects select-mode contact';
-  }
-
-  .card {
-    background-color: var(--neutral-100);
-    border-radius: var(--border-radius);
   }
 
   .brand,
@@ -1102,6 +1102,10 @@ input {
     padding-left: 10px;
   }
 
+  .stacks-icons {
+    width: 90%;
+  }
+
   .stacks .description p {
     margin-top: 2rem;
   }
@@ -1128,33 +1132,6 @@ input {
 
   .mail .img img {
     width: 370px;
-  }
-
-  .contact .frame {
-    width: 153px;
-    height: 186px;
-    display: flex;
-    border: 6px solid transparent;
-    border-radius: 4.6rem;
-    background-color: transparent;
-    overflow: hidden;
-    left: 32px;
-    top: 33px;
-    position: absolute;
-  }
-
-  .contact .button a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 1rem;
-    color: var(--neutral-100);
-    width: 140px;
-    height: 34px;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.26);
-    transition: 0.3s;
-    position: relative;
   }
 
   .select-mode {
@@ -1186,6 +1163,25 @@ input {
       top: 9.8rem;
       opacity: 1;
     }
+  }
+
+  .interface img {
+    width: 70%;
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translate(-50%, 2%);
+  }
+
+  .clock-background {
+    background-color: #748cab;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 130px;
+    height: 155px;
+    border-radius: 39px;
   }
 }
 
