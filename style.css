@@ -784,19 +784,21 @@ input {
 
 .contact img{
   position: relative;
-  width: 70%;
+  width: 100%;
   display: flex;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 3;
+  
 }
 
 .contact .frame {
-  width: 125px;
-  height: 152px;
+  width: 135px;
+  height: 160px;
   display: flex;
   border-radius: 3.6rem;
+
   overflow: hidden;
   top: 50%;
   left: 50%;
@@ -1053,7 +1055,7 @@ input {
 
   .contact img{
     position: relative;
-    width: 83%;
+    width: 86%;
     display: flex;
     top: 50%;
     left: 50%;
