@@ -784,28 +784,27 @@ input {
 
 .contact img {
   position: relative;
-  width: min(90%, 100%);
+  width: min(95%, 100%);
   display: flex;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 3;
+  /* z-index: 3; */
 }
 
 .contact .frame {
-  width: 140px;
-  height: 170px;
+  width: 130px; /*140px*/
+  height: 155px; /*170px*/
   display: flex;
   border-radius: 3.6rem;
   padding: 10px;
-
   overflow: hidden;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   position: absolute;
   background-color: black;
-  z-index: 1;
+  /* z-index: 1; */
 }
 
 .contact .button {
@@ -815,13 +814,14 @@ input {
   cursor: pointer;
   display: flex;
   background: transparent;
+  padding: 2px;
 }
 
 .contact .button a {
   border-radius: 1rem;
   color: var(--neutral-100);
-  width: 12rem;
-  padding: 0.7rem;
+  width: 11rem;
+  padding: 0.6rem;
   display: flex;
   justify-content: center;
   background: rgba(255, 255, 255, 0.2);
@@ -896,7 +896,7 @@ input {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 3;
+    /* z-index: 3; */
   }
 }
 
@@ -1066,7 +1066,7 @@ input {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 3;
+    /* z-index: 3; */
   }
 
   .select-mode .avatar img {
