@@ -539,6 +539,13 @@ li {
   padding: 1.5rem;
 }
 
+.stack-icons span {
+  border: 1px solid black;
+  border-radius: 2px;
+  padding: 0.2rem;
+  width: fit-content;
+}
+
 .mail {
   grid-area: mail;
   flex-direction: column;
@@ -784,17 +791,23 @@ input {
 
 .contact img {
   position: relative;
-  width: min(95%, 100%);
+  width: min(100%, 100%);
   display: flex;
-  top: 50%;
+  top: 50.5%;
   left: 50%;
   transform: translate(-50%, -50%);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
   /* z-index: 3; */
 }
 
 .contact .frame {
-  width: 130px; /*140px*/
-  height: 155px; /*170px*/
+  /* width: min(130px, 220px); 140px */
+  /* height: min(155px, 200px); 170px */
+  width: 126px;
+  height: 152px;
   display: flex;
   border-radius: 3.6rem;
   padding: 10px;
@@ -803,7 +816,7 @@ input {
   left: 50%;
   transform: translate(-50%, -50%);
   position: absolute;
-  background-color: black;
+  background-color: blue;
   /* z-index: 1; */
 }
 
@@ -1059,11 +1072,17 @@ input {
     bottom: 10px;
   }
 
+  .contact .frame {
+    width: 143px;
+    height: 176px;
+  }
+
   .contact img {
     position: relative;
-    width: min(86%, 100%);
+    width: min(100%, 100%); /*86%*/
     display: flex;
-    top: 50%;
+    flex-direction: column;
+    top: 50.5%;
     left: 50%;
     transform: translate(-50%, -50%);
     /* z-index: 3; */
