@@ -412,11 +412,11 @@ li {
   grid-template-areas:
     'description description'
     'stack preview';
-  gap: 1.5rem;
+  gap: 1rem;
   padding: 1rem;
   border-radius: 0 0 1rem 1rem;
   background-color: var(--pure-white);
-  border-top: 2px dashed var(--neutral-300);
+  border-top: 1px dashed var(--neutral-300);
 }
 
 .name-job {
@@ -425,7 +425,7 @@ li {
 
 .stack-details {
   grid-area: stack;
-
+  width: 100px;
   display: flex;
   flex-direction: column;
   padding-inline: 1rem;
@@ -433,7 +433,6 @@ li {
 
 .project-preview {
   grid-area: preview;
-  padding-inline: 2rem;
 }
 
 .project-details .name {
@@ -458,8 +457,20 @@ li {
 .stack-details .stack-icons,
 .preview-icons {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   gap: 0.5rem;
+}
+
+.preview-icons a {
+  width: fit-content;
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 0.2rem;
+  color: black;
+}
+
+.preview-icons a:visited {
+  color: black;
 }
 
 .stack-details .stack-icons img,
@@ -467,7 +478,7 @@ li {
   width: 2rem;
 }
 
-.project-preview .preview-icons img {
+.project-preview .preview-icons a {
   cursor: pointer;
 }
 
@@ -535,13 +546,13 @@ li {
   font-size: 1.6rem;
   font-weight: 400;
   border: 1px solid var(--neutral-400);
-  border-radius: 3rem;
+  border-radius: 1.5rem;
   padding: 1.5rem;
 }
 
 .stack-icons span {
   border: 1px solid black;
-  border-radius: 2px;
+  border-radius: 3px;
   padding: 0.2rem;
   width: fit-content;
 }
@@ -810,7 +821,7 @@ input {
   left: 50%;
   transform: translate(-50%, -50%);
   position: relative;
-  background-color: lightskyblue;
+  background-color: black;
 }
 
 .contact .button {
@@ -1024,11 +1035,10 @@ input {
     display: grid;
     grid-template-columns: 1fr 0.1fr;
     grid-template-rows: 1fr;
-    grid-template-areas: 'description description stack preview';
+    grid-template-areas: 'description stack preview';
     padding: 1rem;
     border-radius: 0 0 1rem 1rem;
     background-color: var(--pure-white);
-    border-top: 2px dashed var(--neutral-300);
   }
   .project-details .name,
   .stack-details .stack-title,
@@ -1047,11 +1057,23 @@ input {
 
   .stacks-icons {
     width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .stack-details .stack-icons,
+  .preview-icons {
+    flex-wrap: wrap;
+    width: 80px;
   }
 
   .stacks .description p {
     font-size: 1.4rem;
     padding: 1.3rem;
+  }
+
+  .stack-details {
+    width: 100px;
+    padding-inline: 1rem;
   }
 
   .mail .img img {
@@ -1065,13 +1087,14 @@ input {
   }
 
   .contact .frame {
-    width: 130px;
-    height: 160px;
+    width: 125px;
+    height: 150px;
   }
 
   .contact img {
     position: absolute;
-    width: min(100%, 100%); /*86%*/
+    width: 170px;
+    max-width: 177px;
     display: flex;
     flex-direction: column;
     top: 50.5%;
@@ -1089,12 +1112,12 @@ input {
     width: fit-content;
   }
 
-  .stack-icons span {
+  /* .stack-icons span {
     border: 1px solid black;
     border-radius: 2px;
     padding: 0.2rem;
     width: fit-content;
-  }
+  } */
 }
 
 /* --------------- LARGE DISPLAYS --------------- */
