@@ -257,7 +257,6 @@ li {
 
 .resume {
   grid-area: resume;
-  background-color: #f2f3f4;
   position: relative;
   overflow: hidden;
 }
@@ -268,7 +267,10 @@ li {
   font-weight: 700;
   line-height: normal;
   letter-spacing: -0.75px;
-  color: #6491c6;
+  background: linear-gradient(89deg, #ff487a 2.77%, #ffd876 172.6%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .resume a.fill {
@@ -416,7 +418,7 @@ li {
   padding: 1rem;
   border-radius: 0 0 1rem 1rem;
   background-color: var(--pure-white);
-  border-top: 1px dashed var(--neutral-300);
+  border-top: 1px solid var(--neutral-300);
 }
 
 .name-job {
@@ -428,7 +430,6 @@ li {
   width: 100px;
   display: flex;
   flex-direction: column;
-  padding-inline: 1rem;
 }
 
 .project-preview {
@@ -656,7 +657,7 @@ li {
 
 .select-mode.night {
   border-radius: 20px;
-  background-color: var(--pure-black);
+  background-color: #192237;
 }
 
 input {
@@ -835,15 +836,18 @@ input {
 }
 
 .contact .button a {
-  border-radius: 1rem;
-  color: var(--neutral-100);
+  border-radius: 8px;
   width: 11rem;
   padding: 0.6rem;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
+  padding-left: 10px;
   background: rgba(255, 255, 255, 0.2);
   transition: 0.3s;
   position: relative;
+  color: var(--neutral-100);
+  font-size: 1.4rem;
+  font-weight: 300;
 }
 
 .contact .button a:hover {
@@ -1244,7 +1248,7 @@ body.dark {
 .dark .loader_bg {
   background-color: var(--pure-black);
 }
-
+.dark .resume,
 .dark .mail,
 .dark .hello,
 .dark .stacks,
@@ -1255,7 +1259,7 @@ body.dark {
   background-color: var(--neutral-600);
 }
 
-.dark .card p {
+.dark .card .profile-about p {
   color: var(--neutral-300);
 }
 
@@ -1274,7 +1278,6 @@ body.dark {
 }
 
 .dark .projects span {
-  color: var(--neutral-100);
 }
 
 .dark .swiper-pagination-bullet {
