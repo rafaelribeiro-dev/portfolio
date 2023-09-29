@@ -564,6 +564,7 @@ li {
   align-items: center;
   justify-content: center;
   position: relative;
+  padding: 1rem;
 }
 
 .mail .img {
@@ -969,10 +970,10 @@ input {
   }
 
   .profile .profile-about p {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     padding-inline: 0;
     letter-spacing: 0;
-    line-height: 18px;
+    line-height: 17px;
   }
 
   .resume a {
@@ -1144,10 +1145,6 @@ input {
     padding-inline: 1rem;
   }
 
-  .mail .img img {
-    width: 320px;
-  }
-
   .button-copy {
     width: 94%;
     position: absolute;
@@ -1266,10 +1263,6 @@ input {
     border-radius: 0 0 1rem 1rem;
     background-color: var(--pure-white);
     border-top: 2px dashed var(--neutral-300);
-  }
-
-  .mail .img img {
-    width: 370px;
   }
 
   .select-mode {
