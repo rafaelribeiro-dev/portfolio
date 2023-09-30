@@ -568,7 +568,7 @@ li {
 }
 
 .mail .img {
-  width: 90%;
+  width: 95%;
   position: absolute;
   top: 40%;
   transform: translateY(-60%);
@@ -944,6 +944,10 @@ input {
       'resume resume projects select-mode contact';
   }
 
+  .title {
+    font-size: 2.4rem;
+  }
+
   .profile {
     padding: 1rem 1.5rem;
   }
@@ -977,8 +981,28 @@ input {
     line-height: 17px;
   }
 
+  .swiper-navBtn {
+    display: flex;
+    width: 25px;
+    height: 25px;
+  }
+
   .resume a {
     font-size: 2.7rem;
+  }
+
+  .card-container {
+    padding: 30px 0;
+  }
+
+  .project-details .name,
+  .stack-details .stack-title,
+  .preview-title {
+    font-size: 1.6rem;
+  }
+
+  .project-details .job {
+    font-size: 1.4rem;
   }
 
   .stacks .ico {
@@ -1321,7 +1345,8 @@ body.dark {
   color: var(--neutral-300);
 }
 
-.dark .profile .profile-name h1 {
+.dark .profile .profile-name h1,
+.dark .projects .title {
   color: var(--neutral-100);
 }
 
@@ -1330,12 +1355,13 @@ body.dark {
   font-weight: 300;
 }
 
+.stacks .description p {
+  color: rgba(255, 255, 255, 0.6);
+}
+
 .dark .stacks .ico,
 .dark .stacks .description p {
   background-color: var(--pure-black);
-}
-
-.dark .projects span {
 }
 
 .dark .swiper-pagination-bullet {
