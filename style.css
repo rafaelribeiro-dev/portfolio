@@ -48,6 +48,10 @@ body {
   flex-direction: column;
 } */
 
+#loaderlogo svg path {
+  fill: var(--neutral-600);
+}
+
 .loader_bg {
   display: flex;
   align-items: center;
@@ -1337,6 +1341,10 @@ body.dark {
 
 .dark .loader_bg {
   background-color: var(--pure-black);
+}
+
+.dark #loaderlogo path {
+  fill: white;
 }
 .dark .resume,
 .dark .mail,
