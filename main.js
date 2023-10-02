@@ -31,158 +31,192 @@ var swiper = new Swiper('.slide-container', {
     }
   }
 })
-
-// TIMELINE GSAP QUE ANIMA OS CARDS NA ABERTURA DO SITE
-gsap.from('.apple-grid', {
-  scale: 1.5,
-  // delay: 7,
-  opacity: 0,
-  duration: 1,
-  ease: 'expo.out'
+const preload = gsap.timeline({
+  paused: true
 })
+preload
+  .to('.loader_bg', {
+    delay: 0.5,
+    duration: 0.5,
+    opacity: 0,
+    zIndex: -100
+  })
+  .from('.main', {
+    duration: 0.5,
+    opacity: 0
+  })
 
-gsap.from('.profile', {
-  x: -200,
-  opacity: 0,
-  // delay: 7,
-  duration: 3,
-  ease: 'expo.out'
-})
+var id,
+  width = 0
 
-gsap.from('.stacks', {
-  x: 200,
-  opacity: 0,
-  delay: 0.2,
-  duration: 3,
-  ease: 'expo.out'
-})
+function loading() {
+  id = setInterval(frame, 50)
+  console.log('iniciou aqui')
+}
 
-gsap.from('.resume', {
-  y: 200,
-  opacity: 0,
-  // delay: 7,
-  duration: 3,
-  ease: 'expo.out'
-})
+function frame() {
+  if (width >= 100) {
+    clearInterval(id)
+    console.log('passou por aqui')
+    preload.play()
+    setTimeout(() => {
+      initialization()
+    }, 1000)
+  } else {
+    width++
+    const bar = document.getElementById('progress')
+    bar.style.width = width + '%'
+  }
+}
 
-gsap.from('.contact', {
-  x: 200,
-  opacity: 0,
-  // delay: 7,
-  duration: 3.5,
-  ease: 'expo.out'
-})
+function initialization() {
+  gsap.from('.apple-grid', {
+    scale: 1.5,
+    // delay: 7,
+    opacity: 0,
+    duration: 1,
+    ease: 'expo.out'
+  })
 
-gsap.from('.projects', {
-  scale: 1.2,
-  opacity: 0,
-  // delay: 7,
-  duration: 3,
-  ease: 'expo.out'
-})
+  gsap.from('.profile', {
+    x: -200,
+    opacity: 0,
+    // delay: 7,
+    duration: 3,
+    ease: 'expo.out'
+  })
 
-gsap.from('.select-mode', {
-  y: 200,
-  opacity: 0,
-  // delay: 7,
-  duration: 2.5,
-  ease: 'expo.out'
-})
+  gsap.from('.stacks', {
+    x: 200,
+    opacity: 0,
+    delay: 0.2,
+    duration: 3,
+    ease: 'expo.out'
+  })
 
-gsap.from('.hello', {
-  y: -200,
-  opacity: 0,
-  delay: 0.2,
-  duration: 3,
-  ease: 'expo.out'
-})
+  gsap.from('.resume', {
+    y: 200,
+    opacity: 0,
+    // delay: 7,
+    duration: 3,
+    ease: 'expo.out'
+  })
 
-gsap.from('.mail', {
-  x: 200,
-  opacity: 0,
-  delay: 0.3,
-  duration: 4,
-  ease: 'expo.out'
-})
+  gsap.from('.contact', {
+    x: 200,
+    opacity: 0,
+    // delay: 7,
+    duration: 3.5,
+    ease: 'expo.out'
+  })
 
-gsap.from('.brand', {
-  y: -200,
-  opacity: 0,
-  delay: 0.6,
-  duration: 3,
-  ease: 'expo.out'
-})
+  gsap.from('.projects', {
+    scale: 1.2,
+    opacity: 0,
+    // delay: 7,
+    duration: 3,
+    ease: 'expo.out'
+  })
 
-gsap.from('.welcome', {
-  y: -200,
-  opacity: 0,
-  duration: 3,
-  delay: 0.4,
-  ease: 'expo.out'
-})
+  gsap.from('.select-mode', {
+    y: 200,
+    opacity: 0,
+    // delay: 7,
+    duration: 2.5,
+    ease: 'expo.out'
+  })
 
-const linkList = document.querySelectorAll('.contact-list li')
-const stackIcons = document.querySelectorAll('.stacks-icons .ico')
+  gsap.from('.hello', {
+    y: -200,
+    opacity: 0,
+    delay: 0.2,
+    duration: 3,
+    ease: 'expo.out'
+  })
 
-var tl = gsap.timeline()
-const time = 1
+  gsap.from('.mail', {
+    x: 200,
+    opacity: 0,
+    delay: 0.3,
+    duration: 4,
+    ease: 'expo.out'
+  })
 
-// TIMELINE GSAP ANIMAÇÃO LISTA DE REDES SOCIAIS E CONTATOS
-linkList.forEach((list, i) => {
-  gsap.from(
-    list,
-    1,
-    {
-      y: 200,
-      opacity: 0,
-      ease: 'circ.out',
-      delay: i * 0.06
-    },
-    '-=.9'
-  )
-})
+  gsap.from('.brand', {
+    y: -200,
+    opacity: 0,
+    delay: 0.6,
+    duration: 3,
+    ease: 'expo.out'
+  })
 
-// TIMELINE GSAP ANIMAÇÃO APRESENTAÇÃO DAS STACKS
-stackIcons.forEach((item, i) => {
-  gsap.from(
-    item,
-    1,
-    {
-      y: 200,
-      opacity: 0,
-      ease: 'circ.out'
-    },
-    '-=.8'
-  )
-})
+  gsap.from('.welcome', {
+    y: -200,
+    opacity: 0,
+    duration: 3,
+    delay: 0.4,
+    ease: 'expo.out'
+  })
 
-// ANIMA O BOTÃO DE DESCRIÇÃO NA SESSÃO DE STACKS
-gsap.from('.description', {
-  y: 400,
-  opacity: 0,
-  duration: 3,
-  delay: 7, //delay 12
-  ease: 'expo.out'
-})
+  const linkList = document.querySelectorAll('.contact-list li')
 
-// CONTROLA O TEMPO DE AANIMAÇÃO TELA DE LOADING
+  linkList.forEach((list, i) => {
+    gsap.from(
+      list,
+      1,
+      {
+        y: 200,
+        opacity: 0,
+        ease: 'circ.out',
+        delay: i * 0.06
+      },
+      '-=.9'
+    )
+  })
+
+  const stackIcons = document.querySelectorAll('.stacks-icons .ico')
+
+  stackIcons.forEach((item, i) => {
+    gsap.from(
+      item,
+      1,
+      {
+        y: 200,
+        opacity: 0,
+        ease: 'circ.out'
+      },
+      '-=.8'
+    )
+  })
+
+  gsap.from('.description', {
+    y: 400,
+    opacity: 0,
+    duration: 3,
+    delay: 7, //delay 12
+    ease: 'expo.out'
+  })
+}
+
+window.onload = function () {
+  loading()
+}
+
+// CONTROLA O TEMPO DE ANIMAÇÃO TELA DE LOADING
 // setTimeout(() => {
 //   $('.loader_bg').fadeToggle()
-// }, 6000)
+// }, 5200)
 
-// const animationContainer = document.querySelector('[data-js="animation"]')
+// TIMELINE GSAP QUE ANIMA OS CARDS NA ABERTURA DO SITE
 
-// CONTROLA A ANIMAÇÃO LOTTIE DE LOADING DA PAGINA
-// const animation = bodymovin.loadAnimation({
-//   container: animationContainer,
-//   path: 'animation_hello.json',
-//   render: 'svg',
-//   autoplay: true,
-//   loop: false,
-//   name: 'hello animation',
-//   speed: 1
-// })
-// animation.setSpeed(1)
+// var tl = gsap.timeline()
+// const time = 1
+
+// TIMELINE GSAP ANIMAÇÃO LISTA DE REDES SOCIAIS E CONTATOS
+
+// TIMELINE GSAP ANIMAÇÃO APRESENTAÇÃO DAS STACKS
+
+// ANIMA O BOTÃO DE DESCRIÇÃO NA SESSÃO DE STACKS
 
 const buttonCopy = document.querySelector('.button-copy')
 const checkmark = document.querySelector('.checkmark-svg')
