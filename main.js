@@ -31,6 +31,7 @@ var swiper = new Swiper('.slide-container', {
     }
   }
 })
+
 const preload = gsap.timeline({
   paused: true
 })
@@ -69,6 +70,7 @@ function frame() {
   }
 }
 
+// TIMELINE GSAP QUE ANIMA OS CARDS NA ABERTURA DO SITE
 function initialization() {
   gsap.from('.apple-grid', {
     scale: 1.5,
@@ -158,8 +160,8 @@ function initialization() {
     ease: 'expo.out'
   })
 
+  // TIMELINE GSAP ANIMAÇÃO LISTA DE REDES SOCIAIS E CONTATOS
   const linkList = document.querySelectorAll('.contact-list li')
-
   linkList.forEach((list, i) => {
     gsap.from(
       list,
@@ -174,8 +176,8 @@ function initialization() {
     )
   })
 
+  // TIMELINE GSAP ANIMAÇÃO APRESENTAÇÃO DAS STACKS
   const stackIcons = document.querySelectorAll('.stacks-icons .ico')
-
   stackIcons.forEach((item, i) => {
     gsap.from(
       item,
@@ -189,6 +191,7 @@ function initialization() {
     )
   })
 
+  // ANIMA O BOTÃO DE DESCRIÇÃO NA SESSÃO DE STACKS
   gsap.from('.description', {
     y: 400,
     opacity: 0,
@@ -207,16 +210,8 @@ window.onload = function () {
 //   $('.loader_bg').fadeToggle()
 // }, 5200)
 
-// TIMELINE GSAP QUE ANIMA OS CARDS NA ABERTURA DO SITE
-
 // var tl = gsap.timeline()
 // const time = 1
-
-// TIMELINE GSAP ANIMAÇÃO LISTA DE REDES SOCIAIS E CONTATOS
-
-// TIMELINE GSAP ANIMAÇÃO APRESENTAÇÃO DAS STACKS
-
-// ANIMA O BOTÃO DE DESCRIÇÃO NA SESSÃO DE STACKS
 
 const buttonCopy = document.querySelector('.button-copy')
 const checkmark = document.querySelector('.checkmark-svg')
