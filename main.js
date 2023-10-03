@@ -205,14 +205,6 @@ window.onload = function () {
   loading()
 }
 
-// CONTROLA O TEMPO DE ANIMAÇÃO TELA DE LOADING
-// setTimeout(() => {
-//   $('.loader_bg').fadeToggle()
-// }, 5200)
-
-// var tl = gsap.timeline()
-// const time = 1
-
 const buttonCopy = document.querySelector('.button-copy')
 const checkmark = document.querySelector('.checkmark-svg')
 
@@ -301,3 +293,11 @@ toggleBtn.addEventListener('click', handleSwitchMode)
 
 // FUNÇÃO DE CLIQUE QUE ALTERNA ENTRE OS MODOS LIGHT E DARK
 toggleBtn.addEventListener('click', handleBackgroundMode)
+
+const watchTime = document.querySelector('[data-js="time"]')
+console.log(watchTime)
+const date = new Date()
+let hour = date.getHours()
+let minutes = date.getMinutes()
+
+watchTime.textContent = `${hour}:${minutes}`
