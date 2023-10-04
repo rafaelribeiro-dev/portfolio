@@ -161,6 +161,13 @@ function initialization() {
   })
 
   // TIMELINE GSAP ANIMAÇÃO LISTA DE REDES SOCIAIS E CONTATOS
+  gsap.from('.clock', {
+    y: -100,
+    duration: 1,
+    opacity: 0,
+    ease: 'circ.out',
+    delay: 2.5
+  })
   const linkList = document.querySelectorAll('.contact-list li')
   linkList.forEach((list, i) => {
     gsap.from(
@@ -294,10 +301,15 @@ toggleBtn.addEventListener('click', handleSwitchMode)
 // FUNÇÃO DE CLIQUE QUE ALTERNA ENTRE OS MODOS LIGHT E DARK
 toggleBtn.addEventListener('click', handleBackgroundMode)
 
+//RELOGIO MOSTRADOR SESSAO CONTATOS
 const watchTime = document.querySelector('[data-js="time"]')
-console.log(watchTime)
-const date = new Date()
-let hour = date.getHours()
-let minutes = date.getMinutes()
 
-watchTime.textContent = `${hour}:${minutes}`
+const date = new Date()
+
+const hour = date.getHours()
+const minutes = date.getMinutes()
+
+const formatedHour = hour < 10 ? `0${hour}` : hour
+const formatedMinutes = minutes < 10 ? `0${minutes}` : minutes
+
+watchTime.textContent = `${formatedHour}:${formatedMinutes}`
