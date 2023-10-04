@@ -1468,7 +1468,6 @@ body.dark {
 .dark .contact .button a {
   color: #f90202;
   background: rgba(226, 32, 37, 0.15);
-  font-weight: 200;
 }
 
 .dark .contact .button a:hover {
@@ -1477,5 +1476,5 @@ body.dark {
 
 .dark .clock span {
   color: #c41819;
-  font-weight: 400;
+  font-weight: 600;
 }
