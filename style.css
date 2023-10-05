@@ -294,26 +294,8 @@ li {
   justify-content: center;
 }
 
-.resume svg {
-  display: none;
-  transition: 1s all ease;
+.resume:hover {
 }
-
-.resume:hover svg {
-  display: block;
-  opacity: 1;
-  position: absolute;
-
-  /* stroke-dasharray: 4000; */
-  /* stroke-dashoffset: 4000; */
-  /* animation: animate 3s forwards;  */
-}
-/* 
-@keyframes animate {
-  to {
-    stroke-dashoffset: 0;
-  }
-} */
 
 .hello {
   width: 100%;
@@ -613,6 +595,7 @@ li {
   display: flex;
   align-items: center;
   background: rgba(159, 159, 159, 0.2);
+  border: 1px solid var(--neutral-600);
 }
 
 .button-copy i {
@@ -1415,7 +1398,8 @@ body.dark {
 .dark .projects,
 .dark .brand,
 .dark .welcome,
-.dark .profile {
+.dark .profile,
+.dark .contact {
   background-color: var(--neutral-600);
 }
 
@@ -1463,11 +1447,12 @@ body.dark {
 
 .dark .button-copy.copied {
   background: rgba(255, 255, 255, 0.4);
+  border: 1px solid var(--neutral-200);
 }
 
 .dark .contact .button a {
   color: #f90202;
-  background: rgba(226, 32, 37, 0.15);
+  background: rgba(85, 56, 57, 0.4);
 }
 
 .dark .contact .button a:hover {
@@ -1475,6 +1460,6 @@ body.dark {
 }
 
 .dark .clock span {
-  color: #c41819;
-  font-weight: 600;
+  color: #f90202;
+  font-weight: 500;
 }

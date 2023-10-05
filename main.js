@@ -212,6 +212,14 @@ window.onload = function () {
   loading()
 }
 
+gsap.from('.fill', {
+  x: -200,
+  opacity: 0,
+  duration: 2,
+  delay: 2,
+  ease: 'expo.out'
+})
+
 const buttonCopy = document.querySelector('.button-copy')
 const checkmark = document.querySelector('.checkmark-svg')
 
@@ -302,14 +310,17 @@ toggleBtn.addEventListener('click', handleSwitchMode)
 toggleBtn.addEventListener('click', handleBackgroundMode)
 
 //RELOGIO MOSTRADOR SESSAO CONTATOS
-const watchTime = document.querySelector('[data-js="time"]')
 
-const date = new Date()
+const watch = setInterval(() => {
+  const watchTime = document.querySelector('[data-js="time"]')
 
-const hour = date.getHours()
-const minutes = date.getMinutes()
+  const date = new Date()
 
-const formatedHour = hour < 10 ? `0${hour}` : hour
-const formatedMinutes = minutes < 10 ? `0${minutes}` : minutes
+  let hour = date.getHours()
+  let minutes = date.getMinutes()
 
-watchTime.textContent = `${formatedHour}:${formatedMinutes}`
+  let formatedHour = hour < 10 ? `0${hour}` : hour
+  let formatedMinutes = minutes < 10 ? `0${minutes}` : minutes
+
+  watchTime.textContent = `${formatedHour}:${formatedMinutes}`
+})
