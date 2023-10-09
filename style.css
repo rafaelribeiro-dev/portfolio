@@ -18,11 +18,12 @@ body {
   text-rendering: optimizeLegibility;
 }
 :root {
-  font-family: 'SF Pro Display', sans-serif;
+  /* font-family: 'SF Pro Display', sans-serif; */
+  font-family: 'Roboto', sans-serif;
   font-size: 62.5%; /* 1rem === 10px*/
 
   --pure-black: #000;
-  --neutral-600: #1d1d1f;
+  --neutral-600: #1a1a1a;
   --neutral-400: #6e6e73;
   --neutral-300: #dcdcdc;
   --neutral-200: #e7e7e7;
@@ -81,56 +82,7 @@ body {
   width: 0;
   height: 6px;
   border-radius: 1rem;
-  /* animation: progress 5s forwards linear; */
 }
-
-/* @keyframes progress {
-  0% {
-    width: 0;
-  }
-
-  20% {
-    width: 3%;
-  }
-
-  25% {
-    width: 10%;
-  }
-
-  43% {
-    width: 26%;
-  }
-
-  56% {
-    width: 42%;
-  }
-
-  66% {
-    width: 52%;
-  }
-
-  71% {
-    width: 60%;
-  }
-
-  75% {
-    width: 76%;
-  }
-
-  94% {
-    width: 86%;
-  }
-
-  100% {
-    width: 100%;
-  }
-} */
-
-/* p {
-  font-size: 1.6rem;
-  font-weight: 300;
-  color: var(--neutral-400);
-} */
 
 a {
   text-decoration: none;
@@ -217,22 +169,6 @@ li {
   padding: 3rem 1.5rem;
   position: relative;
   /* background-image: url(./assets/dot.svg); */
-}
-
-.profile .profile-avatar img {
-  width: 12rem;
-  position: relative;
-}
-
-.profile .profile-avatar::before {
-  content: '';
-  width: 19rem;
-  height: 19rem;
-  border-radius: 50%;
-  background-color: var(--pure-white);
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 .profile .profile-name {
@@ -505,10 +441,11 @@ li {
   align-items: center;
   flex-direction: column;
   overflow: hidden;
+  padding: 1rem;
 }
 
 .stacks-icons {
-  width: 90%;
+  width: 100%;
   flex-wrap: wrap;
   gap: 1rem;
   align-items: center;
@@ -525,12 +462,42 @@ li {
   position: relative;
 }
 
+.stacks .ico svg path {
+  fill: var(--neutral-600);
+}
+
+.stacks .html5 svg path:nth-child(n + 3) {
+  fill: var(--neutral-100);
+}
+.stacks .git svg path:nth-child(3) {
+  fill: var(--neutral-100);
+}
+
+.stacks .css3 svg path:nth-child(n + 3) {
+  fill: var(--neutral-100);
+}
+
+.stacks .javascript svg path:nth-child(n + 2) {
+  fill: var(--neutral-100);
+}
 .stacks .ico:nth-child(n + 6) svg path {
   fill: var(--neutral-400);
 }
 
 .stacks .typescript svg path:nth-child(2) {
   fill: var(--neutral-100);
+}
+
+.stacks .ico:nth-child(n + 6):after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: #f90202;
+  right: 3px;
+  top: 3px;
+  border-radius: 50%;
+  opacity: 0.5;
 }
 .stacks .description {
   justify-content: center;
@@ -544,6 +511,19 @@ li {
   border: 1px solid var(--neutral-400);
   border-radius: 1.5rem;
   padding: 1.5rem;
+}
+
+.stacks .description p:after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #f90202;
+  opacity: 0.5;
+  border-radius: 50%;
 }
 
 .stack-icons span {
@@ -1423,7 +1403,7 @@ body.dark {
 
 .dark .stacks .ico,
 .dark .stacks .description p {
-  background-color: var(--pure-black);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .dark .swiper-pagination-bullet {
@@ -1449,7 +1429,7 @@ body.dark {
   background: rgba(255, 255, 255, 0.4);
   border: 1px solid var(--neutral-200);
 }
-
+/* 
 .dark .contact .button a {
   color: #f90202;
   background: rgba(85, 56, 57, 0.4);
@@ -1462,4 +1442,4 @@ body.dark {
 .dark .clock span {
   color: #f90202;
   font-weight: 500;
-}
+} */

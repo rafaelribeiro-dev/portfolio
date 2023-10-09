@@ -4,6 +4,9 @@ var swiper = new Swiper('.slide-container', {
   spaceBetween: 30,
   slidesPerGroup: 1,
   loop: true,
+  // autoplay: true,
+  // delay: 3000,
+  // speed: 3000,
   centeredSlide: true,
   grabCursor: true,
   fade: true,
@@ -165,7 +168,7 @@ function initialization() {
     y: -100,
     duration: 1,
     opacity: 0,
-    ease: 'circ.out',
+    ease: 'expo.out',
     delay: 2.5
   })
   const linkList = document.querySelectorAll('.contact-list li')
@@ -190,7 +193,7 @@ function initialization() {
       item,
       1,
       {
-        y: 200,
+        y: 50,
         opacity: 0,
         ease: 'circ.out'
       },
@@ -200,7 +203,7 @@ function initialization() {
 
   // ANIMA O BOTÃO DE DESCRIÇÃO NA SESSÃO DE STACKS
   gsap.from('.description', {
-    y: 400,
+    y: 50,
     opacity: 0,
     duration: 3,
     delay: 7, //delay 12
@@ -212,12 +215,30 @@ window.onload = function () {
   loading()
 }
 
-gsap.from('.fill', {
-  x: -200,
-  opacity: 0,
+gsap.from('.card-slide', {
+  scale: 0.5,
+  duration: 3,
+  ease: 'expo.out',
+  delay: 8,
+  opacity: 0
+})
+
+gsap.from('.swiper-button-prev', {
+  x: 50,
   duration: 2,
-  delay: 2,
-  ease: 'expo.out'
+  ease: 'expo.out',
+  delay: 10,
+  opacity: 0,
+  zIndex: -50
+})
+
+gsap.from('.swiper-button-next', {
+  x: -50,
+  duration: 2,
+  ease: 'expo.out',
+  delay: 10,
+  opacity: 0,
+  zIndex: -50
 })
 
 const buttonCopy = document.querySelector('.button-copy')
