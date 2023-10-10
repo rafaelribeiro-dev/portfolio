@@ -202,11 +202,18 @@ function initialization() {
   })
 
   // ANIMA O BOTÃO DE DESCRIÇÃO NA SESSÃO DE STACKS
-  gsap.from('.description', {
+  gsap.from('.studing', {
     y: 50,
     opacity: 0,
     duration: 3,
     delay: 7, //delay 12
+    ease: 'expo.out'
+  })
+  gsap.from('.interested', {
+    y: 50,
+    opacity: 0,
+    duration: 3,
+    delay: 7.5, //delay 12
     ease: 'expo.out'
   })
 }
