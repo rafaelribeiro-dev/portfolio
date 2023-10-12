@@ -55,13 +55,11 @@ var id,
 
 function loading() {
   id = setInterval(frame, 50)
-  console.log('iniciou aqui')
 }
 
 function frame() {
   if (width >= 100) {
     clearInterval(id)
-    console.log('passou por aqui')
     preload.play()
     setTimeout(() => {
       initialization()
@@ -165,11 +163,11 @@ function initialization() {
 
   // TIMELINE GSAP ANIMAÇÃO LISTA DE REDES SOCIAIS E CONTATOS
   gsap.from('.clock', {
-    y: -100,
-    duration: 1,
+    y: -50,
+    duration: 2,
     opacity: 0,
     ease: 'expo.out',
-    delay: 2.5
+    delay: 3
   })
   const linkList = document.querySelectorAll('.contact-list li')
   linkList.forEach((list, i) => {
@@ -177,7 +175,7 @@ function initialization() {
       list,
       1,
       {
-        y: 200,
+        y: 50,
         opacity: 0,
         ease: 'circ.out',
         delay: i * 0.06
@@ -205,15 +203,15 @@ function initialization() {
   gsap.from('.studing', {
     y: 50,
     opacity: 0,
-    duration: 3,
-    delay: 7, //delay 12
+    duration: 1.5,
+    delay: 7.5,
     ease: 'expo.out'
   })
   gsap.from('.interested', {
     y: 50,
     opacity: 0,
-    duration: 3,
-    delay: 7.5, //delay 12
+    duration: 1.5,
+    delay: 8,
     ease: 'expo.out'
   })
 }
@@ -221,7 +219,7 @@ function initialization() {
 window.onload = function () {
   loading()
 }
-
+// ANIMA SWIPPER JS
 gsap.from('.card-slide', {
   scale: 0.5,
   duration: 3,
