@@ -156,13 +156,15 @@ li {
 .profile .container {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .profile .profile-avatar {
   display: flex;
   justify-content: center;
   position: relative;
-  background: linear-gradient(89deg, #ff487a 2.77%, #ffd876 172.6%);
+  background: linear-gradient(40deg, #ff487a 20.77%, #ffd876 90.6%);
   clip-path: circle(44%);
 }
 
@@ -179,7 +181,7 @@ li {
 }
 
 .profile .profile-name h1 {
-  font-size: 3.5rem;
+  font-size: 3.9rem;
   padding-top: 4rem;
   font-weight: 700;
   color: var(--neutral-600);
@@ -205,34 +207,23 @@ li {
 
 .resume {
   grid-area: resume;
-  position: relative;
   overflow: hidden;
+  display: grid;
+  place-content: center;
 }
 
 .resume a {
-  font-size: 3.5rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  letter-spacing: -0.75px;
+  transition: 0.5s all ease;
+  font-size: 4rem;
+  letter-spacing: -0.95px;
+  font-weight: 800;
+  color: #172334;
+  cursor: pointer;
+  padding-block: 3rem;
   background: linear-gradient(89deg, #ff487a 2.77%, #ffd876 172.6%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-.resume a.fill {
-  height: 100%;
-  width: 100%;
-  text-decoration: none;
-  align-items: center;
-  justify-content: center;
-}
-
-.cloneText {
-  position: absolute;
-  left: 0;
-  top: 0;
 }
 
 .hello {
@@ -561,34 +552,6 @@ li {
   transform: translateY(-50%);
   border-radius: 50%;
 }
-
-/* .stacks .description {
-  justify-content: center;
-  align-items: center;
-}
-
-.stacks .description p {
-  color: var(--neutral-400);
-  font-size: 1.6rem;
-  font-weight: 400;
-  border: 1px solid var(--neutral-400);
-  border-radius: 1.5rem;
-  padding: 1.5rem;
-}
-
-.stacks .description p:after {
-  content: '';
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  left: 5px;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #f90202;
-  opacity: 0.5;
-  border-radius: 50%;
-}
-*/
 
 .stack-icons span {
   border: 1px solid black;
@@ -947,10 +910,6 @@ input {
     padding-inline: 6rem;
   }
 
-  .resume a {
-    font-size: 5rem;
-  }
-
   .stacks-icons {
     margin-bottom: 0.5rem;
   }
@@ -1021,7 +980,7 @@ input {
   }
 
   .profile .profile-name h1 {
-    font-size: 2.6rem;
+    font-size: 2.8rem;
     padding-top: 2rem;
   }
 
@@ -1036,14 +995,14 @@ input {
     line-height: 17px;
   }
 
+  .resume a {
+    font-size: 2.9rem;
+  }
+
   .swiper-navBtn {
     display: flex;
     width: 25px;
     height: 25px;
-  }
-
-  .resume a {
-    font-size: 2.7rem;
   }
 
   .card-container {
@@ -1091,17 +1050,17 @@ input {
     display: grid;
     place-content: center;
     gap: 1rem;
-    grid-template-columns: 0.5fr 1fr 0.5fr 2.2fr 0.6fr 0.9fr;
+    grid-template-columns: 0.5fr 1fr 0.5fr 0.5fr 1.8fr 0.6fr 0.9fr;
     grid-template-rows: 1fr 1fr 0.4fr 0.9fr 1.3fr 1fr 1fr;
     grid-auto-flow: row;
     grid-template-areas:
-      'profile profile brand hello stacks stacks'
-      'profile profile welcome hello stacks stacks'
-      'profile profile projects projects stacks stacks'
-      'profile profile projects projects mail mail'
-      'profile profile projects projects mail mail'
-      'profile profile projects projects select-mode contact'
-      'resume resume projects projects select-mode contact';
+      'profile profile brand welcome hello stacks stacks'
+      'profile profile resume resume hello stacks stacks'
+      'profile profile projects projects projects stacks stacks'
+      'profile profile projects projects projects mail mail'
+      'profile profile projects projects projects mail mail'
+      'profile profile projects projects projects select-mode contact'
+      'profile profile projects projects projects select-mode contact';
   }
   .brand,
   .welcome {
@@ -1119,10 +1078,15 @@ input {
     padding-top: 2rem;
   }
 
+  .resume a {
+    font-size: 2.5rem;
+  }
+
   .select-mode .avatar img {
     width: 100%;
   }
 }
+
 @media (min-width: 1440px) {
   .apple-grid {
     max-width: 150rem;
@@ -1131,17 +1095,17 @@ input {
     display: grid;
     place-content: center;
     gap: 1rem;
-    grid-template-columns: 0.5fr 1fr 0.5fr 2.2fr 0.6fr 0.9fr;
+    grid-template-columns: 0.5fr 1fr 0.5fr 0.5fr 1.8fr 0.6fr 0.9fr;
     grid-template-rows: 1fr 1fr 0.4fr 0.9fr 1.3fr 1fr 1fr;
     grid-auto-flow: row;
     grid-template-areas:
-      'profile profile brand hello stacks stacks'
-      'profile profile welcome hello stacks stacks'
-      'profile profile projects projects stacks stacks'
-      'profile profile projects projects mail mail'
-      'profile profile projects projects mail mail'
-      'profile profile projects projects select-mode contact'
-      'resume resume projects projects select-mode contact';
+      'profile profile brand welcome hello stacks stacks'
+      'profile profile resume resume hello stacks stacks'
+      'profile profile projects projects projects stacks stacks'
+      'profile profile projects projects projects mail mail'
+      'profile profile projects projects projects mail mail'
+      'profile profile projects projects projects select-mode contact'
+      'profile profile projects projects projects select-mode contact';
   }
 
   .brand,
@@ -1162,7 +1126,7 @@ input {
   }
 
   .profile .profile-name h1 {
-    font-size: 2.6rem;
+    /* font-size: 2.6rem; */
     padding-top: 2rem;
   }
 
@@ -1175,10 +1139,6 @@ input {
     padding-top: 1rem;
     line-height: 20px;
     padding-inline: 2rem;
-  }
-
-  .resume a {
-    font-size: 2.8rem;
   }
 
   .brand {
@@ -1314,17 +1274,17 @@ input {
     display: grid;
     place-content: center;
     gap: 1rem;
-    grid-template-columns: 0.5fr 1fr 0.5fr 2.2fr 0.6fr 0.9fr;
+    grid-template-columns: 0.5fr 1fr 0.5fr 0.5fr 1.8fr 0.6fr 0.9fr;
     grid-template-rows: 1fr 1fr 0.4fr 0.9fr 1.3fr 1fr 1fr;
     grid-auto-flow: row;
     grid-template-areas:
-      'profile profile brand hello stacks stacks'
-      'profile profile welcome hello stacks stacks'
-      'profile profile projects projects stacks stacks'
-      'profile profile projects projects mail mail'
-      'profile profile projects projects mail mail'
-      'profile profile projects projects select-mode contact'
-      'resume resume projects projects select-mode contact';
+      'profile profile brand welcome hello stacks stacks'
+      'profile profile resume resume hello stacks stacks'
+      'profile profile projects projects projects stacks stacks'
+      'profile profile projects projects projects mail mail'
+      'profile profile projects projects projects mail mail'
+      'profile profile projects projects projects select-mode contact'
+      'profile profile projects projects projects select-mode contact';
   }
 
   .brand,

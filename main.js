@@ -75,7 +75,6 @@ function frame() {
 function initialization() {
   gsap.from('.apple-grid', {
     scale: 1.5,
-    // delay: 7,
     opacity: 0,
     duration: 1,
     ease: 'expo.out'
@@ -84,7 +83,6 @@ function initialization() {
   gsap.from('.profile', {
     x: -200,
     opacity: 0,
-    // delay: 7,
     duration: 3,
     ease: 'expo.out'
   })
@@ -98,17 +96,16 @@ function initialization() {
   })
 
   gsap.from('.resume', {
-    y: 200,
+    y: -200,
     opacity: 0,
-    // delay: 7,
     duration: 3,
+    delay: 0.5,
     ease: 'expo.out'
   })
 
   gsap.from('.contact', {
     x: 200,
     opacity: 0,
-    // delay: 7,
     duration: 3.5,
     ease: 'expo.out'
   })
@@ -116,7 +113,6 @@ function initialization() {
   gsap.from('.projects', {
     scale: 1.2,
     opacity: 0,
-    // delay: 7,
     duration: 3,
     ease: 'expo.out'
   })
@@ -124,7 +120,6 @@ function initialization() {
   gsap.from('.select-mode', {
     y: 200,
     opacity: 0,
-    // delay: 7,
     duration: 2.5,
     ease: 'expo.out'
   })
@@ -148,7 +143,7 @@ function initialization() {
   gsap.from('.brand', {
     y: -200,
     opacity: 0,
-    delay: 0.6,
+    delay: 0.7,
     duration: 3,
     ease: 'expo.out'
   })
@@ -157,7 +152,7 @@ function initialization() {
     y: -200,
     opacity: 0,
     duration: 3,
-    delay: 0.4,
+    delay: 0.9,
     ease: 'expo.out'
   })
 
