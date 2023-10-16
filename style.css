@@ -106,7 +106,7 @@ li {
   place-content: center;
   gap: 1rem;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 0.4fr 1.5fr 0.3fr 0.4fr 0.4fr 0.8fr 0.2fr 0.15fr;
+  grid-template-rows: 0.4fr auto 0.3fr 0.5fr 0.5fr 1fr 0.25fr 0.15fr;
   grid-template-areas:
     'hello hello'
     'profile profile'
@@ -147,17 +147,16 @@ li {
 
 .profile {
   grid-area: profile;
-  align-items: center;
-  flex-direction: column;
-  padding: 3rem 1.5rem;
+  padding: 1rem;
   position: relative;
-  /* background-image: url(./assets/dot.svg); */
 }
+
 .profile .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  gap: 1rem;
 }
 
 .profile .profile-avatar {
@@ -165,24 +164,22 @@ li {
   justify-content: center;
   position: relative;
   background: linear-gradient(40deg, #ff487a 20.77%, #ffd876 90.6%);
-  clip-path: circle(44%);
+  clip-path: circle(40%);
 }
 
 .profile .profile-avatar img {
-  width: 80%;
+  width: 70%;
 }
 
 .profile .profile-name {
   display: flex;
   flex-direction: column;
-  width: 40rem;
-  line-height: 25px;
+  line-height: 21px;
   text-align: center;
 }
 
 .profile .profile-name h1 {
   font-size: 3.9rem;
-  padding-top: 4rem;
   font-weight: 700;
   color: var(--neutral-600);
   letter-spacing: -1px;
@@ -190,19 +187,16 @@ li {
 .profile .profile-name .role {
   font-size: 2rem;
   color: var(--neutral-600);
-  font-weight: 300;
+  font-weight: 400;
   text-align: center;
   letter-spacing: -0.5px;
+  margin-top: 1rem;
 }
 .profile .profile-about p {
   color: var(--neutral-400);
-  padding-top: 2.3rem;
-  padding-inline: 2.5rem;
+  padding: 0rem 2.2rem;
   font-size: 2rem;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 24px;
-  letter-spacing: 1px;
+  font-weight: 400;
 }
 
 .resume {
@@ -220,7 +214,7 @@ li {
   color: #172334;
   cursor: pointer;
   padding-block: 3rem;
-  background: linear-gradient(89deg, #ff487a 2.77%, #ffd876 172.6%);
+  background: linear-gradient(320deg, #ff487a 2.77%, #ffd876 172.6%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -553,12 +547,12 @@ li {
   border-radius: 50%;
 }
 
-.stack-icons span {
+/* .stack-icons span {
   border: 1px solid black;
   border-radius: 3px;
   padding: 0.2rem;
   width: fit-content;
-}
+} */
 
 .mail {
   grid-area: mail;
@@ -761,7 +755,7 @@ input {
   position: absolute;
   width: 5rem;
   height: 3rem;
-  background: #feef88;
+  background: #feff81;
   border-radius: 5rem;
   cursor: pointer;
   transition: all 0.4s;
@@ -787,10 +781,11 @@ input {
   font-size: 2rem;
   color: var(--neutral-400);
   transition: all 0.4s;
+  filter: drop-shadow(2px 1px 8px rgba(0, 0, 0, 0.2));
 }
 
 .toggle-btn.active {
-  background: var(--neutral-300);
+  background: var(--neutral-400);
   transition: all 0.4s;
 }
 
@@ -840,11 +835,11 @@ input {
   align-items: center;
 }
 
-.clock span:nth-child(1) {
+.clock h2 {
   color: #24a7ff;
   font-size: 1.2rem;
 }
-.clock span:nth-child(2) {
+.clock span {
   color: white;
   font-weight: 400;
 }
@@ -895,7 +890,7 @@ input {
     height: fit-content;
     padding: 1rem;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 0.3fr 1fr 0.2fr 0.4fr 1fr 0.2fr 0.2fr;
+    grid-template-rows: 0.3fr 1fr 0.2fr 0.3fr auto 0.1fr 0.2fr;
     grid-template-areas:
       'hello hello'
       'profile profile'
@@ -947,10 +942,9 @@ input {
     margin: 0 auto;
     height: 100vh;
     padding: 1rem;
-    /* padding-inline: 2rem; */
     overflow: hidden;
-    grid-template-columns: 0.7fr 0.6fr 2.2fr 0.6fr 0.9fr;
-    grid-template-rows: 0.8fr 0.9fr 0.2fr 0.6fr 1fr 1fr 1fr;
+    grid-template-columns: 0.7fr 0.7fr 2.2fr 0.6fr 0.9fr;
+    grid-template-rows: 0.8fr 0.9fr 0.2fr 0.6fr 1fr 1fr auto;
     grid-auto-flow: row;
     grid-template-areas:
       'profile profile hello stacks stacks'
@@ -967,21 +961,11 @@ input {
   }
 
   .profile {
-    padding: 1rem 1.5rem;
-  }
-
-  .profile .profile-avatar::before {
-    width: 14rem;
-    height: 14rem;
-  }
-
-  .profile .profile-name {
-    width: 26rem;
+    padding: 1rem;
   }
 
   .profile .profile-name h1 {
     font-size: 2.8rem;
-    padding-top: 2rem;
   }
 
   .profile .profile-name .role {
@@ -990,7 +974,7 @@ input {
 
   .profile .profile-about p {
     font-size: 1.4rem;
-    padding-inline: 0;
+    padding-inline: 0.7rem;
     letter-spacing: 0;
     line-height: 17px;
   }
@@ -1073,9 +1057,8 @@ input {
   }
 
   .profile .profile-about p {
-    font-size: 1.6rem;
-    padding-inline: 2rem;
-    padding-top: 2rem;
+    font-size: 1.4rem;
+    padding-inline: 1rem;
   }
 
   .resume a {
@@ -1117,28 +1100,9 @@ input {
     padding: 2rem 1.5rem;
   }
 
-  .profile .profile-avatar::before {
-    width: 14rem;
-    height: 14rem;
-  }
-  .profile .profile-name {
-    width: 30rem;
-  }
-
-  .profile .profile-name h1 {
-    /* font-size: 2.6rem; */
-    padding-top: 2rem;
-  }
-
-  .profile .profile-name .role {
-    font-size: 1.8rem;
-  }
-
   .profile .profile-about p {
-    font-size: 1.7rem;
-    padding-top: 1rem;
-    line-height: 20px;
-    padding-inline: 2rem;
+    font-size: 1.6rem;
+    padding-inline: 1.2rem;
   }
 
   .brand {
@@ -1293,16 +1257,12 @@ input {
   }
 
   .hello-message h2 {
-    font-size: 8rem;
-  }
-
-  .hello-message .stroke {
-    width: 390px;
+    font-size: 7rem;
   }
 
   .profile .profile-about p {
-    font-size: 1.8rem;
-    padding: 2rem 1.2rem;
+    font-size: 1.7rem;
+    padding: 0 1.2rem;
   }
 
   .brand {
@@ -1311,7 +1271,7 @@ input {
   }
 
   .brand-logo img {
-    height: 100px;
+    width: 100%;
     padding-left: 10px;
   }
 
@@ -1343,12 +1303,16 @@ input {
     border-top: 2px dashed var(--neutral-300);
   }
 
+  .card-container {
+    width: 88%;
+    padding: 30px 0;
+  }
+
   .select-mode {
     background: var(--blue-sky);
   }
 
   .select-mode .avatar img {
-    width: 140px;
     transition: all 1s;
   }
 
@@ -1358,7 +1322,7 @@ input {
       opacity: 0;
     }
     100% {
-      top: 9.8rem;
+      top: 6.8rem;
       opacity: 1;
     }
   }
@@ -1369,7 +1333,7 @@ input {
       opacity: 0;
     }
     100% {
-      top: 9.8rem;
+      top: 6.8rem;
       opacity: 1;
     }
   }

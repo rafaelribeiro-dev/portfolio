@@ -217,7 +217,7 @@ window.onload = function () {
 // ANIMA SWIPPER JS
 gsap.from('.card-slide', {
   scale: 0.5,
-  duration: 3,
+  duration: 1.8,
   ease: 'expo.out',
   delay: 8,
   opacity: 0
@@ -240,6 +240,57 @@ gsap.from('.swiper-button-next', {
   opacity: 0,
   zIndex: -50
 })
+//  TIMELINE ANIMACAO APRESENTACAO CARD PROFILE
+const tlprof = gsap.timeline()
+
+tlprof
+  .from('.profile-avatar', {
+    y: 50,
+    opacity: 0,
+    duration: 1.5,
+    delay: 7,
+    ease: 'expo.inOut'
+  })
+  .from(
+    '.me',
+    {
+      y: 30,
+      duration: 1.5,
+      ease: 'expo.inOut',
+      opacity: 0
+    },
+    '-=1.2'
+  )
+  .from(
+    '.profile-name h1',
+    {
+      y: 10,
+      opacity: 0,
+      ease: 'expo.inOut',
+      duration: 1.5
+    },
+    '-=1.2'
+  )
+  .from(
+    '.profile-name h2',
+    {
+      y: 10,
+      opacity: 0,
+      ease: 'expo.inOut',
+      duration: 1.5
+    },
+    '-=1.1'
+  )
+  .from(
+    '.profile-about',
+    {
+      y: 10,
+      opacity: 0,
+      ease: 'expo.inOut',
+      duration: 1.3
+    },
+    '-=1'
+  )
 
 const buttonCopy = document.querySelector('.button-copy')
 const checkmark = document.querySelector('.checkmark-svg')
