@@ -272,9 +272,9 @@ tlprof
     '-=1.2'
   )
   .from(
-    '.profile-name h2',
+    '.profile-name .role',
     {
-      y: 10,
+      y: 15,
       opacity: 0,
       ease: 'expo.inOut',
       duration: 1.5

@@ -305,14 +305,14 @@ li {
 }
 
 .slide-container {
-  margin: 0 10px;
+  margin: 0 9px;
   overflow: hidden;
 }
 
 .card-slide {
   width: 312px;
   background-color: var(--pure-white);
-  border-radius: 8px;
+  /* border-radius: 2px; */
 }
 
 .card-slide .image-box {
@@ -322,7 +322,6 @@ li {
 .card-slide .image-box img {
   width: 100%;
   height: 100%;
-  border-radius: 1rem 1rem 0 0;
 }
 
 .card-slide .project-details {
@@ -334,7 +333,6 @@ li {
     'stack preview';
   gap: 1rem;
   padding: 1rem;
-  border-radius: 0 0 1rem 1rem;
   background-color: var(--pure-white);
   border-top: 1px solid var(--neutral-300);
 }
@@ -376,7 +374,6 @@ li {
 .stack-details .stack-icons,
 .preview-icons {
   display: flex;
-  /* flex-direction: column; */
   gap: 0.5rem;
 }
 
@@ -447,6 +444,25 @@ li {
   justify-content: center;
   border-radius: 1rem;
   position: relative;
+  cursor: pointer;
+}
+
+.stacks .ico::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: -15px;
+  width: auto;
+  padding: 5px;
+  border-radius: 6px;
+  background: var(--logo-yellow);
+  color: black;
+  font-weight: 600;
+  text-align: center;
+  display: none;
+}
+
+.stacks .ico:hover::after {
+  display: block;
 }
 
 .stacks .ico svg path {
@@ -547,12 +563,12 @@ li {
   border-radius: 50%;
 }
 
-/* .stack-icons span {
+.stack-icons span {
   border: 1px solid black;
   border-radius: 3px;
   padding: 0.2rem;
   width: fit-content;
-} */
+}
 
 .mail {
   grid-area: mail;
@@ -859,7 +875,6 @@ input {
   width: 11.5rem;
   padding: 0.5rem;
   display: flex;
-  /* justify-content: center; */
   padding-left: 10px;
   background: rgba(255, 255, 255, 0.2);
   transition: 0.3s;
@@ -880,6 +895,10 @@ input {
   align-items: center;
   justify-content: space-evenly;
   text-align: center;
+}
+
+.contact ul li a:nth-child(2) {
+  background-color: #24a7ff;
 }
 
 /* --------------- SMALL DISPLAYS --------------- */
@@ -907,6 +926,14 @@ input {
 
   .stacks-icons {
     margin-bottom: 0.5rem;
+  }
+
+  .hello-message .stroke {
+    width: 440px;
+  }
+
+  .hello-message h2 {
+    font-size: 9.5rem;
   }
 
   .stacks .ico {
@@ -943,17 +970,24 @@ input {
     height: 100vh;
     padding: 1rem;
     overflow: hidden;
-    grid-template-columns: 0.7fr 0.7fr 2.2fr 0.6fr 0.9fr;
-    grid-template-rows: 0.8fr 0.9fr 0.2fr 0.6fr 1fr 1fr auto;
+    grid-template-columns: 0.5fr 1fr 0.5fr 0.5fr 1.8fr 0.6fr 0.9fr;
+    grid-template-rows: 1fr 1fr 0.4fr 0.9fr 1.3fr 1fr 1fr;
     grid-auto-flow: row;
     grid-template-areas:
-      'profile profile hello stacks stacks'
-      'profile profile hello stacks stacks'
-      'profile profile projects stacks stacks'
-      'profile profile projects mail mail'
-      'profile profile projects mail mail'
-      'profile profile projects select-mode contact'
-      'resume resume projects select-mode contact';
+      'profile profile brand welcome hello stacks stacks'
+      'profile profile resume resume hello stacks stacks'
+      'profile profile projects projects projects stacks stacks'
+      'profile profile projects projects projects mail mail'
+      'profile profile projects projects projects mail mail'
+      'profile profile projects projects projects select-mode contact'
+      'profile profile projects projects projects select-mode contact';
+  }
+
+  .brand,
+  .welcome {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .title {
@@ -976,11 +1010,19 @@ input {
     font-size: 1.4rem;
     padding-inline: 0.7rem;
     letter-spacing: 0;
-    line-height: 17px;
+    line-height: 16px;
   }
 
   .resume a {
-    font-size: 2.9rem;
+    font-size: 2rem;
+  }
+
+  .hello-message .stroke {
+    width: 270px;
+  }
+
+  .hello-message h2 {
+    font-size: 5.7rem;
   }
 
   .swiper-navBtn {
@@ -990,6 +1032,7 @@ input {
   }
 
   .card-container {
+    width: 90%;
     padding: 30px 0;
   }
 
@@ -1014,6 +1057,10 @@ input {
 
   .select-mode .avatar img {
     width: 120px;
+  }
+
+  .button-copy {
+    width: 93%;
   }
 
   .select-mode .sun,
@@ -1111,6 +1158,14 @@ input {
     padding-left: 7px;
   }
 
+  .hello-message .stroke {
+    width: 320px;
+  }
+
+  .hello-message h2 {
+    font-size: 6.7rem;
+  }
+
   .swiper-navBtn {
     display: flex;
   }
@@ -1139,7 +1194,6 @@ input {
   .card-slide .image-box img {
     width: 100%;
     height: 100%;
-    border-radius: 1rem 1rem 0 0;
   }
 
   .card-slide .project-details {
@@ -1148,7 +1202,6 @@ input {
     grid-template-rows: 1fr;
     grid-template-areas: 'description stack preview';
     padding: 1rem;
-    border-radius: 0 0 1rem 1rem;
     background-color: var(--pure-white);
   }
   .project-details .name,
@@ -1207,7 +1260,6 @@ input {
     top: 50.5%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* z-index: 3; */
   }
 
   .select-mode .avatar img {
@@ -1218,13 +1270,6 @@ input {
   .moon {
     width: fit-content;
   }
-
-  /* .stack-icons span {
-    border: 1px solid black;
-    border-radius: 2px;
-    padding: 0.2rem;
-    width: fit-content;
-  } */
 }
 
 /* --------------- LARGE DISPLAYS --------------- */
@@ -1298,7 +1343,6 @@ input {
     grid-template-areas: 'description description stack preview';
     gap: 1.5rem;
     padding: 1rem;
-    border-radius: 0 0 1rem 1rem;
     background-color: var(--pure-white);
     border-top: 2px dashed var(--neutral-300);
   }

@@ -18,7 +18,7 @@
   </head>
   <body>
     <!-- TELA DE CARREGAMENTO -->
-    <div class="loader_bg" id="">
+    <div class="loader_bg">
       <svg id="loaderlogo" width="47" height="137" viewBox="0 0 47 137" fill="" xmlns="http://www.w3.org/2000/svg">
         <path d="M43.5953 135.87C42.374 136.286 40.9492 136.598 39.4689 136.777C39.4319 136.777 39.4134 136.777 39.3764 136.792C38.3772 136.926 37.3409 137 36.3602 137C33.9547 137 31.6972 136.628 29.7543 135.974C28.6626 135.572 27.6634 135.111 26.7567 134.591C26.072 134.204 25.4429 133.788 24.8508 133.327C24.7028 133.208 24.5362 133.089 24.3882 132.97C22.1122 131.036 20.5209 128.538 19.6142 125.459C19.059 123.556 18.6705 121.399 18.4484 118.99C18.3189 117.533 18.2634 115.971 18.2634 114.32V87.2981C18.2634 84.8145 18.0783 82.6432 17.7453 80.7544C17.3937 78.8806 16.635 77.2447 15.4693 75.8616C14.285 74.4785 12.5827 73.259 10.3622 72.218C8.14173 71.1769 5.08858 70.2698 1.22126 69.4667V69.1692C8.28976 68.1877 12.8972 66.2097 15.0252 63.2353C17.1716 60.2758 18.2634 56.4984 18.2634 51.9476V21.6386C18.2634 20.2853 18.3189 18.9914 18.4484 17.7719C18.3559 12.9534 16.9681 9.20571 14.285 6.52877C13.1563 5.38363 11.676 4.37234 9.8996 3.48003C7.67913 2.36463 4.95906 1.41283 1.72087 0.639492C1.22126 0.520517 0.61063 0.31231 0 0.148719L4.07087 0C5.38465 0.0148719 6.64291 0.0594878 7.86417 0.148719H7.90118C10.7138 0.31231 13.2303 0.609748 15.4508 1.04103C16.376 1.2195 17.2642 1.4277 18.1154 1.65078C20.965 2.43899 23.3335 3.50977 25.2024 4.89286C25.2209 4.89286 25.2209 4.89286 25.2209 4.89286C27.6449 6.67749 29.3472 8.93802 30.3094 11.6596C30.9386 13.4442 31.3642 15.437 31.6047 17.6678C31.5862 17.9504 31.5862 18.233 31.5862 18.5155V49.1219C31.5862 54.6691 30.439 59.1158 28.163 62.4917C27.4228 63.5774 26.4421 64.5589 25.2209 65.4066C22.6858 67.1764 19.1331 68.4256 14.5441 69.1692V69.4667C18.1339 70.1656 21.039 71.1769 23.278 72.5154C23.8331 72.8575 24.3697 73.2144 24.8693 73.6011C26.3311 74.7016 27.5339 75.9508 28.4776 77.3488C29.7173 79.2226 30.5685 81.3493 30.9756 83.7437C31.4012 86.1232 31.6047 88.7407 31.6047 91.6109V120.135C31.6047 120.686 31.6232 121.221 31.6602 121.741C32.0118 126.456 33.9732 130.248 37.526 133.118C37.5445 133.118 37.5445 133.133 37.563 133.148L37.822 133.356C37.9701 133.49 38.1366 133.609 38.3031 133.713L38.3216 133.728C39.6539 134.606 41.4673 135.141 43.4842 135.141C44.2799 135.141 45.5012 134.903 46.2783 134.725C46.6669 134.635 46.9445 134.561 47 134.546L43.5953 135.87Z" fill=""/>
       </svg>  
@@ -46,8 +46,10 @@
               <img class="me" src="./assets/me_action.png" alt="minha foto">
             </div>
             <div class="profile-name">
-              <h1>Rafael Ribeiro Alves</h1>
-              <h2 class="role">Desenvolvedor Front-end</h2>
+              <h1>Rafael Ribeiro Alves <br>
+                <span class="role">Desenvolvedor Front-end</span>
+              </h1>
+             
             </div>
             <div class="profile-about">
               <p>
@@ -63,7 +65,7 @@
         <section class="hello card flex pd-1">
           <div class="hello-message flex" data-tilt data-tilt-scale="1" data-tilt-full-page-listening >
             <h2>DevRibeiro</h2>
-            <img class="stroke" src="./assets/stroke-brand.svg" alt="devribeiro">
+            <img class="stroke" src="./assets/stroke-brand.svg" alt="devribeiro somente contorno">
           </div>
         </section>
 
@@ -76,7 +78,7 @@
               <div class="card-wrapper swiper-wrapper">
                 <div class="card-slide swiper-slide">
                   <div class="image-box">
-                    <img src="./assets/frioprime.jpg" alt="placeholder image" />
+                    <img src="./assets/frioprime.jpg" alt="imagem projeto frioprime" />
                   </div>
                   <div class="project-details">
                     <div class="name-job">
@@ -107,7 +109,7 @@
 
                 <div class="card-slide swiper-slide">
                   <div class="image-box">
-                    <img src="./assets/portfolio.jpg" alt="placeholder image" />
+                    <img src="./assets/portfolio.jpg" alt="imagem projeto portfolio" />
                   </div>
                   <div class="project-details">
                     <div class="name-job">
@@ -146,10 +148,7 @@
           <h2 class="title">Habilidades</h2>
           <div class="stacks-icons flex">
             <div class="stacks-icons flex">
-              <div class="html5 ico flex tooltip"
-                data-tooltip="Bons conhecimentos na linguagem de marcação"
-              >
-              <span>HTML5</span>
+              <div class="html5 ico flex tooltip" data-tooltip="HTML5">
                 <svg
                   width="52"
                   height="52"
@@ -175,11 +174,7 @@
                   />
                 </svg>
               </div>
-              <div class="css3 ico flex tooltip"
-                data-tooltip="Bons conhecimentos na linguagem de estilização"
-              >
-              <span>CSS3</span>
-
+              <div class="css3 ico flex tooltip" data-tooltip="CSS3">
                 <svg
                   width="26"
                   height="30"
@@ -213,9 +208,7 @@
                   />
                 </svg>
               </div>
-              <div class="javascript ico flex tooltip">
-              <span>JAVASCRIPT</span>
-                
+              <div class="javascript ico flex tooltip" data-tooltip="JAVASCRIPT">
                 <svg
                   width="30"
                   height="30"
@@ -233,9 +226,7 @@
                   />
                 </svg>
               </div>
-              <div class="git ico flex tooltip">
-              <span>GIT</span>
-
+              <div class="git ico flex tooltip" data-tooltip="GIT" >
                 <svg width="30" height="30" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M23.6259 10.9673L13.1123 0.454119C12.5072 -0.151373 11.5252 -0.151373 10.9194 0.454119L8.73617 2.63735L11.5057 5.40688C12.1492 5.18941 12.8872 5.3353 13.4003 5.84833C13.9157 6.36465 14.0606 7.10898 13.8378 7.75463L16.5069 10.4238C17.1526 10.2013 17.8977 10.3453 18.4134 10.8619C19.1342 11.5824 19.1342 12.7502 18.4134 13.4712C17.6924 14.1923 16.5246 14.1923 15.8033 13.4712C15.2611 12.9284 15.1272 12.1322 15.4016 11.4642L12.9125 8.97512L12.9123 15.5255C13.0927 15.6147 13.2575 15.7325 13.4003 15.8744C14.1211 16.595 14.1211 17.7629 13.4003 18.4844C12.6793 19.2052 11.5109 19.2052 10.791 18.4844C10.0702 17.7629 10.0702 16.5951 10.791 15.8745C10.9637 15.7017 11.169 15.5648 11.3949 15.4719V8.86045C11.1687 8.76807 10.9633 8.63113 10.791 8.45776C10.2448 7.91238 10.1135 7.11105 10.3934 6.44046L7.66329 3.71006L0.454323 10.9187C-0.151441 11.5247 -0.151441 12.5069 0.454323 13.1124L10.9681 23.6258C11.5734 24.2314 12.5552 24.2314 13.1613 23.6258L23.6258 13.1613C24.2314 12.5555 24.2315 11.5728 23.6259 10.9673Z" fill="#DE4C36"/>
                   <path d="M11.5057 5.40688L8.73617 2.63735L7.66329 3.71006L10.3934 6.44046C10.1135 7.11105 10.2448 7.91238 10.791 8.45776C10.9633 8.63113 11.1687 8.76807 11.3949 8.86045V15.4719C11.169 15.5648 10.9637 15.7017 10.791 15.8745C10.0702 16.5951 10.0702 17.7629 10.791 18.4844C11.5109 19.2052 12.6793 19.2052 13.4003 18.4844C14.1211 17.7629 14.1211 16.595 13.4003 15.8744C13.2575 15.7325 13.0927 15.6147 12.9123 15.5255L12.9125 8.97512L15.4016 11.4642C15.1272 12.1322 15.2611 12.9284 15.8033 13.4712C16.5246 14.1923 17.6924 14.1923 18.4134 13.4712C19.1342 12.7502 19.1342 11.5824 18.4134 10.8619C17.8977 10.3453 17.1526 10.2013 16.5069 10.4238L13.8378 7.75463C14.0606 7.10898 13.9157 6.36465 13.4003 5.84833C12.8872 5.3353 12.1492 5.18941 11.5057 5.40688Z" fill="#DE4C36"/>
@@ -245,9 +236,7 @@
 
                   
               </div>
-              <div class="figma ico flex tooltip">
-              <span>FIGMA</span>
-
+              <div class="figma ico flex tooltip" data-tooltip="FIGMA">
                 <svg
                   width="20"
                   height="30"
@@ -277,9 +266,7 @@
                   />
                 </svg>
               </div>
-              <div class="bootstrap ico flex tooltip">
-              <span>BOOTSTRAP</span>
-
+              <div class="bootstrap ico flex tooltip" data-tooltip="BOOTSTRAP">
                 <svg width="30" height="30" viewBox="0 0 101 81" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M21.427 0.763916C15.7212 0.763916 11.4991 5.75806 11.6882 11.1741C11.8696 16.3774 11.6339 23.1165 9.93739 28.6122C8.23485 34.1233 5.3575 37.6157 0.656723 38.0639V43.1249C5.3575 43.5741 8.23485 47.0647 9.93719 52.5766C11.6339 58.0723 11.8694 64.8114 11.688 70.0147C11.4989 75.4299 15.721 80.4249 21.4278 80.4249H79.894C85.5999 80.4249 89.8212 75.4307 89.6321 70.0147C89.4507 64.8114 89.6864 58.0723 91.3829 52.5766C93.0854 47.0647 95.9557 43.5727 100.657 43.1249V38.0639C95.9559 37.6147 93.0856 34.1241 91.3829 28.6122C89.6862 23.1172 89.4507 16.3774 89.6321 11.1741C89.8212 5.75884 85.5999 0.763916 79.894 0.763916H21.427ZM68.4534 49.8004C68.4534 57.2581 62.8907 61.7809 53.6593 61.7809H37.9448C37.4953 61.7809 37.0642 61.6023 36.7463 61.2845C36.4285 60.9666 36.2499 60.5355 36.2499 60.086V21.103C36.2499 20.6535 36.4285 20.2223 36.7463 19.9045C37.0642 19.5866 37.4953 19.4081 37.9448 19.4081H53.5698C61.2673 19.4081 66.319 23.5776 66.319 29.9792C66.319 34.4723 62.9206 38.4948 58.5911 39.1995V39.4338C64.4848 40.0803 68.4534 44.1624 68.4534 49.8004ZM51.9458 24.7809H42.9856V37.4372H50.5323C56.3663 37.4372 59.5831 35.0879 59.5831 30.8889C59.5825 26.9538 56.8169 24.7809 51.9458 24.7809ZM42.9856 42.4588V56.4063H52.2755C58.3497 56.4063 61.5671 53.969 61.5671 49.3885C61.5671 44.8081 58.2595 42.4581 51.8848 42.4581L42.9856 42.4588Z" fill="#7952B3"/>
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M68.4534 49.8004C68.4534 57.2581 62.8907 61.7809 53.6593 61.7809H37.9448C37.4953 61.7809 37.0642 61.6023 36.7463 61.2845C36.4285 60.9666 36.2499 60.5355 36.2499 60.086V21.103C36.2499 20.6535 36.4285 20.2223 36.7463 19.9045C37.0642 19.5866 37.4953 19.4081 37.9448 19.4081H53.5698C61.2673 19.4081 66.319 23.5776 66.319 29.9792C66.319 34.4723 62.9206 38.4948 58.5911 39.1995V39.4338C64.4848 40.0803 68.4534 44.1624 68.4534 49.8004ZM42.9856 24.7809H51.9458C56.8169 24.7809 59.5825 26.9538 59.5831 30.8889C59.5831 35.0879 56.3663 37.4372 50.5323 37.4372H42.9856V24.7809ZM42.9856 56.4063V42.4588L51.8848 42.4581C58.2595 42.4581 61.5671 44.8081 61.5671 49.3885C61.5671 53.969 58.3497 56.4063 52.2755 56.4063H42.9856Z" fill="#7952B3"/>
@@ -288,9 +275,7 @@
                   
                   
               </div>
-              <div class="react ico flex tooltip">
-              <span>REACTJS</span>
-
+              <div class="react ico flex tooltip" data-tooltip="REACTJS">
                 <svg
                   width="30"
                   height="32"
@@ -322,9 +307,7 @@
                   />
                 </svg>
               </div>
-              <div class="node ico flex tooltip">
-              <span>NODEJS</span>
-
+              <div class="node ico flex tooltip" data-tooltip="NODEJS">
                 <svg
                   width="28"
                   height="30"
@@ -343,9 +326,7 @@
                 </svg>
                 
               </div>
-              <div class="typescript ico flex tooltip">
-              <span>TYPESCRIPT</span>
-
+              <div class="typescript ico flex tooltip" data-tooltip="TYPESCRIPT">
                 <svg
                   width="30"
                   height="30"
@@ -364,9 +345,7 @@
                 </svg>
                 
               </div>
-              <div class="tailwind ico flex tooltip">
-              <span>TAILWIND</span>
-
+              <div class="tailwind ico flex tooltip" data-tooltip="TAILWIND">
                 <svg
                   width="30"
                   height="18"
@@ -487,23 +466,13 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
-    <script
+    <!-- <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-      crossorigin="anonymous"></script>
+      crossorigin="anonymous"></script> -->
     <script src="./swiper-bundle.min.js"></script>
     <script src="./vanilla-tilt.min.js"></script>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <script src="./main.js"></script>
   </body>
 </html>
-
-
-
-
-<!-- 
-                Olá! É um prazer compartilhar um pouco sobre mim e minha jornada profissional.
-                Meu objetivo é destacar minhas habilidades e experiencias, aqui voce encontra exemplos do 
-                meu trabalho, bem como a evolução das mihas habilidades no desenvolvimento Front-end.
-                Sou formado em analise e desenvolvimento de sistemas, porem tenho trabalhado nesses ultimos 15 anos no setor de vendas, construí uma base solida no atendimento ao cliente tanto presencialmente como por telefone. 
-                Estou atualmente em busca de uma transição de carreira que me permita seguir minha paixão, que é o desenvolvimento front-end. Assim como no meu trabalho, tenho levado meus estudos com comprometimento e dedicação, com o objetivo de adquirir as habilidades e conhecimentos necessários para contribuir de forma significativa em futuros projetos. -->
