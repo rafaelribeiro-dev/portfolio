@@ -24,7 +24,7 @@ body {
   --neutral-100: #f2f3f4;
   --pure-white: #ffffff;
   --disabled: rgba(206, 206, 206, 0.7);
-  --dark-disabled: rgba(206, 206, 206, 0.3);
+  --dark-disabled: rgba(206, 206, 206, 0.1);
   --logo-pink: #ff3d7b;
   --logo-yellow: #ffd876;
   --blue-sky: #62bfeb;
@@ -1000,6 +1000,10 @@ input {
     justify-content: center;
   }
 
+  .brand-logo img {
+    height: 6.5rem;
+  }
+
   .title {
     font-size: 2.4rem;
   }
@@ -1067,6 +1071,7 @@ input {
   .stacks-icons {
     width: 100%;
     margin-bottom: -0.9;
+    gap: 0.5rem;
   }
 
   .stacks .description p {
@@ -1436,7 +1441,6 @@ body.dark {
 
 .dark .profile .profile-name .role {
   color: var(--neutral-100);
-  font-weight: 300;
 }
 
 .dark .stacks .description p {
@@ -1444,7 +1448,7 @@ body.dark {
 }
 
 .dark .stacks .ico {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .dark .stacks .ico:nth-child(n + 7) {
