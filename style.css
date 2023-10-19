@@ -429,7 +429,7 @@ li {
 }
 
 .stacks-icons {
-  width: 95%;
+  width: 90%;
   flex-wrap: wrap;
   gap: 1rem;
   align-items: center;
@@ -461,8 +461,18 @@ li {
   display: none;
 }
 
+.stacks .ico:nth-child(n + 7)::after {
+  background: var(--neutral-400);
+  color: white;
+}
+
 .stacks .ico:hover::after {
   display: block;
+}
+
+.html5 svg {
+  width: 26px;
+  height: 30px;
 }
 
 .stacks .ico svg path {
@@ -1047,8 +1057,16 @@ input {
   }
 
   .stacks .ico {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 4rem;
     height: 4rem;
+  }
+
+  .stacks-icons {
+    width: 100%;
+    margin-bottom: -0.9;
   }
 
   .stacks .description p {
@@ -1056,7 +1074,7 @@ input {
   }
 
   .select-mode .avatar img {
-    width: 120px;
+    width: 100px;
   }
 
   .button-copy {
