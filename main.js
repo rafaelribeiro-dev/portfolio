@@ -282,7 +282,7 @@ tlprof
     '-=1.1'
   )
   .from(
-    '.profile-about',
+    '.profile-about p span',
     {
       y: 10,
       opacity: 0,
