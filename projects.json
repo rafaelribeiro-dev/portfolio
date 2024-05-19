@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "img": "assets/portfolio.jpg",
+    "name": "Portfólio",
+    "description": "Portfolio pessoal, projeto ao qual desenvolvi para colocar o meu conhecimento em prática e, demonstrar um pouco das minhas habilidades.",
+    "stack": ["HTML", "CSS", "JAVASCRIPT"],
+    "preview": {
+      "view": null,
+      "repository": "https://github.com/rafaelribeiro-dev/portfolio"
+    }
+  },
+  {
+    "id": 2,
+    "img": "assets/frioprime.jpg",
+    "name": "Frio Prime Refrigeração",
+    "description": "Desenvolvemos um website sob medida para uma empresa especializada em manutenção e instalação de sistemas de refrigeração para ambientes diversos.",
+    "stack": ["HTML", "CSS", "JAVASCRIPT"],
+    "preview": {
+      "view": "https://www.frioprime.com.br",
+      "repository": "https://github.com/rafaelribeiro-dev/frioprime_v2"
+    }
+  }
+]
