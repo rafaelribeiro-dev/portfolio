@@ -36,13 +36,13 @@ li {
 }
 
 .card {
-  background-color: var(--neutral-1);
+  background-color: var(--neutral-3);
   border-radius: var(--border-radius);
 }
 
 .bento-grid {
   max-width: 540px;
-  height: fit-content;
+  /* height: fit-content; */
   padding: 1rem;
   margin: 0 auto;
   display: grid;
@@ -51,7 +51,10 @@ li {
   overflow: hidden;
   grid-template-columns: 0.7fr 0.3fr 1fr 1fr;
   grid-template-rows: 1fr 0.8fr 0.8fr;
-  grid-template-areas: '';
+  grid-template-areas:
+    'contacts contacts profile projects'
+    'skils skils profile projects'
+    'resume theme-mode profile projects';
 }
 
 /*-----------------DARK MODE -------------------*/
@@ -60,13 +63,6 @@ body.dark {
   background-color: var(--neutral-8);
 }
 
-.dark .loader_bg {
-  background-color: var(--neutral-8);
-}
-
-.dark #loaderlogo path {
-  fill: var(--neutral-1);
-}
 .dark .resume,
 .dark .mail,
 .dark .hello,
