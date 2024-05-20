@@ -41,9 +41,10 @@ li {
 }
 
 .bento-grid {
-  max-width: 540px;
-  /* height: fit-content; */
-  padding: 1rem;
+  width: 100vw;
+  max-width: 1440px;
+  height: fit-content;
+  padding: 2.5rem;
   margin: 0 auto;
   display: grid;
   place-content: center;
@@ -53,10 +54,33 @@ li {
   grid-template-rows: 1fr 0.8fr 0.8fr;
   grid-template-areas:
     'contacts contacts profile projects'
-    'skils skils profile projects'
+    'skills skills profile projects'
     'resume theme-mode profile projects';
 }
 
+.profile {
+  grid-area: profile;
+}
+
+.projects {
+  grid-area: projects;
+}
+
+.contacts {
+  grid-area: contacts;
+}
+
+.skills {
+  grid-area: skills;
+}
+
+.resume {
+  grid-area: resume;
+}
+
+.theme-mode {
+  grid-area: theme-mode;
+}
 /*-----------------DARK MODE -------------------*/
 
 body.dark {
