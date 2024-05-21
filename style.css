@@ -1211,7 +1211,6 @@ input {
 
 @media (min-width: 1440px) {
   .apple-grid {
-    background-color: #feff81;
     max-width: 150rem;
     height: 100vh;
     padding: 4rem 10rem;
