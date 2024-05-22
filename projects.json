@@ -2,7 +2,7 @@
   {
     "id": 1,
     "img": "assets/portfolio.jpg",
-    "name": "Portfólio",
+    "name": "Portfólio Pessoal",
     "description": "Portfolio pessoal, projeto ao qual desenvolvi para colocar o meu conhecimento em prática e, demonstrar um pouco das minhas habilidades.",
     "stack": ["HTML", "CSS", "JAVASCRIPT"],
     "preview": {
